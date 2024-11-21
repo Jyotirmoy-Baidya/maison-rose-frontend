@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.clip-figure {
+  clip-path: path('M0 0 H100 V100 A100 100 0 0 1 0 0 Z');
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit (Google Chrome, Safari) */
+}
+
+.menu-item-description {
+  min-width: 200px;
+  max-width: 400px; /* Set the desired width of the div */
+  word-wrap: break-word; /* Break words that are too long */
+  word-break: break-word; /* Ensure long words break */
+  white-space: normal; /* Allow text to wrap onto new lines */
+  overflow: hidden; /* Hide any overflow content if needed */
+}

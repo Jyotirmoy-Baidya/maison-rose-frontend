@@ -1,0 +1,6 @@
+.cafe-bg-img{
+    background-image: url('./background/menu.png');
+  background-size: cover; /* or 'contain', 'auto' */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center; /* Center aligns the image */
+}
