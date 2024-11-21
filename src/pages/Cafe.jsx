@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { TiSocialFacebookCircular } from 'react-icons/ti'
 import { FaInstagram } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import Menuarrow from '../components/cafe/menuarrow'
+import Menuarrow from '../components/cafe/Menuarrow'
 import Menuarrow2 from '../components/cafe/Menuarrow2'
 import { cafeCategories, cafeMenu } from '../constants/menu'
 
