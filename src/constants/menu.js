@@ -14,7 +14,7 @@ export const cafeMenu = [
                 name: 'Chicken Pizza Mini',
                 description: 'Mini pizza with crispy crust, chicken chunks, rich tomato sauce, and melted mozzarella cheese.',
                 price: 99,
-                imageurl: './menu/Pizza/Veg Pizza Mini.png',
+                imageurl: './menu/Pizza/Chicken Pizza Mini.png',
                 category: 'Pizza',
                 type: 'non-veg',
             },
