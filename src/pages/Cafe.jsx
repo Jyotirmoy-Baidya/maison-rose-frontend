@@ -210,8 +210,8 @@ const Cafe = () => {
                                                         {/* Item Details */}
                                                         <div className="flex flex-col flex-grow justify-center h-full">
                                                             <div className="flex justify-between">
-                                                                <div className="item-name text-primary-text font-forum uppercase tracking-wider">{item.name}</div>
-                                                                <div className="font-forum text-primary-text text-lg tracking-wide price">₹ {item.price}</div>
+                                                                <div className="item-name text-primary-text font-forum uppercase tracking-wider xl:text-base text-sm">{item.name}</div>
+                                                                <div className="font-forum text-primary-text xl:text-lg text-sm tracking-wide price">₹ {item.price}</div>
                                                             </div>
                                                             <div className="xl:block hidden text-xs tracking-wider text-primary-text menu-item-description">
                                                                 {item.description}
