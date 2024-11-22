@@ -87,9 +87,9 @@ const Cafe = () => {
         );
     };
 
-    useEffect(() => {
-        ComboToast()
-    }, [])
+    // useEffect(() => {
+    //     ComboToast()
+    // }, [])
 
 
 
@@ -97,6 +97,23 @@ const Cafe = () => {
     return (
         <div className='bg-primary-bg h-full'>
             <div className='flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
+
+                {/* heading  */}
+                <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
+                    <div className='w-full h-full flex items-center'>
+                        <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
+                        <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
+                        <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
+                            <NavLink to='/'>Home</NavLink>
+                            <NavLink to='/about'>About</NavLink>
+
+                            <NavLink to='/menu/combos'>Combos</NavLink>
+                            <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
+                                Order
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* combo alert  */}
                 <div className="hidden xl:block absolute bottom-1/2 xl:bottom-5 bg-primary-bg p-4 border-2 border-[#e0c097] rounded-xl right-10 text-center leading-6" id='Combo-Alert-Div'>
@@ -117,29 +134,19 @@ const Cafe = () => {
                     </NavLink>
                 </div>
 
+
                 <div className='xl:flex hidden relative w-1/2 text-white bg-black rounded-2xl'>
-                    <div className='absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181885]'>
-                        <div className='w-full h-full flex items-center'>
-                            <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                            <div className='pl-2 text-xl uppercase font-forum tracking-wide'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
-                            <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
-                                <NavLink to='/'>Home</NavLink>
-                                <NavLink to='/about'>About</NavLink>
-                                <div>Combos</div>
-                                <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
-                                    Order
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div className='mt-[125px]   mx-auto'>
                         <div className='mx-auto h-[300px] w-[400px] rounded-xl  overflow-hidden'>
                             <img src={selectedItem} alt="selected item" className='w-full h-full rounded-xl' />
                         </div>
-                        <div className='mt-5 text-4xl text-center tracking-widest font-forum'>
+                        <div className='mt-5 text-4xl uppercase text-center tracking-widest font-forum'>
                             {selectedItemName}
                         </div>
                     </div>
+
+                    {/* links to social media  */}
                     <div className='absolute rounded-ss-2xl p-3 text-white bottom-0 right-0 bg-primary-bg links'>
                         <div className='w-full flex items-center gap-2'>
                             <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
@@ -155,6 +162,7 @@ const Cafe = () => {
                     </div>
                 </div>
 
+                {/* navbar  */}
                 <div className='xl:hidden block sticky top-5'>
                     <div className='z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
                         <div className='w-full h-full flex items-center'>
