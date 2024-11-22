@@ -27,7 +27,7 @@ const Cafe = () => {
 
     const ComboToast = () => {
         toast(
-            <div style={{ textAlign: 'center', lineHeight: '1.5' }}>
+            <div className='xl:hidden block' style={{ textAlign: 'center', lineHeight: '1.5' }}>
                 <h3
                     style={{
                         color: '#e0c097',
@@ -87,13 +87,19 @@ const Cafe = () => {
         );
     };
 
+    useEffect(() => {
+        ComboToast()
+    }, [])
+
+
+
 
     return (
         <div className='bg-primary-bg h-full'>
-            <div className='flex xl:flex-row flex-col xl:gap-6 gap-2 p-6 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
+            <div className='flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
 
                 {/* combo alert  */}
-                <div className="absolute bottom-5 bg-primary-bg p-4 border-2 border-[#e0c097] rounded-xl right-10 text-center leading-6" id='Combo-Alert-Div'>
+                <div className="hidden xl:block absolute bottom-1/2 xl:bottom-5 bg-primary-bg p-4 border-2 border-[#e0c097] rounded-xl right-10 text-center leading-6" id='Combo-Alert-Div'>
                     <div className='absolute top-5 right-5' ><GiCrossMark className='text-[#e0c097]' onClick={() => { document.getElementById('Combo-Alert-Div').style.display = 'none' }} /></div>
                     <h3 className="text-[#e0c097]  mb-2 text-xl font-bold whitespace-nowrap">
                         🎉 *EXCLUSIVE ALERT* 🎉
@@ -149,7 +155,7 @@ const Cafe = () => {
                     </div>
                 </div>
 
-                <div className='sticky top-5'>
+                <div className='xl:hidden block sticky top-5'>
                     <div className='z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
                         <div className='w-full h-full flex items-center'>
                             <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
