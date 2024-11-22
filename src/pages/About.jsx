@@ -6,7 +6,7 @@ import { TiSocialFacebookCircular } from 'react-icons/ti'
 import { NavLink } from 'react-router-dom'
 import Menuarrow from '../components/cafe/Menuarrow'
 import Menuarrow2 from '../components/cafe/Menuarrow2'
-import { schedule } from '../constants/aboutus'
+import { schedule } from '../constants/aboutUs'
 
 
 const text = () => {
