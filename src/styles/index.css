@@ -16,6 +16,7 @@
   display: none; /* WebKit (Google Chrome, Safari) */
 }
 
+
 .menu-item-description {
   min-width: 200px;
   max-width: 400px; /* Set the desired width of the div */
@@ -45,4 +46,12 @@
   50% {
     transform: translateY(-10px);
   }
+}
+
+
+.cafe-bg-img{
+    background-image: url('./background/menu.png');
+  background-size: cover; /* or 'contain', 'auto' */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center; /* Center aligns the image */
 }
