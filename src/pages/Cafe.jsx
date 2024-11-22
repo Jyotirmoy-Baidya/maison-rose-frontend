@@ -163,7 +163,7 @@ const Cafe = () => {
                 </div>
 
                 {/* navbar  */}
-                <div className='xl:hidden block sticky top-5'>
+                <div className='xl:hidden block sticky top-3'>
                     <div className='z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
                         <div className='w-full h-full flex items-center'>
                             <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
