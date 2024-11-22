@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Cafe from "./pages/Cafe";
 import { Toaster } from "react-hot-toast";
 import About from "./pages/About";
+import Saloon from "./pages/Saloon";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cafe' element={<Cafe />} />
+        <Route path='/saloon' element={<Saloon />} />
         <Route path='/about' element={<About />} />
       </Routes>
       <Toaster />

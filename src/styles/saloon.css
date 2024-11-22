@@ -1,0 +1,16 @@
+.bg-img-saloon {
+  position: relative;
+  /* Required for pseudo-element positioning */
+  background-image: url(./saloon/saloon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.content {
+  position: relative;
+  z-index: 2;
+  /* Ensures content is above the overlay */
+}

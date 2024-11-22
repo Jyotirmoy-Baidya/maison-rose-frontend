@@ -1,0 +1,142 @@
+export const saloonMenu = [
+    {
+        category: 'Hair Styling',
+        items: [
+            {
+                name: 'Basic Haircut',
+                description: 'A quick trim to keep your hair neat and stylish.',
+                price: 300,
+                imageurl: 'https://images.unsplash.com/photo-1573497019600-d5d5c32a699f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Hair Styling',
+                type: 'service',
+            },
+            {
+                name: 'Advanced Haircut',
+                description: 'A professional haircut to achieve a new and trendy style.',
+                price: 500,
+                imageurl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Hair Styling',
+                type: 'service',
+            },
+            {
+                name: 'Hair Coloring',
+                description: 'Choose from a variety of colors to give your hair a new look.',
+                price: 1500,
+                imageurl: 'https://images.unsplash.com/photo-1610912178563-695cdb7fb5f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Hair Styling',
+                type: 'service',
+            },
+            {
+                name: 'Hair Smoothening',
+                description: 'Get silky smooth hair with our hair smoothening treatment.',
+                price: 3000,
+                imageurl: 'https://images.unsplash.com/photo-1591089627073-cf55dd02c248?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Hair Styling',
+                type: 'service',
+            },
+        ],
+    },
+    {
+        category: 'Nail Services',
+        items: [
+            {
+                name: 'Basic Nail Paint',
+                description: 'A quick nail paint application with a color of your choice.',
+                price: 150,
+                imageurl: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Nail Services',
+                type: 'service',
+            },
+            {
+                name: 'Gel Nail Paint',
+                description: 'Long-lasting gel nail paint with a glossy finish.',
+                price: 500,
+                imageurl: 'https://images.unsplash.com/photo-1579829545137-c03b3e90e938?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Nail Services',
+                type: 'service',
+            },
+            {
+                name: 'Nail Art',
+                description: 'Custom nail art designs to express your style.',
+                price: 800,
+                imageurl: 'https://images.unsplash.com/photo-1513105737058-9f5bb0ddbf48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Nail Services',
+                type: 'service',
+            },
+        ],
+    },
+    {
+        category: 'Facial Treatments',
+        items: [
+            {
+                name: 'Basic Facial',
+                description: 'Cleanse and rejuvenate your skin with our basic facial treatment.',
+                price: 600,
+                imageurl: 'https://images.unsplash.com/photo-1618889466743-f9d0f2fd1677?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Facial Treatments',
+                type: 'service',
+            },
+            {
+                name: 'Brightening Facial',
+                description: 'Get radiant skin with our brightening facial.',
+                price: 1200,
+                imageurl: 'https://images.unsplash.com/photo-1556228578-dff53be2b076?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Facial Treatments',
+                type: 'service',
+            },
+            {
+                name: 'Anti-Aging Facial',
+                description: 'Reduce signs of aging and nourish your skin.',
+                price: 1800,
+                imageurl: 'https://images.unsplash.com/photo-1615896237633-dffa3af6cd0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Facial Treatments',
+                type: 'service',
+            },
+        ],
+    },
+    {
+        category: 'Spa Services',
+        items: [
+            {
+                name: 'Head Massage',
+                description: 'Relax and rejuvenate with a soothing head massage.',
+                price: 500,
+                imageurl: 'https://images.unsplash.com/photo-1560493675-6a22b947d8ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Spa Services',
+                type: 'service',
+            },
+            {
+                name: 'Body Massage',
+                description: 'Relieve stress and tension with a full-body massage.',
+                price: 2000,
+                imageurl: 'https://images.unsplash.com/photo-1598118883518-40bce127ef48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Spa Services',
+                type: 'service',
+            },
+            {
+                name: 'Foot Spa',
+                description: 'Pamper your feet with a relaxing foot spa session.',
+                price: 700,
+                imageurl: 'https://images.unsplash.com/photo-1541727264687-c307a6a77967?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+                category: 'Spa Services',
+                type: 'service',
+            },
+        ],
+    },
+];
+
+export const saloonCategories = [
+    { category: 'Hair Styling', priority: 1 },
+    { category: 'Nail Services', priority: 2 },
+    { category: 'Facial Treatments', priority: 3 },
+    { category: 'Spa Services', priority: 4 },
+    { category: 'Manicure', priority: 5 },
+    { category: 'Pedicure', priority: 6 },
+    { category: 'Makeup', priority: 7 },
+    { category: 'Waxing', priority: 8 },
+    { category: 'Threading', priority: 9 },
+    { category: 'Spa Services', priority: 10 },
+    { category: 'Nail Art', priority: 11 },
+    { category: 'Bridal Packages', priority: 12 },
+];
+
