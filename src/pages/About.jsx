@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import { FaInstagram } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { RxHamburgerMenu } from 'react-icons/rx'
@@ -17,24 +18,7 @@ const schedule = [
     { day: "Sunday", hours: "16:00 - 22:30" },
 ];
 
-
-const text = () => {
-    return (
-        <div className="rounded-3xl overflow-hidden h-[300px] bg-zinc-900">
-
-
-            <div className='z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
-                <div className='w-full h-full flex items-center'>
-                    <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                    <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
-
-                </div>
-            </div>
-        </div>
-    )
-}
 const About = () => {
-
     const latitude = 22.635068880827603;
     const longitude = 88.46552255397063;
     const mapUrl = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=${latitude},${longitude}&zoom=14`;
@@ -45,10 +29,19 @@ const About = () => {
     };
 
     return (
-
         <div className='bg-primary-bg h-full'>
+            <Helmet>
+                <title>About Maison Rose Lifestyle | Thai-Inspired Fashion & Gourmet Café in Kolkata</title>
+                <meta name="description" content="Discover Maison Rose Lifestyle - A unique blend of Thai-inspired fashion boutique and gourmet café in New Town, Kolkata. Experience our curated collection and exquisite dining." />
+                <meta name="keywords" content="Maison Rose Lifestyle, Thai fashion Kolkata, gourmet cafe New Town, fashion boutique Kolkata, luxury dining Kolkata" />
+                <meta property="og:title" content="About Maison Rose Lifestyle | Fashion & Dining Experience in Kolkata" />
+                <meta property="og:description" content="Visit Maison Rose Lifestyle in New Town, Kolkata - Where Thai fashion meets gourmet dining. Experience our unique blend of style and taste." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://maisonroselifestyle.com/about" />
+                <link rel="canonical" href="https://maisonroselifestyle.com/about" />
+            </Helmet>
 
-            {/* Mobiel Layout  */}
+            {/* Mobile Layout */}
             <div className='xl:hidden flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
                 <div className='xl:hidden z-10 block sticky top-3'>
                     <div className='z-10 h-14 p-3 top-0 rounded-xl navbar bg-[#18181890]'>
@@ -59,59 +52,71 @@ const About = () => {
                     </div>
                 </div>
                 <div className='relative h-46 w-full'>
-                    <img src="./images/coffeeMug.png" alt="" className='h-full w-full rounded-xl' />
+                    <img 
+                        src="./images/coffeeMug.png" 
+                        alt="Maison Rose Lifestyle's signature coffee experience in New Town, Kolkata" 
+                        className='h-full w-full rounded-xl'
+                        loading="lazy"
+                    />
                     <div className='absolute bottom-2 left-2 text-5xl tracking-wider text-white font-forum'>ABOUT US</div>
+                </div>
+
+                <div className='w-full flex flex-col gap-4 text-primary-text font-forum'>
+                    <h1 className="text-2xl tracking-wide">Welcome to Maison Rose Lifestyle</h1>
+                    <p className="text-lg">
+                        Located in the heart of New Town, Kolkata, Maison Rose Lifestyle is a unique destination 
+                        where Thai-inspired fashion meets gourmet dining. Our boutique offers carefully curated 
+                        fashion pieces while our café serves exquisite beverages and delicacies.
+                    </p>
                 </div>
 
                 <div className='w-full flex flex-col rounded-xl py-5 px-5 border-2 border-primary-border overflow-hidden'>
                     <div className='flex w-full text-primary-text font-forum tracking-wide justify-center items-center gap-2 py-2 whitespace-nowrap'>
                         <Menuarrow />
-                        <h2 className="text-primary-text font-forum text-center text-xl tracking-widest ">
+                        <h2 className="text-primary-text font-forum text-center text-xl tracking-widest">
                             OPENING HOURS
                         </h2>
                         <Menuarrow2 />
                     </div>
 
-                    {/* timings  */}
+                    {/* timings */}
                     <div className='flex flex-col px-4 mt-2 gap-4 h-full overflow-scroll no-scrollbar'>
-                        {
-                            schedule.map((ele, i) => (
-                                <div className='flex gap-4 text-primary-text font-forum'>
-                                    <div className='w-fit'>{ele.day}</div>
-                                    <div className='overflow-hidden tracking-widest'>..............................................</div>
-                                    <div className='whitespace-nowrap'>{ele.hours}</div>
-                                </div>
-                            ))
-                        }
+                        {schedule.map((ele, i) => (
+                            <div key={i} className='flex gap-4 text-primary-text font-forum'>
+                                <div className='w-fit'>{ele.day}</div>
+                                <div className='overflow-hidden tracking-widest'>..............................................</div>
+                                <div className='whitespace-nowrap'>{ele.hours}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* contact us  */}
+                {/* contact us */}
                 <div className='flex flex-col w-full rounded-xl py-5 px-5 border-2 border-primary-border'>
                     <div className='flex w-full justify-center items-center gap-2'>
                         <Menuarrow />
-                        <h2 className="text-primary-text font-forum text-center text-xl tracking-widest ">
+                        <h2 className="text-primary-text font-forum text-center text-xl tracking-widest">
                             GET IN TOUCH
                         </h2>
                         <Menuarrow2 />
                     </div>
                     <div className="flex flex-col h-full w-full gap-2 mt-10">
                         <div className='flex w-full font-forum justify-between text-primary-text'>
-                            <h3 className=" tracking-widest">ADDRESS</h3>
-                            <p className="">23 Greenfield Avenue,<br />Prague 120 00</p>
+                            <h3 className="tracking-widest">ADDRESS</h3>
+                            <p className="">Street No. 23, New Town<br />Kolkata, West Bengal</p>
                         </div>
                         <div className='flex w-full font-forum justify-between text-primary-text'>
                             <h3 className="tracking-widest">PHONE</h3>
-                            <p className="">+9085533510</p>
+                            <p className="">+91 9085533510</p>
                         </div>
                         <div className='flex w-full font-forum justify-between text-primary-text'>
                             <h3 className="tracking-widest">EMAIL</h3>
-                            <p className="">email@example.com</p>
+                            <p className="">contact@maisonroselifestyle.com</p>
                         </div>
                     </div>
                 </div>
 
-                {/* Map  */}
+                {/* Map */}
                 <div className='w-full rounded-xl overflow-hidden border-2 border-primary-border' >
                     <iframe
                         src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.7028566375777!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94e8cf28b9b3%3A0x7e778da388d74453!2sYour%20Location!5e0!3m2!1sen!2sus!4v1647095757123!5m2!1sen!2sus`}
@@ -123,7 +128,7 @@ const About = () => {
                     ></iframe>
                 </div>
 
-                {/* social media connect  */}
+                {/* social media connect */}
                 <div className='flex justify-center text-primary-text rounded-xl py-3 gap-3 border-2 border-primary-border w-full'>
                     <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
                     <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><TiSocialFacebookCircular className='text-xl' /></div>
@@ -134,8 +139,8 @@ const About = () => {
 
             <div className='hidden xl:block xl:h-screen xl:w-screen bg-primary-bg cafe-bg-img'>
                 <div className='hidden xl:grid grid-cols-4 xl:p-6 xl:gap-6 h-screen w-full'>
-                    {/* Navbar  */}
-                    <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
+                    {/* Navbar */}
+                    <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]' >
                         <div className='w-full h-full flex items-center'>
                             <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
                             <div className='pl-2 text-xl text-primary-text uppercase font-forum tracking-wide'>Maison Rose Lifestyle</div>
@@ -149,16 +154,13 @@ const About = () => {
                         </div>
                     </div>
                     <div className='relative col-span-2 h-full overflow-hidden  rounded-2xl'>
-                        <img src="./contact/aboutus.png" alt="Contact Img" className='z-[1]  absolute bottom-0' />
-
-
-
+                        <img src="./contact/aboutus.png" alt="Maison Rose Lifestyle's boutique and café in New Town, Kolkata" className='z-[1]  absolute bottom-0' />
 
                         <div className='absolute bottom-7 left-7 font-forum text-white z-[2] text-8xl'>
                             ABOUT US
                         </div>
 
-                        {/* Links to social media  */}
+                        {/* Links to social media */}
                         <div className='absolute z-[4] rounded-ss-2xl p-3 text-white bottom-0 right-0 bg-primary-bg links'>
                             <div className='w-full flex items-center gap-2'>
                                 <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
@@ -179,24 +181,22 @@ const About = () => {
                                     <Menuarrow2 />
                                 </div>
 
-                                {/* timings  */}
+                                {/* timings */}
                                 <div className='flex flex-col px-4 mt-2 justify-between h-full overflow-scroll no-scrollbar'>
-                                    {
-                                        schedule.map((ele, i) => (
-                                            <div className='flex gap-4 text-primary-text font-forum'>
-                                                <div className='w-fit'>{ele.day}</div>
-                                                <div className='overflow-hidden tracking-widest'>..............................................</div>
-                                                <div className='whitespace-nowrap'>{ele.hours}</div>
-                                            </div>
-                                        ))
-                                    }
+                                    {schedule.map((ele, i) => (
+                                        <div key={i} className='flex gap-4 text-primary-text font-forum'>
+                                            <div className='w-fit'>{ele.day}</div>
+                                            <div className='overflow-hidden tracking-widest'>..............................................</div>
+                                            <div className='whitespace-nowrap'>{ele.hours}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 
-                            {/* images section  */}
+                            {/* images section */}
                             <div className='w-1/2 grid grid-cols-2 grid-rows-2 gap-2 rounded-xl'>
                                 <div className='overflow-hidden rounded-xl'>
-                                    <img src="./images/coffee.jpg" alt="" className='h-full w-full' />
+                                    <img src="./images/coffee.jpg" alt="Maison Rose Lifestyle's gourmet coffee experience in Kolkata" className='h-full w-full' />
                                 </div>
                             </div>
                         </div>
@@ -212,7 +212,7 @@ const About = () => {
                                 ></iframe>
                             </div>
 
-                            {/* Contact Us   */}
+                            {/* Contact Us */}
                             <div className='flex flex-col w-1/2 rounded-xl py-5 px-5 border-2 border-primary-border'>
                                 <div className='flex w-full justify-center items-center gap-2'>
                                     <Menuarrow />
@@ -223,16 +223,16 @@ const About = () => {
                                 </div>
                                 <div className="flex flex-col h-full w-full gap-2 mt-10">
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
-                                        <h3 className=" tracking-widest">ADDRESS</h3>
-                                        <p className="">23 Greenfield Avenue,<br />Prague 120 00</p>
+                                        <h3 className="tracking-widest">ADDRESS</h3>
+                                        <p className="">Street No. 23, New Town<br />Kolkata, West Bengal</p>
                                     </div>
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">PHONE</h3>
-                                        <p className="">+9085533510</p>
+                                        <p className="">+91 9085533510</p>
                                     </div>
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">EMAIL</h3>
-                                        <p className="">email@example.com</p>
+                                        <p className="">contact@maisonroselifestyle.com</p>
                                     </div>
                                 </div>
                             </div>
