@@ -102,7 +102,7 @@ const Saloon = () => {
                         <div className='relative xl:w-1/2 w-full h-64 overflow-hidden rounded-xl' data-aos='fade-up'>
                             <img src="./saloon/nailart.png" alt="" className='absolute bottom-0 w-full' />
                         </div>
-                        <div className='flex flex-col border-2 border-primary-border rounded-xl p-7 w-full  xl:w-1/2' data-aos='fade-zoom'>
+                        <div className='flex flex-col border-2 border-primary-border rounded-xl p-7 w-full  xl:w-1/2' data-aos='zoom-in-out'>
                             <div className='w-full text-3xl font-forum items-center gap-2 text-primary-text uppercase justify-center flex'>
                                 <Menuarrow />
                                 Our Story
