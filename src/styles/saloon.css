@@ -14,3 +14,21 @@
   z-index: 2;
   /* Ensures content is above the overlay */
 }
+
+
+.box {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #f0f0f0;
+  text-align: center;
+  border: 1px solid #ddd;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-50px); /* Start from off-screen */
+  transition: all 0.8s ease; /* Smooth transition */
+}
+
+.box.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0); /* Move to position */
+}

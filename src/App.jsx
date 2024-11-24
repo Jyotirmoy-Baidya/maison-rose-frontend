@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Cafe from "./pages/Cafe";
 import { Toaster } from "react-hot-toast";
@@ -13,6 +13,7 @@ const App = () => {
         <Route path='/cafe' element={<Cafe />} />
         <Route path='/saloon' element={<Saloon />} />
         <Route path='/about' element={<About />} />
+        <Route path='/lander' element={<Navigate to="/" replace />} />
       </Routes>
       <Toaster />
     </BrowserRouter>
