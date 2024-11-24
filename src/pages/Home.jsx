@@ -6,6 +6,8 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import ParallaxText from '../components/basics/ParallaxText'
+import { ImQuotesLeft } from 'react-icons/im'
 
 
 
@@ -28,7 +30,7 @@ const Home = () => {
             </div>
 
             {/* Navbar   */}
-            <div className='hidden xl:flex fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
+            <div className='hidden xl:flex  fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
                 <div className='w-full h-full flex items-center'>
                     <div className='border-primary-border border-[1px] p-2 rounded-lg hover:bg-primary-text hover:text-primary-bg text-primary-text'><RxHamburgerMenu className='' /></div>
                     <div className='pl-2 text-xl text-primary-text uppercase font-forum tracking-wide'>Maison Rose Lifestyle</div>
@@ -116,7 +118,7 @@ const Home = () => {
 
             {/* mobile view  */}
             <div className='flex flex-col gap-3 mt-16 xl:hidden p-3'>
-                <div className='w-full font-forum bg-primary-bg relative flex overflow-hidden rounded-lg'>
+                <div className='w-full h-80 font-forum bg-primary-bg relative flex overflow-hidden rounded-lg'>
                     <div className='relative w-[22%]'>
                         <div className='tracking-wider absolute text-3xl bottom-8 right-0 text-primary-text'>
                             MAI<br />
@@ -132,6 +134,33 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+
+                <div className='flex flex-col border-2 border-primary-border p-3'>
+
+                    <div className='text-4xl text-primary-text font-forum text-center'>Welcome</div>
+                    <div className='text-primary-text p-3 font-forum text-sm'>
+                        <div className='flex gap-2'>
+                            <div className='flex flex-col h-full'>
+                                <div className='text-4xl'><ImQuotesLeft /></div>
+                                <div className='flex-grow'>Jyoti</div>
+                            </div>
+                            <div className='flex flex-col'>
+                                <div className='text-xl'>Newtown Fashion Hot Spot</div>
+
+                                <div className='text-[#EFE7D295]'>
+                                    Discover the perfect fusion of style,
+                                    comfort, and rejuvenation. Maison Rose Lifestyle is a one-of-a-kind destination where the elegance of a high-fashion boutique meets the charm of a cozy café and the luxury of a modern salon. Fashion collections, savoring artisan coffee, or indulging in premium self-care services. Step into a world where every corner reflects beauty, creativity, and relaxation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section>
+                    <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+                    <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+                </section>
 
                 {/* mobile to section   */}
                 <div className='flex flex-col gap-2'>
@@ -151,7 +180,7 @@ const Home = () => {
                         </div>
                     </NavLink>
 
-                    <NavLink to='/cafe' className='h-28 ml-auto w-1/2 relative flex-grow-1 bg-primary-bg rounded-lg rounded-br-none overflow-hidden' data-aos='fade-left'>
+                    <NavLink to='/cafe' className='h-28 w-1/2 relative flex-grow-1 bg-primary-bg rounded-lg rounded-br-none overflow-hidden' data-aos='fade-left'>
                         <img src="./images/coffee.jpg" alt="cafe"
                             // className='absolute -bottom-0 min-h-full xl:min-h-[110%] min-w-full'
                             className='object-cover h-full absolute w-full transition duration-300 ease-in-out 
@@ -166,7 +195,6 @@ const Home = () => {
                             </div>
                         </div>
                     </NavLink>
-
                     <NavLink to='/fasion' className='h-28 w-1/2 relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden' data-aos='fade-right'>
                         <img src="./fashion/home.png" alt="cafe"
                             // className='absolute -bottom-0 min-h-full xl:min-h-[110%] min-w-full'
