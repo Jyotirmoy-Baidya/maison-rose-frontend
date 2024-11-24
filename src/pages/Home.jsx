@@ -15,7 +15,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div className='flex flex-col bg-primary-bg'>
+        <div className='flex flex-col w-screen overflow-x-hidden bg-primary-bg'>
             {/* SEO Meta Tags */}
             <Helmet>
                 <title>Maison Rose Lifestyle – Café, Restaurant, and Fashion in New Town Kolkata</title>
@@ -143,18 +143,21 @@ const Home = () => {
                     <h1 className='text-4xl text-primary-text font-forum text-center'>Welcome to Maison Rose Lifestyle</h1>
                     <div className='text-primary-text p-3 font-forum text-sm'>
                         <div className='flex gap-2'>
-                            <div className='flex flex-col h-full'>
-                                <div className='text-4xl'><ImQuotesLeft /></div>
-                                <div className='flex-grow'>Experience</div>
-                            </div>
-                            <div className='flex flex-col'>
-                                <div className='text-xl'>Newtown's Premier Lifestyle Destination</div>
-                                <div className='text-[#EFE7D295]'>
-                                    Welcome to Maison Rose Lifestyle, Kolkata's chic destination combining a delightful café
-                                    and restaurant experience with a unique Thai-inspired lifestyle and fashion store. Located
-                                    in New Town near Axis Mall, we offer the perfect blend of culinary excellence and
-                                    trendsetting fashion. Discover handcrafted coffees, gourmet meals, and an exclusive
-                                    collection of Thai fashion, floral dresses, and Korean styles.
+                            <div className='flex flex-col gap-2'>
+                                <div className='flex items-end gap-2 h-full'>
+                                    <div className='text-4xl mb-1'><ImQuotesLeft /></div>
+                                    <div className='text-xl'>Newtown's Premier Lifestyle Destination</div>
+                                </div>
+                                <div className='flex gap-3'>
+                                    <div className='w-7 ml-6 border-l-2'></div>
+
+                                    <div className='text-[#EFE7D295]'>
+                                        Welcome to Maison Rose Lifestyle, Kolkata's chic destination combining a delightful café
+                                        and restaurant experience with a unique Thai-inspired lifestyle and fashion store. Located
+                                        in New Town near Axis Mall, we offer the perfect blend of culinary excellence and
+                                        trendsetting fashion. Discover handcrafted coffees, gourmet meals, and an exclusive
+                                        collection of Thai fashion, floral dresses, and Korean styles.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -182,21 +185,22 @@ const Home = () => {
                             </div>
                         </div>
                     </NavLink>
-
-                    <NavLink to='/cafe' className='h-28 w-1/2 relative flex-grow-1 bg-primary-bg rounded-lg rounded-br-none overflow-hidden' data-aos='fade-left'>
-                        <img
-                            src="./images/coffee.jpg"
-                            alt="Gourmet Café Experience in New Town Kolkata"
-                            className='object-cover h-full absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]'
-                            loading="lazy"
-                        />
-                        <div className='absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg'>
-                            <div className='pr-2 text-white font-forum text-sm tracking-wide'>Café</div>
-                            <div className='h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg'>
-                                <FaArrowRight />
+                    <div className='grid grid-cols-2'>
+                        <NavLink to='/cafe' className=' col-start-2 h-28 w-full  flex-grow-1 bg-primary-bg rounded-lg rounded-br-none overflow-hidden' data-aos='fade-left'>
+                            <img
+                                src="./images/coffee.jpg"
+                                alt="Gourmet Café Experience in New Town Kolkata"
+                                className='object-cover h-full absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]'
+                                loading="lazy"
+                            />
+                            <div className='absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg'>
+                                <div className='pr-2 text-white font-forum text-sm tracking-wide'>Café</div>
+                                <div className='h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg'>
+                                    <FaArrowRight />
+                                </div>
                             </div>
-                        </div>
-                    </NavLink>
+                        </NavLink>
+                    </div>
                     <NavLink to='/fashion' className='h-28 w-1/2 relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden' data-aos='fade-right'>
                         <img
                             src="./fashion/home.png"
