@@ -120,14 +120,14 @@ const Home = () => {
             <div className='flex flex-col gap-3 mt-16 xl:hidden p-3'>
                 <div className='w-full h-80 font-forum bg-primary-bg relative flex overflow-hidden rounded-lg'>
                     <div className='relative w-[22%]'>
-                        <div className='tracking-wider absolute text-3xl bottom-8 right-0 text-primary-text'>
+                        <div className='tracking-wider absolute text-3xl sm:text-4xl md:text-5xl lg:text-5xl bottom-8 right-0 text-primary-text'>
                             MAI<br />
                             LIFE
                         </div>
                     </div>
                     <div className='w-[78%] relative bg-primary-pink overflow-hidden'>
                         <img src="./fashion/main.png" alt="" className='min-w-full min-h-full' />
-                        <div className='tracking-wider -left-[53px] absolute text-3xl  bottom-8 right-0 text-primary-bg'>
+                        <div className='tracking-wider -left-[53px] sm:-left-[63px] md:-left-[85px] lg:-left-[90px] absolute text-3xl sm:text-4xl md:text-5xl lg:text-5xl bottom-8 right-0 text-primary-bg'>
                             MAISON ROSE
                             <br />
                             LIFESTYLE
@@ -136,17 +136,17 @@ const Home = () => {
                 </div>
 
 
-                <div className='flex flex-col border-2 border-primary-border p-3'>
+                <div className='flex flex-col rounded-lg border-2 border-primary-border p-3'>
 
                     <div className='text-4xl text-primary-text font-forum text-center'>Welcome</div>
                     <div className='text-primary-text p-3 font-forum text-sm'>
-                        <div className='flex gap-2'>
-                            <div className='flex flex-col h-full'>
-                                <div className='text-4xl'><ImQuotesLeft /></div>
-                                <div className='flex-grow'>Jyoti</div>
-                            </div>
-                            <div className='flex flex-col'>
+                        <div className='flex flex-col gap-2'>
+                            <div className='flex items-end gap-2 h-full'>
+                                <div className='text-4xl mb-1'><ImQuotesLeft /></div>
                                 <div className='text-xl'>Newtown Fashion Hot Spot</div>
+                            </div>
+                            <div className='flex gap-3'>
+                                <div className='w-7 ml-6 border-l-2'></div>
 
                                 <div className='text-[#EFE7D295]'>
                                     Discover the perfect fusion of style,
@@ -197,7 +197,6 @@ const Home = () => {
                     </NavLink>
                     <NavLink to='/fasion' className='h-28 w-1/2 relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden' data-aos='fade-right'>
                         <img src="./fashion/home.png" alt="cafe"
-                            // className='absolute -bottom-0 min-h-full xl:min-h-[110%] min-w-full'
                             className=' absolute top-0 w-full transition duration-300 ease-in-out 
                                 transform hover:scale-[103%]'
                         />
@@ -219,6 +218,8 @@ const Home = () => {
                 <div className='uppercase text-primary-text px-4'>Welcome to maison rose<br /> lifestyle</div>
                 <h1 className='text-8xl font-forum text-center text-primary-text'>About Us</h1>
             </div>
+
+
         </div >
     )
 }
