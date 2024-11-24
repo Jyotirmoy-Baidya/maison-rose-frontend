@@ -1,4 +1,4 @@
 export default defineConfig({
-  base: "/your-subdirectory-name/",
+  base: "/",
   plugins: [react()],
 });
