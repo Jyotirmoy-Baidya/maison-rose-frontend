@@ -253,7 +253,7 @@ const Saloon = () => {
                                             className="text-primary-text flex flex-col w-full font-forum"
                                         >
                                             <div className="w-full justify-between flex">
-                                                <div className="text-lg uppercase">{item.name}</div>
+                                                <div className="text-lg tracking-wider uppercase">{item.name}</div>
                                                 <div className="text-lg">₹ {item.price}</div>
                                             </div>
                                             <div className="text-sm description">{item.description}</div>
