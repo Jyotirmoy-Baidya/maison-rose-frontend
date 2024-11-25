@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Saloon from "./pages/Saloon";
 import Fashion from "./pages/Fashion";
 import ProductPage from "./pages/ProductPage";
+import ProductListPage from "./pages/ProductListPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/fashion' element={<Fashion />} />
 
         <Route path='/fashion/fashion-store/:category' element={<ProductPage />} />
+        <Route path='/check/:id' element={<ProductListPage />} />
         <Route path='/about' element={<About />} />
         <Route path='/lander' element={<Navigate to="/" replace />} />
       </Routes>

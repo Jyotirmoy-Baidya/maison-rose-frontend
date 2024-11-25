@@ -48,6 +48,7 @@ const Fashion = () => {
                         <WhatnewCard />
                         <WhatnewCard />
                     </div>
+
                 </div>
             </div>
         </div>

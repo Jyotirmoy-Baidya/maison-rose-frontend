@@ -14,7 +14,7 @@ const WhatnewCard = () => {
                         </div>
                     </div>
                     : <></>}
-            <img src="./store/what's-new1.jpg" alt="" className='h-full' />
+            <img src="./store/what-new1.jpg" alt="" className='h-full' />
         </div>
     )
 }

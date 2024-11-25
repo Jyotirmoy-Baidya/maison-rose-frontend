@@ -18,7 +18,7 @@ const ProductPage = () => {
             tags: ['Casual', 'Comfortable', 'Lightweight'],
             season: 'Summer',
             images: [
-                'https://via.placeholder.com/300x300?text=Summer+Shirt',
+                '/store/GreenDress1.jpg',
             ],
             price: 1200,
             discountedPercentage: 20,
@@ -149,7 +149,7 @@ const ProductPage = () => {
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
 
-                        className="w-full font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
+                        className="flex-grow font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
                     />
                     <div className='text-xl text-primary-text'><IoSearchSharp /></div>
                 </div>
@@ -162,19 +162,33 @@ const ProductPage = () => {
             </div>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-col-8 4xl:grid-cols-9 gap-6">
                 {filteredProducts.map((product, index) => (
                     <div
                         key={index}
-                        className="bg-gray-800 shadow-lg rounded-lg p-4 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                        className="relative bg-gray-800 shadow-lg rounded hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden"
                         onClick={() => handleProductClick(product)}
                     >
-                        <img
-                            src={product.images[0]}
-                            alt={product.name}
-                            className="w-full h-48 object-cover rounded-md mb-4"
-                        />
-                        <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+
+                        <img src={product.images[0]} alt={product.name} className='w-full hover:scale-[105%] transition-transform duration-300' />
+
+                        <div className='absolute flex flex-col bottom-2 left-0 px-2 w-full'>
+                            <div className='bg-white rounded p-3 w-full'>
+                                <h1 className='text-primary-bg font-forum'>{product.name}</h1>
+                                <div className='flex'>
+                                    {
+                                        product.discountedPercentage == 0 ?
+                                            <div>₹ {product.price}</div>
+                                            :
+                                            <div className=''>₹ <s className='text-sm text-red-500'>{product.price}</s> {product.discountedPrice}</div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        {/* <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
                         <div className="flex justify-between items-center mb-4">
                             <span className="font-bold text-lg text-indigo-400">
                                 ₹{product.discountedPrice}
@@ -190,7 +204,7 @@ const ProductPage = () => {
                                 }`}
                         >
                             {product.availability}
-                        </p>
+                        </p> */}
                     </div>
                 ))}
             </div>
