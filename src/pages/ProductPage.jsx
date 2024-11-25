@@ -34,29 +34,13 @@ const ProductPage = () => {
             tags: ['Warm', 'Stylish', 'Durable'],
             season: 'Winter',
             images: [
-                'https://via.placeholder.com/300x300?text=Winter+Jacket',
+                '/store/what-new1.jpg',
             ],
             price: 3500,
             discountedPercentage: 15,
             discountedPrice: 2975,
             availability: 'Out of Stock',
             amazonLink: 'https://www.amazon.com/dp/example2',
-        },
-        {
-            name: 'Festive Cotton Saree',
-            productionDetails: 'Handwoven Sarees Ltd.',
-            color: 'Red',
-            category: 'Clothing',
-            tags: ['Traditional', 'Elegant', 'Festive'],
-            season: 'Durga Puja',
-            images: [
-                'https://via.placeholder.com/300x300?text=Cotton+Saree',
-            ],
-            price: 2200,
-            discountedPercentage: 25,
-            discountedPrice: 1650,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example3',
         },
         {
             name: 'Stylish Summer Shirt',
@@ -66,7 +50,7 @@ const ProductPage = () => {
             tags: ['Casual', 'Comfortable', 'Lightweight'],
             season: 'Summer',
             images: [
-                'https://via.placeholder.com/300x300?text=Summer+Shirt',
+                '/store/WhiteFloral1.jpg',
             ],
             price: 1200,
             discountedPercentage: 20,
@@ -82,7 +66,7 @@ const ProductPage = () => {
             tags: ['Warm', 'Stylish', 'Durable'],
             season: 'Winter',
             images: [
-                'https://via.placeholder.com/300x300?text=Winter+Jacket',
+                '/store/MultiColorCord.jpg',
             ],
             price: 3500,
             discountedPercentage: 15,
@@ -98,7 +82,7 @@ const ProductPage = () => {
             tags: ['Traditional', 'Elegant', 'Festive'],
             season: 'Durga Puja',
             images: [
-                'https://via.placeholder.com/300x300?text=Cotton+Saree',
+                '/store/SportsWear1.jpg',
             ],
             price: 2200,
             discountedPercentage: 25,
