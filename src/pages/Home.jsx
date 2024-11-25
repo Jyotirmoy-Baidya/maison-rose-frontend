@@ -15,7 +15,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div className='flex flex-col w-screen overflow-x-hidden bg-primary-bg'>
+        <div className='flex flex-col w-screen xl:w-full overflow-x-hidden bg-primary-bg'>
             {/* SEO Meta Tags */}
             <Helmet>
                 <title>Maison Rose Lifestyle – Café, Restaurant, and Fashion in New Town Kolkata</title>
