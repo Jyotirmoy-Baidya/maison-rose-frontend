@@ -122,7 +122,7 @@ const ProductPage = () => {
     const location = useLocation();
 
     return (
-        <div className="bg-primary-bg flex flex-col  min-h-screen p-6">
+        <div className="bg-primary-bg flex flex-col  min-h-screen p-3 xl:p-6">
             <Navbar />
             <div className='w-full text-primary-text font-forum text-2xl mt-24 navigation-list'>{location.pathname}</div>
             <div className="flex flex-col md:flex-row gap-2 justify-between items-center mb-6 mt-2">
@@ -149,7 +149,7 @@ const ProductPage = () => {
 
 
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-col-8 4xl:grid-cols-9 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-col-8 4xl:grid-cols-9 gap-3 xl:gap-6">
                 {filteredProducts.map((product, index) => (
                     <div
                         key={index}
