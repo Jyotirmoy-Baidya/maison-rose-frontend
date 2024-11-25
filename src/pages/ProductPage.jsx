@@ -160,14 +160,14 @@ const ProductPage = () => {
                         <img src={product.images[0]} alt={product.name} className='w-full hover:scale-[105%] transition-transform duration-300' />
 
                         <div className='absolute flex flex-col bottom-2 left-0 px-2 w-full'>
-                            <div className='bg-white rounded p-3 w-full'>
-                                <h1 className='text-primary-bg font-forum'>{product.name}</h1>
+                            <div className='bg-white rounded p-1 xl:p-3 w-full'>
+                                <h1 className='text-primary-bg font-forum xl:text-base text-sm'>{product.name}</h1>
                                 <div className='flex'>
                                     {
                                         product.discountedPercentage == 0 ?
-                                            <div>₹ {product.price}</div>
+                                            <div className='xl:text-base text-sm'>₹ {product.price}</div>
                                             :
-                                            <div className=''>₹ <s className='text-sm text-red-500'>{product.price}</s> {product.discountedPrice}</div>
+                                            <div className=''>₹ <s className='text-xs xl:text-sm text-red-500'>{product.price}</s> {product.discountedPrice}</div>
                                     }
                                 </div>
                             </div>
