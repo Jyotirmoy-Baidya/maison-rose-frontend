@@ -17,7 +17,7 @@ const App = () => {
         <Route path='/saloon' element={<Saloon />} />
         <Route path='/fashion' element={<Fashion />} />
 
-        <Route path='/fashion/fashion-store/:category' element={<ProductPage />} />
+        <Route path='/fashion-store/t/:category' element={<ProductPage />} />
         <Route path='/check/:id' element={<ProductListPage />} />
         <Route path='/about' element={<About />} />
         <Route path='/lander' element={<Navigate to="/" replace />} />

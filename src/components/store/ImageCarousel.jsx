@@ -19,7 +19,7 @@ const ImageCarousel = ({ images }) => {
     return (
         <div className="relative w-full h-full overflow-hidden">
             <div
-                className="flex transition-transform duration-500 ease-in-out"
+                className="flex transition-transform duration-500 ease-in-out h-full"
                 style={{
                     transform: `translateX(-${currentIndex * 100}%)`,
                 }}
