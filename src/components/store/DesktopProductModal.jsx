@@ -6,12 +6,12 @@ import RatingStars from '../basics/RatingStars'
 const DesktopProductModal = ({ handleCloseModal, selectedProduct }) => {
 
     // Disable background scroll when the modal is open
-    useEffect(() => {
-        document.body.style.overflow = "hidden"; // Disable scrolling
-        return () => {
-            document.body.style.overflow = "auto"; // Re-enable scrolling when modal is closed
-        };
-    }, []);
+    // useEffect(() => {
+    //     document.body.style.overflow = "hidden"; // Disable scrolling
+    //     return () => {
+    //         document.body.style.overflow = "auto"; // Re-enable scrolling when modal is closed
+    //     };
+    // }, []);
 
     return (
         <div className="fixed z-30 inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={handleCloseModal}>

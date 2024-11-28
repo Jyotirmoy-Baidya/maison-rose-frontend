@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../components/basics/Navbar';
 import { IoSearchSharp } from 'react-icons/io5';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import AnimatedDropdown from '../components/store/AnimatedDropdown';
 import DesktopProductModal from '../components/store/DesktopProductModal';
+import MobileNavbar from '../components/basics/MobileNavbar';
 
 const ProductPage = () => {
     const [search, setSearch] = useState('');
@@ -205,19 +206,20 @@ const ProductPage = () => {
 
     const navigation = useNavigate();
     const location = useLocation();
+    const params = useParams();
 
     return (
         <div className="bg-primary-bg flex flex-col  min-h-screen p-3 xl:p-6">
             <Navbar />
-            <div className='w-full text-primary-text font-forum text-2xl mt-24 navigation-list'>{location.pathname}</div>
-            <div className="flex flex-col md:flex-row gap-2 justify-between items-center mb-6 mt-2">
-                <div className='xl:flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
+            <MobileNavbar />
+
+            <div className="flex flex-col md:flex-row gap-2 xl:justify-between items-end xl:items-center xl:mt-24 mb-3 mt-2">
+                <div className='xl:flex flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
                     <input
                         type="text"
                         placeholder="Search products..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-
                         className="flex-grow font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
                     />
                     <div className='text-xl text-primary-text'><IoSearchSharp /></div>
@@ -229,6 +231,7 @@ const ProductPage = () => {
 
                 <AnimatedDropdown sort={sort} setSort={setSort} />
             </div>
+            <div className='w-full mb-2 text-primary-text font-forum text-3xl capitalize tracking-wide navigation-list'>{params.category}</div>
 
 
 

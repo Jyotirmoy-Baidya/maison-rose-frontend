@@ -17,7 +17,7 @@ const AnimatedDropdown = ({ sort, setSort }) => {
                 {/* Dropdown Trigger */}
                 <div
                     onClick={() => setIsOpen((prev) => !prev)}
-                    className="cursor-pointer border-2 border-primary-border text-primary-text px-6 py-3 rounded-lg shadow-lg flex justify-between items-center w-64"
+                    className="cursor-pointer border-2 border-primary-border text-primary-text px-6 py-3 rounded-lg shadow-lg flex justify-between items-center w-48 xl:w-64"
                 >
                     <span>{sort}</span>
                     <svg
