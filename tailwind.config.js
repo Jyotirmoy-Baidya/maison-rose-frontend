@@ -24,6 +24,15 @@ export default {
       animation: {
         slideDown: 'slideDown 0.3s ease-out',
       },
+      screens: {
+        '3xl': '1700px', // Customize the value as needed
+        '4xl': '1920px', // Customize the value as needed
+        '5xl': '2280px'
+      },
+      fontSize: {
+        '10xl': '10rem', // Adjust the size as needed
+        '11xl': '11rem'
+      },
     },
   },
   plugins: [],

@@ -62,65 +62,76 @@ const Fashion = () => {
                     <ParallaxText baseVelocity={-5}>CRAVE FOR SHOPPING, EXPLORE OUR OFFERS HERE</ParallaxText>
                 </div>
 
-                <div className='relative mx-auto xl:h-[500px] 2xl:h-[600px] w-11/12 mt-20 shopping-area'>
+                <div className='relative mx-auto md:h-[500px] xl:h-[500px] 2xl:h-[600px] 3xl:h-[650px] 4xl:h-[800px] 5xl:w-9/12 4xl:w-[96%]  3xl:w-10/12 w-11/12 mt-20 shopping-area'>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute left-[80px] top-[140px] z-[2] 2xl:h-72 h-56'
+                        className='absolute lg:left-[70px] lg:top-[160px] xl:left-[80px] xl:top-[140px] 3xl:left-[100px] 3xl:top-[170px] 4xl:left-[200px] 4xl:top-[260px] z-[2] 4xl:h-96 3xl:h-80 2xl:h-72 xl:h-56 lg:h-44'
                     >
                         <img src="./store/HomeShoe.png" alt="Home Shoe" className='h-full' />
-                        <StoreHoverButton type='white' className='py-2 px-6 absolute bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
+                        <StoreHoverButton type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute left-[300px] top-0 z-[1] 2xl:h-80 xl:h-64'
+                        className='absolute 4xl:left-[490px] 2xl:left-[340px] xl:left-[300px] lg:left-[120px] top-0 z-[1] 4xl:h-[420px] 3xl:h-[350px] 2xl:h-80 xl:h-64 lg:h-64'
                     >
                         <img src="./store/HomePerfume.png" alt="Home Perfume" className='h-full' />
-                        <StoreHoverButton type='white' className='py-2 px-6 absolute bottom-5 left-1/2 -translate-x-1/2' text='Perfumes' />
+                        <StoreHoverButton type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Perfumes' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute 2xl:left-[310px] xl:left-[265px] bottom-0 xl:h-48 2xl:h-56 z-[3]'
+                        className='absolute 4xl:left-[450px] 3xl:left-[380px] 2xl:left-[310px] xl:left-[265px] lg:left-[200px] bottom-0 lg:h-48 2xl:h-56 4xl:h-64 z-[3]'
                     >
                         <img src="./store/HomeBag.png" alt="Home Bag" className='h-full' />
-                        <StoreHoverButton type='black' className='py-2 px-6 absolute bottom-2 left-1/2 -translate-x-1/2' text='Bags' />
+                        <StoreHoverButton type='black' className='absolute bottom-2 left-1/2 -translate-x-1/2' text='Bags' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute xl:left-[810px] 2xl:left-[1005px] bottom-[55px] 2xl:h-96 h-80 z-[3]'
+                        className='absolute lg:left-[657px] xl:left-[810px] 2xl:left-[1005px] 3xl:left-[1080px] 4xl:left-[1360px] bottom-[55px] 3xl:h-[400px] 4xl:h-[550px] 2xl:h-96 h-80 z-[3]'
                     >
-                        <img src="./store/what-new1.jpg" alt="Home Dress" className='h-full' />
-                        <StoreHoverButton className='py-2 px-5 absolute bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
+                        <img src="./store/GreenDress1.jpg" alt="Home Dress" className='h-full' />
+                        <StoreHoverButton className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
                     </div>
 
                     <div data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom"
+                        className='absolute 4xl:left-[1160px] 3xl:left-[920px] 2xl:left-[850px] lg:left-[510px] 4xl:top-28 3xl:top-20 top-14 4xl:h-64 xl:h-40 lg:h-48 2xl:h-48 z-[3]'
+                    >
+                        <img src="./store/HomeJewellery.jpg" alt="Home Sunglasses" className='h-full' />
+                        <StoreHoverButton type='white' className='absolute bottom-3 left-1/2 -translate-x-1/2' text='Jewellery' />
+                    </div>
+
+                    {/* <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         className='absolute 2xl:left-[850px] xl:left-[690px] top-14 xl:h-40 2xl:h-48 z-[3]'
                     >
                         <img src="./store/HomeJewellery.jpg" alt="Home Sunglasses" className='h-full' />
                         <StoreHoverButton type='white' className='2xl:py-2 2xl:px-6 py-1 px-5 absolute bottom-3 left-1/2 -translate-x-1/2' text='Jewellery' />
-                    </div>
+                    </div> */}
 
 
 
 
-                    <div className='font-medium absolute xl:left-[400px] 2xl:left-[460px] bottom-[80px]  xl:text-8xl 2xl:text-9xl z-[7] text-primary-pink' data-aos="fade-up"
+                    <div className='font-medium absolute lg:left-[350px] xl:left-[400px] 2xl:left-[460px] 3xl:left-[530px] 4xl:left-[605px] bottom-[80px] lg:text-7xl xl:text-8xl 2xl:text-9xl 4xl:text-11xl z-[7] text-primary-pink' data-aos="fade-up"
                         data-aos-anchor-placement="top-bottom">S</div>
-                    <div className='font-medium absolute xl:left-[400px] 2xl:left-[460px] bottom-[80px]  xl:text-8xl 2xl:text-9xl z-[6] text-white' data-aos="fade-up"
+                    <div className='font-medium absolute lg:left-[350px] xl:left-[400px] 2xl:left-[460px] 3xl:left-[530px] 4xl:left-[605px] bottom-[80px] lg:text-7xl xl:text-8xl 2xl:text-9xl 4xl:text-11xl z-[6] text-white' data-aos="fade-up"
                         data-aos-anchor-placement="top-bottom">SHOPPIN</div>
-                    <div className='font-medium absolute xl:left-[400px] 2xl:left-[460px] bottom-[80px]  xl:text-8xl 2xl:text-9xl z-[5] text-primary-bg' data-aos="fade-up"
+                    <div className='font-medium absolute lg:left-[350px] xl:left-[400px] 2xl:left-[460px] 3xl:left-[530px] 4xl:left-[605px] bottom-[80px] lg:text-7xl xl:text-8xl 2xl:text-9xl 4xl:text-11xl z-[5] text-primary-bg' data-aos="fade-up"
                         data-aos-anchor-placement="top-bottom">SHOPPING</div>
 
 
-                    <StoreHoverButton type='white' className="2xl:py-2 2xl:px-6 py-1 px-5 absolute bottom-3 left-1/2 -translate-x-1/2" text='explore' />
+                    <StoreHoverButton type='white' className="absolute bottom-3 left-1/2 4xl:left-[50%] 3xl:left-[60%] -translate-x-1/2" text='explore' />
 
 
                 </div>
 
-                <div className='bg-primary-bg h-96'></div>
+                {/* Special categories  */}
+                <div className='bg-primary-bg h-96'>
+                    <h1></h1>
+                </div>
                 <div className='bg-primary-bg h-96'></div>
             </div>
 

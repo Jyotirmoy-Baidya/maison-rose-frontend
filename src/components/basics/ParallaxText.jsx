@@ -63,6 +63,14 @@ function ParallaxText({ children, baseVelocity = 100 }) {
                 <span>{children} </span>
                 <span>{children} </span>
                 <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
+                <span>{children} </span>
             </motion.div>
         </div>
     );
