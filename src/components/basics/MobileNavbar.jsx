@@ -9,7 +9,7 @@ const MobileNavbar = () => {
                 <div className='w-full h-full flex items-center'>
                     {/* <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div> */}
                     <HamburgerMenu />
-                    <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Store</div>
+                    <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</div>
 
                 </div>
             </div>

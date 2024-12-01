@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { GiCrossMark } from "react-icons/gi";
+import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 
 const HamburgerMenu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,18 +17,17 @@ const HamburgerMenu = () => {
     return (
         <div className="menu-container">
             {/* Hamburger Icon */}
-            <button
-                className={`hamburger ${isMenuOpen ? "open" : ""}`}
-                onClick={toggleMenu}
-                aria-label="Toggle Menu"
-            >
-                <span />
-                <span />
-                <span />
-            </button>
+            <div className='border-primary-border border-[1px] p-2 rounded-lg' onClick={toggleMenu}
+                aria-label="Toggle Menu">
+                {
+                    isMenuOpen ? <RxCross1 className="text-white" /> :
+                        <RxHamburgerMenu className='text-white' />
+                }
+
+            </div>
 
             {/* Dropdown Menu */}
-            <div className={`dropdown ${isMenuOpen ? "show bg-[#181818]" : ""}`}>
+            <div className={`dropdown ${isMenuOpen ? "show bg-[#181818] mt-2" : ""}`}>
                 <ul className="menu">
                     <li>
                         <a href="#home">Home</a>
