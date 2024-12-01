@@ -15,9 +15,16 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/cafe' element={<Cafe />} />
         <Route path='/saloon' element={<Saloon />} />
+
         <Route path='/fashion' element={<Fashion />} />
 
+        <Route path='/store' element={<Fashion />} />
+
         <Route path='/fashion-store/t/:category' element={<ProductPage />} />
+        <Route path='fashion-store/:type/:cat/:subcat' element={<ProductPage />} />
+        <Route path='fashion-store/:type/:cat' element={<ProductPage />} />
+        <Route path='fashion-store/:type' element={<ProductPage />} />
+
         <Route path='/check/:id' element={<ProductListPage />} />
         <Route path='/about' element={<About />} />
         <Route path='/lander' element={<Navigate to="/" replace />} />

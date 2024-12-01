@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/basics/Navbar';
 import { IoSearchSharp } from 'react-icons/io5';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import AnimatedDropdown from '../components/store/AnimatedDropdown';
 import DesktopProductModal from '../components/store/DesktopProductModal';
 import MobileNavbar from '../components/basics/MobileNavbar';
+import { ClimbingBoxLoader, ClipLoader } from 'react-spinners';
+import { override } from '../constants/basic';
+import DesktopStoreNavbar from '../components/basics/DesktopStoreNavbar';
 
 const ProductPage = () => {
     const [search, setSearch] = useState('');
@@ -208,59 +211,82 @@ const ProductPage = () => {
     const location = useLocation();
     const params = useParams();
 
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Set a timer to simulate loading for 1 second
+        const timer = setTimeout(() => {
+            setLoading(false); // Hide the loading screen after 1 second
+        }, 3000);
+
+        // Cleanup the timer if the component unmounts
+        return () => clearTimeout(timer);
+    }, []); // Empty dependency array to run only once on mount
+
     return (
         <div className="bg-primary-bg flex flex-col  min-h-screen p-3 xl:p-6">
-            <Navbar />
+            <DesktopStoreNavbar />
             <MobileNavbar />
 
-            <div className="flex flex-col md:flex-row gap-2 xl:justify-between items-end xl:items-center xl:mt-24 mb-3 mt-2">
-                <div className='xl:flex flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
-                    <input
-                        type="text"
-                        placeholder="Search products..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="flex-grow font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
-                    />
-                    <div className='text-xl text-primary-text'><IoSearchSharp /></div>
-                </div>
+            {
+                loading ? <ClimbingBoxLoader
+                    color={'#EFE7D2'}
+                    loading={loading}
+                    cssOverride={override}
+                    size={'3vh'}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                /> :
+                    <>
 
-
-
-
-
-                <AnimatedDropdown sort={sort} setSort={setSort} />
-            </div>
-            <div className='w-full mb-2 text-primary-text font-forum text-3xl capitalize tracking-wide navigation-list'>{params.category}</div>
-
-
-
-
-
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-col-8 4xl:grid-cols-9 gap-3 xl:gap-6">
-                {filteredProducts.map((product, index) => (
-                    <div
-                        key={index}
-                        className="relative bg-gray-800 shadow-lg rounded hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden"
-                        onClick={() => handleProductClick(product)}
-                    >
-
-                        <img src={product.images[0]} alt={product.name} className='w-full hover:scale-[105%] transition-transform duration-300 brightness-[90%]' />
-
-                        <div className='absolute flex flex-col bottom-2 left-0 px-2 w-full'>
-                            <div className='bg-primary-text rounded p-2 xl:p-3 w-full'>
-                                <h1 className='text-primary-bg font-forum xl:text-base text-sm'>{product.name}</h1>
-                                <div className='flex xl:text-base text-sm'>
-                                    {
-                                        product.discountedPercentage == 0 ?
-                                            <div className=''>₹ {product.price}</div>
-                                            :
-                                            <div className=''>₹ <s className='text-xs xl:text-sm text-red-500'>{product.price}</s> {product.discountedPrice}</div>
-                                    }
-                                </div>
+                        <div className="flex flex-col md:flex-row gap-2 xl:justify-between items-end xl:items-center xl:mt-24 mb-3 mt-2">
+                            <div className='xl:flex flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
+                                <input
+                                    type="text"
+                                    placeholder="Search products..."
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    className="flex-grow font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
+                                />
+                                <div className='text-xl text-primary-text'><IoSearchSharp /></div>
                             </div>
+
+
+
+
+
+                            <AnimatedDropdown sort={sort} setSort={setSort} />
                         </div>
-                        {/* <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+                        <div className='w-full mb-2 text-primary-text font-forum text-3xl capitalize tracking-wide navigation-list'>{params.category}</div>
+
+
+
+
+
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-col-8 4xl:grid-cols-9 gap-3 xl:gap-6">
+                            {filteredProducts.map((product, index) => (
+                                <div
+                                    key={index}
+                                    className="relative bg-gray-800 shadow-lg rounded hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden"
+                                    onClick={() => handleProductClick(product)}
+                                >
+
+                                    <img src={product.images[0]} alt={product.name} className='w-full hover:scale-[105%] transition-transform duration-300 brightness-[90%]' />
+
+                                    <div className='absolute flex flex-col bottom-2 left-0 px-2 w-full'>
+                                        <div className='bg-primary-text rounded p-2 xl:p-3 w-full'>
+                                            <h1 className='text-primary-bg font-forum xl:text-base text-sm'>{product.name}</h1>
+                                            <div className='flex xl:text-base text-sm'>
+                                                {
+                                                    product.discountedPercentage == 0 ?
+                                                        <div className=''>₹ {product.price}</div>
+                                                        :
+                                                        <div className=''>₹ <s className='text-xs xl:text-sm text-red-500'>{product.price}</s> {product.discountedPrice}</div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
                         <div className="flex justify-between items-center mb-4">
                             <span className="font-bold text-lg text-indigo-400">
                                 ₹{product.discountedPrice}
@@ -277,14 +303,18 @@ const ProductPage = () => {
                         >
                             {product.availability}
                         </p> */}
-                    </div>
-                ))}
-            </div>
+                                </div>
+                            ))}
+                        </div>
 
-            {/* Modal */}
-            {selectedProduct && (
-                <DesktopProductModal handleCloseModal={handleCloseModal} selectedProduct={selectedProduct} />
-            )}
+                        {/* Modal */}
+                        {selectedProduct && (
+                            <DesktopProductModal handleCloseModal={handleCloseModal} selectedProduct={selectedProduct} />
+                        )}
+
+                    </>
+
+            }
         </div>
     );
 };

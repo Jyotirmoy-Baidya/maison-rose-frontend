@@ -218,6 +218,84 @@ const Home = () => {
                 </div>
             </div>
 
+            <div className='hidden xl:flex rounded-md w-11/12 mx-auto flex-col border-2 border-primary-border p-3 mt-20' data-aos='fade-up'>
+                <h1 className='text-6xl text-primary-text font-forum text-center' data-aos='fade-up'>Welcome to Maison Rose Lifestyle</h1>
+                <div className='text-primary-text p-3 font-forum text-sm' data-aos='fade-up' data-aos-anchor-placement="center-bottom">
+                    <div className='flex gap-2'>
+                        <div className='flex flex-col gap-2'>
+                            <div className='flex items-end gap-2 h-full'>
+                                <div className='text-4xl mb-1'><ImQuotesLeft /></div>
+                                <div className='text-xl'>Newtown's Premier Lifestyle Destination</div>
+                            </div>
+                            <div className='flex gap-3'>
+                                <div className='w-7 ml-6 border-l-2'></div>
+
+                                <div className='text-xl text-[#EFE7D295]'>
+                                    Welcome to Maison Rose Lifestyle, Kolkata's premier destination for those seeking an extraordinary blend of culinary delights and fashion-forward living. Nestled in the heart of New Town, near Axis Mall, our chic establishment combines the warmth of a cozy café, the sophistication of a gourmet restaurant, and the allure of a unique Thai-inspired lifestyle and fashion boutique.
+
+                                    Step into a world where taste meets elegance. Indulge in our handcrafted coffees, brewed to perfection, and savor a menu that boasts a curated selection of gourmet meals, from tantalizing appetizers to delectable desserts. Our chefs blend creativity with quality ingredients to craft dishes that delight the palate and nourish the soul.
+
+                                    Maison Rose Lifestyle is more than just a café or a boutique; it’s a haven where you can unwind, shop, and create unforgettable memories. Whether you're catching up with friends over coffee, enjoying a romantic dinner, or updating your wardrobe with the latest trends, we promise an experience that’s as unique as you are.
+
+                                    Visit us today and immerse yourself in the Maison Rose Lifestyle – where every detail is designed to inspire and delight!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            {/* what we provide  */}
+            <div className='hidden flex-col w-8/12 gap-2 mx-auto mt-20'>
+
+                <h1 className='text-5xl text-primary-text font-forum text-center mb-12' data-aos='zoom-in'>What We Provide...</h1>
+                <NavLink to='/saloon' className='relative h-56 w-1/2 bg-primary-bg rounded-lg rounded-br-none overflow-hidden' data-aos='fade-right'>
+                    <img
+                        src="./images/saloon.png"
+                        alt="Luxury Salon Services at Maison Rose Lifestyle"
+                        className='object-cover bottom-0 absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]'
+                        loading="lazy"
+                    />
+                    <div className='absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg'>
+                        <div className='pr-2 text-white font-forum text-sm tracking-wide'>Salon</div>
+                        <div className='h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg'>
+                            <FaArrowRight />
+                        </div>
+                    </div>
+                </NavLink>
+                <div className='grid grid-cols-2'>
+                    <NavLink to='/cafe' className=' col-start-2 h-56 w-full  flex-grow-1 bg-primary-bg rounded-lg rounded-br-none overflow-hidden' data-aos='fade-left'>
+                        <img
+                            src="./images/coffee.jpg"
+                            alt="Gourmet Café Experience in New Town Kolkata"
+                            className='object-cover h-full absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]'
+                            loading="lazy"
+                        />
+                        <div className='absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg'>
+                            <div className='pr-2 text-white font-forum text-sm tracking-wide'>Café</div>
+                            <div className='h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg'>
+                                <FaArrowRight />
+                            </div>
+                        </div>
+                    </NavLink>
+                </div>
+                <NavLink to='/fashion' className='h-56 w-1/2 relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden' data-aos='fade-right'>
+                    <img
+                        src="./fashion/home.png"
+                        alt="Thai-Inspired Fashion Collection in Kolkata"
+                        className='absolute top-0 w-full transition duration-300 ease-in-out transform hover:scale-[103%]'
+                        loading="lazy"
+                    />
+                    <div className='absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg'>
+                        <div className='pr-2 text-white font-forum text-sm tracking-wide'>Fashion</div>
+                        <div className='h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg'>
+                            <FaArrowRight />
+                        </div>
+                    </div>
+                </NavLink>
+            </div>
+
             {/* About Section */}
             <div className='flex flex-col mt-20 px-4 max-w-6xl mx-auto'>
                 <h2 className='text-3xl md:text-4xl font-forum text-primary-text mb-6'>Discover Maison Rose Lifestyle</h2>
