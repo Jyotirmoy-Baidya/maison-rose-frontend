@@ -233,7 +233,7 @@ const ProductPage = () => {
                     color={'#EFE7D2'}
                     loading={loading}
                     cssOverride={override}
-                    size={'3vh'}
+                    size={'2vh'}
                     aria-label="Loading Spinner"
                     data-testid="loader"
                 /> :

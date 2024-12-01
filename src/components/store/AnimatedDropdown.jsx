@@ -12,7 +12,7 @@ const AnimatedDropdown = ({ sort, setSort }) => {
     };
 
     return (
-        <div className="flex z-20 items-center justify-center font-forum">
+        <div className="flex z-10 items-center justify-center font-forum">
             <div className="relative">
                 {/* Dropdown Trigger */}
                 <div

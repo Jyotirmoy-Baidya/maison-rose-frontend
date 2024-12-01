@@ -33,6 +33,12 @@ export default {
         '10xl': '10rem', // Adjust the size as needed
         '11xl': '11rem'
       },
+      transitionProperty: {
+        height: "height",
+      },
+      maxHeight: {
+        40: "10rem",
+      },
     },
   },
   plugins: [],
