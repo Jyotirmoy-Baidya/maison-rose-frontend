@@ -1,33 +1,33 @@
 export const DressCategories = [
     {
-        type: "Tops",
+        category: "Tops",
         subcategories: ["Tank Tops", "Party Tops"],
     },
     {
-        type: "Bottoms",
+        category: "Bottoms",
         subcategories: []
     },
     {
-        type: "Accessories",
+        category: "Accessories",
         subcategories: ["Hats", "Bags", "Jewelry"],
     },
     {
-        type: "Shoes",
+        category: "Shoes",
         subcategories: ["Sneakers", "Sandals", "Boots"],
     },
 ];
 
 export const AccessoriesCategories = [
     {
-        type: "Bags",
+        category: "Bags",
         subcategories: ["Handbags", "Backpacks", "Totes", "Clutches"],
     },
     {
-        type: "Antique Jewellery",
+        category: "Antique Jewellery",
         subcategories: ["Necklaces", "Earrings", "Bracelets", "Rings"],
     },
     {
-        type: "Shoes",
+        category: "Shoes",
         subcategories: ["Formal Shoes", "Sneakers", "Sandals", "Heels"],
     },
 ];

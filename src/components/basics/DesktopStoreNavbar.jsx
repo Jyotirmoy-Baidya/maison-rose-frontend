@@ -4,6 +4,9 @@ import HoverDropdown from './HoverDropdown'
 import { AccessoriesCategories, DressCategories } from '../../constants/store'
 import { RxHamburgerMenu } from 'react-icons/rx'
 
+
+
+
 const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
 
     const location = useLocation();

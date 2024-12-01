@@ -25,23 +25,23 @@ const HoverDropdown = ({ ItemCategoryList, value }) => {
             {isDropdownVisible && (
                 <div className="absolute top-full left-0 bg-[#18181895] backdrop-blur-3xl shadow-lg w-48 z-10">
                     {ItemCategoryList?.map((category, index) => (
-                        <NavLink to={`/fashion-store/${category.type}`}
+                        <NavLink to={`/fashion-store/${category.category}`}
                             key={index}
                             className="flex justify-between items-center px-4 py-2 hover:bg-primary-text hover:text-primary-bg cursor-pointer text-primary-text relative"
-                            onMouseEnter={() => setHoveredCategory(category.type)}
+                            onMouseEnter={() => setHoveredCategory(category.category)}
                             onMouseLeave={() => setHoveredCategory(null)}
                         >
-                            <span>{category.type}</span>
+                            <span>{category.category}</span>
                             {
                                 category.subcategories?.length > 0 &&
                                 <span>→</span>
                             }
 
                             {/* Subcategories Dropdown */}
-                            {hoveredCategory === category.type && (
+                            {hoveredCategory === category.category && (
                                 <div className="absolute flex flex-col top-0 bg-[#18181895] backdrop-blur-md left-full  shadow-lg w-48">
                                     {category?.subcategories?.map((subcategory, subIndex) => (
-                                        <NavLink to={`/fashion-store/${category.type}/${subcategory}`}
+                                        <NavLink to={`/fashion-store/${category.category}/${subcategory}`}
                                             key={subIndex}
                                             className="px-4 py-2 text-primary-text hover:bg-primary-text hover:text-primary-bg cursor-pointer"
                                         >
