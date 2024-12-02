@@ -7,6 +7,7 @@ import Saloon from "./pages/Saloon";
 import Fashion from "./pages/Fashion";
 import ProductPage from "./pages/ProductPage";
 import ProductListPage from "./pages/ProductListPage";
+import Combos from './pages/Combos';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
 
         <Route path='/check/:id' element={<ProductListPage />} />
         <Route path='/about' element={<About />} />
+        <Route path='/combos' element={<Combos />} />
         <Route path='/lander' element={<Navigate to="/" replace />} />
       </Routes>
       <Toaster />

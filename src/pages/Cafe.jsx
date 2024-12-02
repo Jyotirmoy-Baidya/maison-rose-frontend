@@ -52,7 +52,7 @@ const Cafe = () => {
                     Enjoy unbeatable deals and delicious flavors in one bite!
                 </p>
                 <NavLink
-                    to="/cafe/combos"
+                    to="/combos"
                     style={{
                         display: 'inline-block',
                         background: 'linear-gradient(45deg, #e0c097, #ffda77)',
@@ -107,7 +107,7 @@ const Cafe = () => {
                             <NavLink to='/'>Home</NavLink>
                             <NavLink to='/about'>About</NavLink>
 
-                            <NavLink to='/menu/combos'>Combos</NavLink>
+                            <NavLink to='/combos'>Combos</NavLink>
                             <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
                                 Order
                             </div>
@@ -127,7 +127,7 @@ const Cafe = () => {
                         Enjoy unbeatable deals and delicious flavors in one bite!
                     </p>
                     <NavLink
-                        to="/cafe/combos"
+                        to="/combos"
                         className="inline-block bg-gradient-to-r from-[#e0c097] to-[#ffda77] text-[#1f1f1f] py-3 px-6 rounded-full font-bold text-base no-underline shadow-[0_0_5px_#ffda77,0_0_10px_#e0c097] transition-transform duration-300 ease-in-out hover:scale-120 animate-pulse"
                     >
                         🚀 Explore Combos Now!
