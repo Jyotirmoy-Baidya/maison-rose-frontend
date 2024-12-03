@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -14,7 +16,6 @@ export default {
       fontFamily: {
         forum: ['"Forum"', 'serif'],
       },
-
       keyframes: {
         slideDown: {
           '0%': { transform: 'scaleY(0)', opacity: 0 },
@@ -25,12 +26,18 @@ export default {
         slideDown: 'slideDown 0.3s ease-out',
       },
       screens: {
-        '3xl': '1700px', // Customize the value as needed
-        '4xl': '1920px', // Customize the value as needed
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1700px',
+        '4xl': '1920px',
         '5xl': '2280px'
       },
       fontSize: {
-        '10xl': '10rem', // Adjust the size as needed
+        '10xl': '10rem',
         '11xl': '11rem'
       },
       transitionProperty: {
@@ -43,4 +50,3 @@ export default {
   },
   plugins: [],
 }
-

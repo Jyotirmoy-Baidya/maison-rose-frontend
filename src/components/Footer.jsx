@@ -1,7 +1,7 @@
-import React from 'react';
+  import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF, FaTwitter, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-import { GiHairStrands, GiNailPolish, GiCoffeeCup } from 'react-icons/gi';
+import { GiHairStrands, GiNails, GiCoffeeCup } from 'react-icons/gi';
 import { IoShirtOutline } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
@@ -18,7 +18,7 @@ const Footer = () => {
     { name: 'Fashion Boutique', icon: <IoShirtOutline size={20} />, path: '/fashion' },
     { name: 'Luxury Salon', icon: <GiHairStrands size={20} />, path: '/salon' },
     { name: 'Café & Restaurant', icon: <GiCoffeeCup size={20} />, path: '/cafe' },
-    { name: 'Nail Art Studio', icon: <GiNailPolish size={20} />, path: '/nailart' }
+    { name: 'Nail Art Studio', icon: <GiNails size={20} />, path: '/nailart' }
   ];
 
   return (
