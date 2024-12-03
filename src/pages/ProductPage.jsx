@@ -8,189 +8,233 @@ import MobileNavbar from '../components/basics/MobileNavbar';
 import { ClimbingBoxLoader, ClipLoader } from 'react-spinners';
 import { override } from '../constants/basic';
 import DesktopStoreNavbar from '../components/basics/DesktopStoreNavbar';
+import { fetchFilteredProductsOnCategory, fetchFilteredProductsOnType } from '../api/AirtableApis';
 
 const ProductPage = () => {
     const [search, setSearch] = useState('');
     const [sort, setSort] = useState('default'); // Sorting options: 'default', 'asc', 'desc'
     const [selectedProduct, setSelectedProduct] = useState(null);
 
-    const products = [
-        {
-            name: 'Stylish Summer Shirt',
-            productionDetails: 'Manufactured by Trendy Fashions Co.',
-            color: 'Blue',
-            category: 'Clothing',
-            tags: ['Casual', 'Comfortable', 'Lightweight'],
-            season: 'Summer',
-            images: [
-                '/store/GreenDress1.jpg',
-                '/store/what-new1.jpg',
-                '/store/WhiteFloral1.jpg'
-            ],
-            price: 1200,
-            discountedPercentage: 20,
-            discountedPrice: 960,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example',
-        },
-        {
-            name: 'Winter Wool Jacket',
-            productionDetails: 'Warm & Cozy Garments Inc.',
-            color: 'Gray',
-            category: 'Clothing',
-            tags: ['Warm', 'Stylish', 'Durable'],
-            season: 'Winter',
-            images: [
-                '/store/what-new1.jpg',
-            ],
-            price: 3500,
-            discountedPercentage: 15,
-            discountedPrice: 2975,
-            availability: 'Out of Stock',
-            amazonLink: 'https://www.amazon.com/dp/example2',
-        },
-        {
-            name: 'Stylish Summer Shirt',
-            productionDetails: 'Manufactured by Trendy Fashions Co.',
-            color: 'Blue',
-            category: 'Clothing',
-            tags: ['Casual', 'Comfortable', 'Lightweight'],
-            season: 'Summer',
-            images: [
-                '/store/WhiteFloral1.jpg',
-            ],
-            price: 1200,
-            discountedPercentage: 20,
-            discountedPrice: 960,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example',
-        },
-        {
-            name: 'Winter Wool Jacket',
-            productionDetails: 'Warm & Cozy Garments Inc.',
-            color: 'Gray',
-            category: 'Clothing',
-            tags: ['Warm', 'Stylish', 'Durable'],
-            season: 'Winter',
-            images: [
-                '/store/MultiColorCord.jpg',
-            ],
-            price: 3500,
-            discountedPercentage: 15,
-            discountedPrice: 2975,
-            availability: 'Out of Stock',
-            amazonLink: 'https://www.amazon.com/dp/example2',
-        },
-        {
-            name: 'Festive Cotton Saree',
-            productionDetails: 'Handwoven Sarees Ltd.',
-            color: 'Red',
-            category: 'Clothing',
-            tags: ['Traditional', 'Elegant', 'Festive'],
-            season: 'Durga Puja',
-            images: [
-                '/store/SportsWear1.jpg',
-            ],
-            price: 2200,
-            discountedPercentage: 25,
-            discountedPrice: 1650,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example3',
-        },
-        {
-            name: 'Stylish Summer Shirt',
-            productionDetails: 'Manufactured by Trendy Fashions Co.',
-            color: 'Blue',
-            category: 'Clothing',
-            tags: ['Casual', 'Comfortable', 'Lightweight'],
-            season: 'Summer',
-            images: [
-                '/store/GreenDress1.jpg',
-                '/store/what-new1.jpg',
-                '/store/WhiteFloral1.jpg'
-            ],
-            price: 1200,
-            discountedPercentage: 20,
-            discountedPrice: 960,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example',
-        },
-        {
-            name: 'Winter Wool Jacket',
-            productionDetails: 'Warm & Cozy Garments Inc.',
-            color: 'Gray',
-            category: 'Clothing',
-            tags: ['Warm', 'Stylish', 'Durable'],
-            season: 'Winter',
-            images: [
-                '/store/what-new1.jpg',
-            ],
-            price: 3500,
-            discountedPercentage: 15,
-            discountedPrice: 2975,
-            availability: 'Out of Stock',
-            amazonLink: 'https://www.amazon.com/dp/example2',
-        },
-        {
-            name: 'Stylish Summer Shirt',
-            productionDetails: 'Manufactured by Trendy Fashions Co.',
-            color: 'Blue',
-            category: 'Clothing',
-            tags: ['Casual', 'Comfortable', 'Lightweight'],
-            season: 'Summer',
-            images: [
-                '/store/WhiteFloral1.jpg',
-            ],
-            price: 1200,
-            discountedPercentage: 20,
-            discountedPrice: 960,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example',
-        },
-        {
-            name: 'Winter Wool Jacket',
-            productionDetails: 'Warm & Cozy Garments Inc.',
-            color: 'Gray',
-            category: 'Clothing',
-            tags: ['Warm', 'Stylish', 'Durable'],
-            season: 'Winter',
-            images: [
-                '/store/MultiColorCord.jpg',
-            ],
-            price: 3500,
-            discountedPercentage: 15,
-            discountedPrice: 2975,
-            availability: 'Out of Stock',
-            amazonLink: 'https://www.amazon.com/dp/example2',
-        },
-        {
-            name: 'Festive Cotton Saree',
-            productionDetails: 'Handwoven Sarees Ltd.',
-            color: 'Red',
-            category: 'Clothing',
-            tags: ['Traditional', 'Elegant', 'Festive'],
-            season: 'Durga Puja',
-            images: [
-                '/store/SportsWear1.jpg',
-            ],
-            price: 2200,
-            discountedPercentage: 25,
-            discountedPrice: 1650,
-            availability: 'In Stock',
-            amazonLink: 'https://www.amazon.com/dp/example3',
-        }
-    ];
+    // const products = [
+    //     {
+    //         name: 'Stylish Summer Shirt',
+    //         productionDetails: 'Manufactured by Trendy Fashions Co.',
+    //         color: 'Blue',
+    //         category: 'Clothing',
+    //         tags: ['Casual', 'Comfortable', 'Lightweight'],
+    //         season: 'Summer',
+    //         images: [
+    //             '/store/GreenDress1.jpg',
+    //             '/store/what-new1.jpg',
+    //             '/store/WhiteFloral1.jpg'
+    //         ],
+    //         price: 1200,
+    //         discountedPercentage: 20,
+    //         discountedPrice: 960,
+    //         availability: 'In Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example',
+    //     },
+    //     {
+    //         name: 'Winter Wool Jacket',
+    //         productionDetails: 'Warm & Cozy Garments Inc.',
+    //         color: 'Gray',
+    //         category: 'Clothing',
+    //         tags: ['Warm', 'Stylish', 'Durable'],
+    //         season: 'Winter',
+    //         images: [
+    //             '/store/what-new1.jpg',
+    //         ],
+    //         price: 3500,
+    //         discountedPercentage: 15,
+    //         discountedPrice: 2975,
+    //         availability: 'Out of Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example2',
+    //     },
+    //     {
+    //         name: 'Stylish Summer Shirt',
+    //         productionDetails: 'Manufactured by Trendy Fashions Co.',
+    //         color: 'Blue',
+    //         category: 'Clothing',
+    //         tags: ['Casual', 'Comfortable', 'Lightweight'],
+    //         season: 'Summer',
+    //         images: [
+    //             '/store/WhiteFloral1.jpg',
+    //         ],
+    //         price: 1200,
+    //         discountedPercentage: 20,
+    //         discountedPrice: 960,
+    //         availability: 'In Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example',
+    //     },
+    //     {
+    //         name: 'Winter Wool Jacket',
+    //         productionDetails: 'Warm & Cozy Garments Inc.',
+    //         color: 'Gray',
+    //         category: 'Clothing',
+    //         tags: ['Warm', 'Stylish', 'Durable'],
+    //         season: 'Winter',
+    //         images: [
+    //             '/store/MultiColorCord.jpg',
+    //         ],
+    //         price: 3500,
+    //         discountedPercentage: 15,
+    //         discountedPrice: 2975,
+    //         availability: 'Out of Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example2',
+    //     },
+    //     {
+    //         name: 'Festive Cotton Saree',
+    //         productionDetails: 'Handwoven Sarees Ltd.',
+    //         color: 'Red',
+    //         category: 'Clothing',
+    //         tags: ['Traditional', 'Elegant', 'Festive'],
+    //         season: 'Durga Puja',
+    //         images: [
+    //             '/store/SportsWear1.jpg',
+    //         ],
+    //         price: 2200,
+    //         discountedPercentage: 25,
+    //         discountedPrice: 1650,
+    //         availability: 'In Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example3',
+    //     },
+    //     {
+    //         name: 'Stylish Summer Shirt',
+    //         productionDetails: 'Manufactured by Trendy Fashions Co.',
+    //         color: 'Blue',
+    //         category: 'Clothing',
+    //         tags: ['Casual', 'Comfortable', 'Lightweight'],
+    //         season: 'Summer',
+    //         images: [
+    //             '/store/GreenDress1.jpg',
+    //             '/store/what-new1.jpg',
+    //             '/store/WhiteFloral1.jpg'
+    //         ],
+    //         price: 1200,
+    //         discountedPercentage: 20,
+    //         discountedPrice: 960,
+    //         availability: 'In Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example',
+    //     },
+    //     {
+    //         name: 'Winter Wool Jacket',
+    //         productionDetails: 'Warm & Cozy Garments Inc.',
+    //         color: 'Gray',
+    //         category: 'Clothing',
+    //         tags: ['Warm', 'Stylish', 'Durable'],
+    //         season: 'Winter',
+    //         images: [
+    //             '/store/what-new1.jpg',
+    //         ],
+    //         price: 3500,
+    //         discountedPercentage: 15,
+    //         discountedPrice: 2975,
+    //         availability: 'Out of Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example2',
+    //     },
+    //     {
+    //         name: 'Stylish Summer Shirt',
+    //         productionDetails: 'Manufactured by Trendy Fashions Co.',
+    //         color: 'Blue',
+    //         category: 'Clothing',
+    //         tags: ['Casual', 'Comfortable', 'Lightweight'],
+    //         season: 'Summer',
+    //         images: [
+    //             '/store/WhiteFloral1.jpg',
+    //         ],
+    //         price: 1200,
+    //         discountedPercentage: 20,
+    //         discountedPrice: 960,
+    //         availability: 'In Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example',
+    //     },
+    //     {
+    //         name: 'Winter Wool Jacket',
+    //         productionDetails: 'Warm & Cozy Garments Inc.',
+    //         color: 'Gray',
+    //         category: 'Clothing',
+    //         tags: ['Warm', 'Stylish', 'Durable'],
+    //         season: 'Winter',
+    //         images: [
+    //             '/store/MultiColorCord.jpg',
+    //         ],
+    //         price: 3500,
+    //         discountedPercentage: 15,
+    //         discountedPrice: 2975,
+    //         availability: 'Out of Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example2',
+    //     },
+    //     {
+    //         name: 'Festive Cotton Saree',
+    //         productionDetails: 'Handwoven Sarees Ltd.',
+    //         color: 'Red',
+    //         category: 'Clothing',
+    //         tags: ['Traditional', 'Elegant', 'Festive'],
+    //         season: 'Durga Puja',
+    //         images: [
+    //             '/store/SportsWear1.jpg',
+    //         ],
+    //         price: 2200,
+    //         discountedPercentage: 25,
+    //         discountedPrice: 1650,
+    //         availability: 'In Stock',
+    //         amazonLink: 'https://www.amazon.com/dp/example3',
+    //     }
+    // ];
 
-    const filteredProducts = products
-        .filter(product =>
-            product.name.toLowerCase().includes(search.toLowerCase()) ||
-            product.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
-        )
-        .sort((a, b) => {
-            if (sort == 'Price: Low to High') return a.price - b.price;
-            if (sort == 'Price: High to Low') return b.price - a.price;
-            return 0; // Default order
-        });
+    const { type, cat, subcat } = useParams(); // Extract parameters
+
+    const [products, setProducts] = useState([]);
+
+
+
+
+    useEffect(() => {
+        const getFilteredProducts = async () => {
+            setLoading(true);
+            try {
+                // Determine API URL based on parameters
+                // if (type && cat && subcat) {
+                //     apiUrl = `/api/products?type=${type}&cat=${cat}&subcat=${subcat}`;
+                // } 
+                if (cat) {
+                    console.log('sss');
+                    const filteredProducts = await fetchFilteredProductsOnCategory(cat);
+                    setProducts(filteredProducts);
+                    console.log("check");
+                    console.log(filteredProducts);
+                }
+                else if (type) {
+                    const filteredProducts = await fetchFilteredProductsOnType(type);
+                    setProducts(filteredProducts);
+                    console.log(filteredProducts);
+                    console.log(filteredProducts[0].fields?.Images[0].url);
+                    // } else {
+                    //     apiUrl = `/api/products`; // Default API if no parameters
+                    // }
+
+                }
+            } catch (error) {
+                console.error("Failed to fetch products:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        getFilteredProducts();
+
+
+    }, [type, cat]);
+
+    // const filteredProducts = products
+    //     .filter(product =>
+    //         product.name.toLowerCase().includes(search.toLowerCase()) ||
+    //         product.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
+    //     )
+    //     .sort((a, b) => {
+    //         if (sort == 'Price: Low to High') return a.price - b.price;
+    //         if (sort == 'Price: High to Low') return b.price - a.price;
+    //         return 0; // Default order
+    //     });
 
     const handleProductClick = (product) => {
         setSelectedProduct(product);
@@ -209,19 +253,18 @@ const ProductPage = () => {
 
     const navigation = useNavigate();
     const location = useLocation();
-    const params = useParams();
 
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        // Set a timer to simulate loading for 1 second
-        const timer = setTimeout(() => {
-            setLoading(false); // Hide the loading screen after 1 second
-        }, 3000);
+    // useEffect(() => {
+    //     // Set a timer to simulate loading for 1 second
+    //     const timer = setTimeout(() => {
+    //         setLoading(false); // Hide the loading screen after 1 second
+    //     }, 3000);
 
-        // Cleanup the timer if the component unmounts
-        return () => clearTimeout(timer);
-    }, []); // Empty dependency array to run only once on mount
+    //     // Cleanup the timer if the component unmounts
+    //     return () => clearTimeout(timer);
+    // }, []); // Empty dependency array to run only once on mount
 
     return (
         <div className="bg-primary-bg flex flex-col  min-h-screen p-3 xl:p-6">
@@ -257,31 +300,32 @@ const ProductPage = () => {
 
                             <AnimatedDropdown sort={sort} setSort={setSort} />
                         </div>
-                        <div className='w-full mb-2 text-primary-text font-forum text-3xl capitalize tracking-wide navigation-list'>{params.category}</div>
+                        {/* <div className='w-full mb-2 text-primary-text font-forum text-3xl capitalize tracking-wide navigation-list'>{params.category}</div> */}
 
 
 
 
 
                         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 3xl:grid-col-8 4xl:grid-cols-9 gap-3 xl:gap-6">
-                            {filteredProducts.map((product, index) => (
+                            {products.length > 0 && products?.map((product, index) => (
                                 <div
                                     key={index}
-                                    className="relative bg-gray-800 shadow-lg rounded hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden"
-                                    onClick={() => handleProductClick(product)}
+                                    className="relative bg-gray-800 shadow-lg rounded hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden text-primary-text"
+                                // onClick={() => handleProductClick(product)}
                                 >
-
-                                    <img src={product.images[0]} alt={product.name} className='w-full hover:scale-[105%] transition-transform duration-300 brightness-[90%]' />
-
+                                    <div className='w-full xl:h-[300px] 3xl:h-[330px]'>
+                                        <img src={product?.fields?.Images[0].url} alt={product?.fields?.Name} className='w-full hover:scale-[105%] transition-transform duration-300 brightness-[90%]' />
+                                    </div>
+                                    {/* {product?.fields?.Name} */}
                                     <div className='absolute flex flex-col bottom-2 left-0 px-2 w-full'>
                                         <div className='bg-primary-text rounded p-2 xl:p-3 w-full'>
-                                            <h1 className='text-primary-bg font-forum xl:text-base text-sm'>{product.name}</h1>
+                                            <h1 className='text-primary-bg font-forum xl:text-base text-sm'>{product?.fields?.Name}</h1>
                                             <div className='flex xl:text-base text-sm'>
                                                 {
-                                                    product.discountedPercentage == 0 ?
-                                                        <div className=''>₹ {product.price}</div>
+                                                    product?.fields.DiscountedPercentage == 0 ?
+                                                        <div className=''>₹ {product?.fields?.Price}</div>
                                                         :
-                                                        <div className=''>₹ <s className='text-xs xl:text-sm text-red-500'>{product.price}</s> {product.discountedPrice}</div>
+                                                        <div className='text-primary-bg'>₹ <s className='text-xs xl:text-sm text-red-500'>{product?.fields?.Price}</s> {product?.fields?.DiscountedPrice}</div>
                                                 }
                                             </div>
                                         </div>

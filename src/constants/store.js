@@ -4,15 +4,15 @@ export const DressCategories = [
         subcategories: ["Tank Tops", "Party Tops"],
     },
     {
-        category: "Bottoms",
+        category: "Skirt",
         subcategories: []
     },
     {
-        category: "Accessories",
+        category: "Jeans",
         subcategories: ["Hats", "Bags", "Jewelry"],
     },
     {
-        category: "Shoes",
+        category: "Summer",
         subcategories: ["Sneakers", "Sandals", "Boots"],
     },
 ];

@@ -9,12 +9,42 @@ import StoreHoverButton from '../components/store/StoreHoverButton'
 import DesktopStoreNavbar from '../components/basics/DesktopStoreNavbar'
 
 
+import Airtable from 'airtable'
+
+
+
+import { ClimbingBoxLoader } from 'react-spinners'
+import { override } from '../constants/basic'
+import { fetchRecords } from '../api/AirtableApis'
+
 
 
 const Fashion = () => {
+
+    const [whatsNewLoading, setWhatsNewLoading] = useState(false);
+
     useEffect(() => {
         Aos.init();
     }, [])
+
+    const [whatsNew, setWhatsNew] = useState();
+
+    useEffect(() => {
+        const getRecords = async () => {
+            setWhatsNewLoading(true);
+            try {
+                const data = await fetchRecords("What's New");
+                setWhatsNew(data);
+                console.log(data);
+            } catch (error) {
+                console.log('Error');
+            } finally {
+                setWhatsNewLoading(false);
+            }
+        };
+
+        getRecords();
+    }, []);
 
     const p1 = useRef(null);
     const p2 = useRef(null);
@@ -48,15 +78,32 @@ const Fashion = () => {
                 <h2 className='text-primary-text text-5xl text-center font-forum'>What's New</h2>
 
                 <div className='flex mt-8 px-8 overflow-x-scroll no-scrollbar' ref={p1}>
-                    <div className='flex gap-5 ' >
-                        <WhatnewCard />
-                        <WhatnewCard />
-                        <WhatnewCard />
-                        <WhatnewCard />
-                        <WhatnewCard />
-                        <WhatnewCard />
-                        <WhatnewCard />
-                    </div>
+                    {
+                        whatsNewLoading ?
+                            <div className='w-full flex justify-center'>
+                                <ClimbingBoxLoader
+                                    color={'#EFE7D2'}
+                                    loading={whatsNewLoading}
+                                    cssOverride={override}
+                                    size={'2vh'}
+                                    aria- label="Loading Spinner"
+                                    data-testid="loader"
+                                />
+                            </div> :
+                            <div className='flex gap-5 justify-center' >
+                                {
+                                    whatsNew?.map((item, index) => (
+
+                                        <>
+                                            <WhatnewCard key={index} item={item.fields} />
+
+
+                                        </>
+
+                                    ))
+                                }
+                            </div>
+                    }
                 </div>
 
                 <div className='my-20'>
@@ -94,7 +141,7 @@ const Fashion = () => {
                         className='absolute left-[200px] md:left-[487px] lg:left-[657px] xl:left-[810px] 2xl:left-[1005px] 3xl:left-[1080px] 4xl:left-[1360px] bottom-[55px] 3xl:h-[400px] 4xl:h-[550px] 2xl:h-96 h-80 z-[3]'
                     >
                         <img src="./store/GreenDress1.jpg" alt="Home Dress" className='h-full min-w-full' />
-                        <StoreHoverButton type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
+                        <StoreHoverButton link='/fashion-store/Dress' type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
                     </div>
 
                     <div data-aos="fade-up"

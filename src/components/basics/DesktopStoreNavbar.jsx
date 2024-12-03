@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import HoverDropdown from './HoverDropdown'
 import { AccessoriesCategories, DressCategories } from '../../constants/store'
@@ -8,6 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 
 
 const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
+
 
     const location = useLocation();
     console.log(location.pathname.split('/'));

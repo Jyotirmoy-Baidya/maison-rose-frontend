@@ -25,7 +25,7 @@ const HoverDropdown = ({ ItemCategoryList, value }) => {
             {isDropdownVisible && (
                 <div className="absolute top-full left-0 bg-[#18181895] backdrop-blur-3xl shadow-lg w-48 z-10">
                     {ItemCategoryList?.map((category, index) => (
-                        <NavLink to={`/fashion-store/${category.category}`}
+                        <NavLink to={`/fashion-store/c/${category.category}`}
                             key={index}
                             className="flex justify-between items-center px-4 py-2 hover:bg-primary-text hover:text-primary-bg cursor-pointer text-primary-text relative"
                             onMouseEnter={() => setHoveredCategory(category.category)}
