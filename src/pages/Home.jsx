@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import DesktopHeader from "../components/basics/DesktopHeader";
 import { NavLink } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ImQuotesLeft } from "react-icons/im";
 import Aos from "aos";
