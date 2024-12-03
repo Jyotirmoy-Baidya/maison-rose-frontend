@@ -58,14 +58,14 @@ const ServiceCarousel = () => {
   };
 
   return (
-    <div className="w-full py-12">
-      <h2 className="text-4xl font-forum text-primary-text text-center mb-12">Our Services</h2>
-      <div className="relative max-w-[1000px] h-[400px] mx-auto">
+    <div className="w-full py-6 md:py-12">
+      <h2 className="text-3xl md:text-4xl font-forum text-primary-text text-center mb-6 md:mb-12">Our Services</h2>
+      <div className="relative max-w-[95%] md:max-w-[1000px] h-[520px] md:h-[450px] mx-auto">
         <button 
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-primary-bg/80 p-3 rounded-full text-primary-text hover:bg-primary-text hover:text-primary-bg transition-all"
+          className="absolute left-0 md:left-4 top-[30%] md:top-1/2 -translate-y-1/2 z-30 bg-primary-bg/80 p-2 md:p-3 rounded-full text-primary-text hover:bg-primary-text hover:text-primary-bg transition-all"
         >
-          <FaArrowLeft size={20} />
+          <FaArrowLeft size={16} className="md:w-5 md:h-5" />
         </button>
         
         <div className="relative h-full w-full">
@@ -91,20 +91,22 @@ const ServiceCarousel = () => {
                 }}
               >
                 <div 
-                  className="mx-auto w-[700px] h-full bg-primary-bg rounded-2xl overflow-hidden shadow-2xl cursor-pointer group relative"
+                  className="mx-auto w-[90%] md:w-[700px] h-full bg-primary-bg rounded-2xl overflow-hidden shadow-2xl cursor-pointer group relative"
                   onClick={() => goToService(service.path)}
                 >
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-black/30 transition-all duration-300"></div>
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-bg via-primary-bg/90 to-transparent pt-16 px-8 pb-8 transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-                      <h3 className="text-2xl font-forum text-primary-text mb-3">{service.name}</h3>
-                      <p className="text-primary-text/90 text-base leading-relaxed mb-3 transform transition-all duration-500 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100">{service.description}</p>
-                      <p className="text-primary-pink text-lg font-forum transform transition-all duration-500 translate-y-2 group-hover:translate-y-0">{service.price}</p>
+                  <div className="relative w-full h-full flex flex-col md:block">
+                    <div className="h-[45%] md:h-full relative">
+                      <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-black/30 transition-all duration-300"></div>
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 md:absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-primary-bg md:bg-gradient-to-t md:from-black/80 md:to-transparent z-20">
+                      <h3 className="text-lg md:text-2xl font-forum text-primary-text md:text-white mb-2">{service.name}</h3>
+                      <p className="text-sm md:text-base text-primary-text/80 md:text-white/80 line-clamp-4 leading-relaxed">{service.description}</p>
+                      <p className="text-sm md:text-base text-primary-pink mt-3 font-medium">{service.price}</p>
                     </div>
                   </div>
                 </div>
@@ -115,24 +117,24 @@ const ServiceCarousel = () => {
 
         <button 
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-primary-bg/80 p-3 rounded-full text-primary-text hover:bg-primary-text hover:text-primary-bg transition-all"
+          className="absolute right-0 md:right-4 top-[30%] md:top-1/2 -translate-y-1/2 z-30 bg-primary-bg/80 p-2 md:p-3 rounded-full text-primary-text hover:bg-primary-text hover:text-primary-bg transition-all"
         >
-          <FaArrowRight size={20} />
+          <FaArrowRight size={16} className="md:w-5 md:h-5" />
         </button>
+      </div>
 
-        <div className="absolute bottom-[-3rem] left-1/2 -translate-x-1/2 flex justify-center gap-4 z-30">
-          {services.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 rounded-full transition-all duration-500 ${
-                index === currentIndex 
-                  ? 'bg-primary-pink w-6' 
-                  : 'bg-primary-text/30 w-2 hover:bg-primary-text/50 hover:w-3'
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            />
-          ))}
-        </div>
+      <div className="flex justify-center gap-2 mt-4 md:mt-6">
+        {services.map((_, index) => (
+          <button
+            key={index}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'bg-primary-pink w-6' 
+                : 'bg-primary-text/30 w-2 hover:bg-primary-text/50 hover:w-3'
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
       </div>
     </div>
   );
