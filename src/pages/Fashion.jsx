@@ -110,27 +110,27 @@ const Fashion = () => {
                     <ParallaxText baseVelocity={-1}>CRAVE FOR SHOPPING, EXPLORE OUR OFFERS HERE</ParallaxText>
                 </div>
 
-                <div className='relative mx-auto h-[300px] sm:h-[350px] md:h-[440px] xl:h-[500px] 2xl:h-[600px] 4xl:h-[800px] 5xl:w-9/12 4xl:w-[1550px] 2xl:w-[1400px] xl:w-[1140px] md:w-[700px] sm:w-[600px] w-[350px] mt-20 shopping-area'>
+                <div className='relative mx-auto h-[290px] sm:h-[350px] md:h-[440px] xl:h-[500px] 2xl:h-[600px] 4xl:h-[800px] 5xl:w-9/12 4xl:w-[1550px] 2xl:w-[1400px] xl:w-[1140px] md:w-[700px] sm:w-[600px] w-[350px] mt-20 shopping-area'>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute left-0  sm:left-0 md:left-0 md:top-[150px] xl:left-[80px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-28'
+                        className='absolute -left-5  sm:left-0 md:left-0 md:top-[150px] xl:left-[80px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-24'
                     >
                         <img src="./store/HomeShoe.png" alt="Home Shoe" className='h-full' />
-                        <StoreHoverButton type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
+                        <StoreHoverButton type='white' className='absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute left-8 sm:left-[90px] 4xl:left-[250px] 2xl:left-[340px] xl:left-[250px] md:left-[100px] top-0 z-[1] 4xl:h-[420px] 2xl:h-80 xl:h-64 md:h-56 sm:h-40 h-40'
+                        className='absolute left-6 sm:left-[90px] 4xl:left-[250px] 2xl:left-[340px] xl:left-[250px] md:left-[100px] top-0 z-[1] 4xl:h-[420px] 2xl:h-80 xl:h-64 md:h-56 sm:h-40 h-32'
                     >
                         <img src="./store/HomePerfume.png" alt="Home Perfume" className='h-full' />
-                        <StoreHoverButton type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Perfumes' />
+                        <StoreHoverButton type='white' className='absolute bottom-2 sm:bottom-5 left-1/2 -translate-x-1/2' text='Perfumes' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute 4xl:left-[250px] 2xl:left-[310px] xl:left-[280px] md:left-[105px] sm:left-[80px] left-[30px] bottom-0 h-24 sm:h-28 md:h-36 xl:h-44 2xl:h-56 4xl:h-64 z-[3]'
+                        className='absolute 4xl:left-[250px] 2xl:left-[310px] xl:left-[280px] md:left-[105px] sm:left-[80px] left-[30px] bottom-0 h-20 sm:h-28 md:h-36 xl:h-44 2xl:h-56 4xl:h-64 z-[3]'
                     >
                         <img src="./store/HomeBag.png" alt="Home Bag" className='h-full' />
                         <StoreHoverButton type='black' className='absolute bottom-2 left-1/2 -translate-x-1/2' text='Bags' />
@@ -141,15 +141,15 @@ const Fashion = () => {
                         className='absolute right-0 sm:right-auto sm:left-[415px] md:left-[470px] xl:left-[810px] 2xl:left-[1005px]  4xl:left-[1160px] bottom-[40px] md:bottom-[55px] 4xl:h-[550px] 2xl:h-96 sm:h-64 h-56 z-[3]'
                     >
                         <img src="./store/GreenDress1.jpg" alt="Home Dress" className='h-full min-w-full' />
-                        <StoreHoverButton link='/fashion-store/Dress' type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
+                        <StoreHoverButton link='/fashion-store/Dress' type='white' className='absolute  bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute right-16 sm:right-auto sm:left-[340px] 4xl:left-[960px] 2xl:left-[850px] xl:left-[700px]  md:left-[400px]  4xl:top-28 xl:top-14 md:top-[40px] h-24 sm:h-28 4xl:h-64 xl:h-40 md:h-32 2xl:h-48 z-[3]'
+                        className='absolute right-24 sm:right-auto sm:left-[340px] 4xl:left-[960px] 2xl:left-[850px] xl:left-[700px]  md:left-[400px]  4xl:top-28 xl:top-14 md:top-[40px] h-[70px] sm:h-28 4xl:h-64 xl:h-40 md:h-32 2xl:h-48 z-[3]'
                     >
                         <img src="./store/HomeJewellery.jpg" alt="Home Sunglasses" className='h-full' />
-                        <StoreHoverButton type='white' className='absolute bottom-3 left-1/2 -translate-x-1/2' text='Jewellery' />
+                        <StoreHoverButton type='white' className='absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2' text='Jewellery' />
                     </div>
 
 
