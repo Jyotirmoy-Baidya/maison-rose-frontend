@@ -10,11 +10,14 @@ import ProductListPage from "./pages/ProductListPage";
 import Combos from './pages/Combos';
 import Footer from './components/Footer';
 import DesktopStoreNavbar from "./components/basics/DesktopStoreNavbar";
+import ScrollToTop from "./utils/ScrollToTop";
+import ScrollToTopOnRouteChange from "./utils/ScrollToTopOnRouteChange";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
+        <ScrollToTopOnRouteChange />
         <DesktopStoreNavbar />
         <div className="flex-1">
           <Routes>
