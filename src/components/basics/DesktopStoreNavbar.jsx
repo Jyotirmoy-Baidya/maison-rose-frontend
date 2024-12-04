@@ -14,7 +14,7 @@ const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
     console.log(location.pathname.split('/'));
     console.log(location.pathname)
     return (
-        <div className='xl:block hidden fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181895] backdrop-blur-sm'>
+        <div className='xl:block hidden fixed z-20  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181895] backdrop-blur-sm'>
             <div className='w-full h-full flex items-center'>
                 <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
                 <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>

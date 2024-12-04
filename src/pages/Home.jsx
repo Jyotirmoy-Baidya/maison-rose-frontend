@@ -46,7 +46,7 @@ const Home = () => {
       </Helmet>
 
       {/* mobile nav  */}
-      <div className="xl:hidden z-10 flex w-full fixed top-3 left-0 px-3">
+      {/* <div className="xl:hidden z-10 flex w-full fixed top-3 left-0 px-3">
         <div className="z-10 h-14 p-3 top-0 rounded-xl navbar w-full mb-3 bg-[#18181890]">
           <div className="w-full h-full flex items-center">
             <div className="border-primary-border border-[1px] p-2 rounded-lg">
@@ -57,10 +57,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Navbar   */}
-      <div className="hidden xl:flex  fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]">
+      {/* <div className="hidden xl:flex  fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]">
         <div className="w-full h-full flex items-center">
           <div className="border-primary-border border-[1px] p-2 rounded-lg hover:bg-primary-text hover:text-primary-bg text-primary-text">
             <RxHamburgerMenu className="" />
@@ -76,7 +76,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="hidden xl:flex p-4 h-screen max-h-screen min-h-screen bg-primary-bg">
         <div className="flex w-full gap-4">
@@ -146,9 +146,9 @@ const Home = () => {
                 className="h-full w-full relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
               >
                 <img
-                  src="./fashion/home.png"
+                  src="./store/what-new1.jpg"
                   alt="Thai-Inspired Fashion Collection in Kolkata"
-                  className="absolute top-0 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
+                  className="absolute -top-1/3 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 right-0 pl-6 pt-3 flex items-center rounded-ss-3xl bg-primary-bg">
@@ -224,8 +224,8 @@ const Home = () => {
         </div>
 
         <section>
-          <ParallaxText baseVelocity={-5}>Experience Luxury</ParallaxText>
-          <ParallaxText baseVelocity={5}>Fashion & Dining</ParallaxText>
+          <ParallaxText baseVelocity={-1}>Experience Luxury</ParallaxText>
+          <ParallaxText baseVelocity={1}>Fashion & Dining</ParallaxText>
         </section>
 
         {/* mobile to section   */}
@@ -278,7 +278,7 @@ const Home = () => {
             data-aos="fade-right"
           >
             <img
-              src="./fashion/home.png"
+              src="./store/what-new1.jpg"
               alt="Thai-Inspired Fashion Collection in Kolkata"
               className="absolute top-0 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
               loading="lazy"
@@ -399,7 +399,7 @@ const Home = () => {
               className="w-full h-full"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ 
+              whileHover={{
                 rotateX: 5,
                 rotateY: 5,
                 scale: 1.05,
@@ -447,91 +447,20 @@ const Home = () => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <NavLink 
+          <NavLink
             to="/combos"
-            className="inline-block bg-primary-pink text-white px-8 py-3 rounded-lg hover:bg-primary-pink/90 transition-all"
+            className="inline-block bg-primary-bg border-2 border-primary-border text-primary-text hover:text-primary-bg font-forum px-8 py-3 rounded-lg hover:bg-primary-pink/90 transition-all"
           >
             Explore Our Special Combos
           </NavLink>
         </div>
       </div>
 
-      {/* what we provide  */}
-      <div className="hidden flex-col w-8/12 gap-2 mx-auto mt-20">
-        <h1
-          className="text-5xl text-primary-text font-forum text-center mb-12"
-          data-aos="zoom-in"
-        >
-          What We Provide...
-        </h1>
-        <NavLink
-          to="/saloon"
-          className="relative h-56 w-1/2 bg-primary-bg rounded-lg rounded-br-none overflow-hidden"
-          data-aos="fade-right"
-        >
-          <img
-            src="./images/saloon.png"
-            alt="Luxury Salon Services at Maison Rose Lifestyle"
-            className="object-cover bottom-0 absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
-            loading="lazy"
-          />
-          <div className="absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg">
-            <div className="pr-2 text-white font-forum text-sm tracking-wide">
-              Salon
-            </div>
-            <div className="h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
-              <FaArrowRight />
-            </div>
-          </div>
-        </NavLink>
-        <div className="grid grid-cols-2">
-          <NavLink
-            to="/cafe"
-            className=" col-start-2 h-56 w-full  flex-grow-1 bg-primary-bg rounded-lg rounded-br-none overflow-hidden"
-            data-aos="fade-left"
-          >
-            <img
-              src="./images/coffee.jpg"
-              alt="Gourmet Café Experience in New Town Kolkata"
-              className="object-cover h-full absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
-              loading="lazy"
-            />
-            <div className="absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg">
-              <div className="pr-2 text-white font-forum text-sm tracking-wide">
-                Café
-              </div>
-              <div className="h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
-                <FaArrowRight />
-              </div>
-            </div>
-          </NavLink>
-        </div>
-        <NavLink
-          to="/fashion"
-          className="h-56 w-1/2 relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
-          data-aos="fade-right"
-        >
-          <img
-            src="./fashion/home.png"
-            alt="Thai-Inspired Fashion Collection in Kolkata"
-            className="absolute top-0 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
-            loading="lazy"
-          />
-          <div className="absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg">
-            <div className="pr-2 text-white font-forum text-sm tracking-wide">
-              Fashion
-            </div>
-            <div className="h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
-              <FaArrowRight />
-            </div>
-          </div>
-        </NavLink>
-      </div>
 
       {/* Social Proof */}
       <section className="py-12 px-4">
-        <ParallaxText baseVelocity={-5}>Experience Luxury</ParallaxText>
-        <ParallaxText baseVelocity={5}>Fashion & Dining</ParallaxText>
+        <ParallaxText baseVelocity={-1}>Experience Luxury</ParallaxText>
+        <ParallaxText baseVelocity={1}>Fashion & Dining</ParallaxText>
       </section>
 
       {/* Google Reviews Section */}

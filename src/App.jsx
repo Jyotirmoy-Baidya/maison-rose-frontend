@@ -9,12 +9,14 @@ import ProductPage from "./pages/ProductPage";
 import ProductListPage from "./pages/ProductListPage";
 import Combos from './pages/Combos';
 import Footer from './components/Footer';
+import DesktopStoreNavbar from "./components/basics/DesktopStoreNavbar";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
-        <div className="flex-grow">
+        <DesktopStoreNavbar />
+        <div className="flex-1">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cafe' element={<Cafe />} />
