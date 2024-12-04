@@ -114,7 +114,7 @@ const Fashion = () => {
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute -left-10  sm:left-0 md:left-0 md:top-[150px] xl:left-[80px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-28'
+                        className='absolute left-0  sm:left-0 md:left-0 md:top-[150px] xl:left-[80px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-28'
                     >
                         <img src="./store/HomeShoe.png" alt="Home Shoe" className='h-full' />
                         <StoreHoverButton type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
