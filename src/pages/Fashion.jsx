@@ -138,7 +138,7 @@ const Fashion = () => {
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute -right-10 sm:right-auto sm:left-[415px] md:left-[470px] xl:left-[810px] 2xl:left-[1005px]  4xl:left-[1160px] bottom-[40px] md:bottom-[55px] 4xl:h-[550px] 2xl:h-96 sm:h-64 h-56 z-[3]'
+                        className='absolute right-0 sm:right-auto sm:left-[415px] md:left-[470px] xl:left-[810px] 2xl:left-[1005px]  4xl:left-[1160px] bottom-[40px] md:bottom-[55px] 4xl:h-[550px] 2xl:h-96 sm:h-64 h-56 z-[3]'
                     >
                         <img src="./store/GreenDress1.jpg" alt="Home Dress" className='h-full min-w-full' />
                         <StoreHoverButton link='/fashion-store/Dress' type='white' className='absolute bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
