@@ -15,8 +15,7 @@ import Airtable from 'airtable'
 
 import { ClimbingBoxLoader } from 'react-spinners'
 import { override } from '../constants/basic'
-import { fetchRecords } from '../api/AirtableApis'
-import ScrollToTop from '../utils/ScrollToTop'
+import { fetchWhatsNewRecords } from '../api/AirtableApis'
 
 
 
@@ -34,7 +33,7 @@ const Fashion = () => {
         const getRecords = async () => {
             setWhatsNewLoading(true);
             try {
-                const data = await fetchRecords("What's New");
+                const data = await fetchWhatsNewRecords("What's New");
                 setWhatsNew(data);
                 console.log(data);
             } catch (error) {
@@ -87,7 +86,7 @@ const Fashion = () => {
                                     loading={whatsNewLoading}
                                     cssOverride={override}
                                     size={'2vh'}
-                                    aria- label="Loading Spinner"
+                                    aria-label="Loading Spinner"
                                     data-testid="loader"
                                 />
                             </div> :
@@ -95,11 +94,11 @@ const Fashion = () => {
                                 {
                                     whatsNew?.map((item, index) => (
 
-                                        <>
+                                        <React.Fragment key={index}>
                                             <WhatnewCard key={index} item={item.fields} />
 
 
-                                        </>
+                                        </React.Fragment>
 
                                     ))
                                 }
@@ -142,7 +141,7 @@ const Fashion = () => {
                         className='absolute right-0 sm:right-auto sm:left-[415px] md:left-[470px] xl:left-[810px] 2xl:left-[1005px]  4xl:left-[1160px] bottom-[40px] md:bottom-[55px] 4xl:h-[550px] 2xl:h-96 sm:h-64 h-[218px] z-[3]'
                     >
                         <img src="./store/GreenDress1.jpg" alt="Home Dress" className='h-full min-w-full' />
-                        <StoreHoverButton link='/fashion-store/Dress' type='white' className='absolute  bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
+                        <StoreHoverButton link='/fashion-store/Fashion' type='white' className='absolute  bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
                     </div>
 
                     <div data-aos="fade-up"

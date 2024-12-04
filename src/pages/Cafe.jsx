@@ -98,22 +98,7 @@ const Cafe = () => {
         <div className='bg-primary-bg h-full'>
             <div className='flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
 
-                {/* heading  */}
-                <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
-                    <div className='w-full h-full flex items-center'>
-                        <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                        <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
-                        <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
-                            <NavLink to='/'>Home</NavLink>
-                            <NavLink to='/about'>About</NavLink>
 
-                            <NavLink to='/combos'>Combos</NavLink>
-                            <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
-                                Order
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 {/* combo alert  */}
                 <div className="hidden xl:block absolute bottom-1/2 xl:bottom-5 bg-primary-bg p-4 border-2 border-[#e0c097] rounded-xl right-10 text-center leading-6" id='Combo-Alert-Div'>
@@ -162,16 +147,7 @@ const Cafe = () => {
                     </div>
                 </div>
 
-                {/* navbar  */}
-                <div className='xl:hidden block sticky top-3'>
-                    <div className='z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
-                        <div className='w-full h-full flex items-center'>
-                            <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                            <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
 
-                        </div>
-                    </div>
-                </div>
                 <div className='flex flex-col gap-2 xl:w-1/2 w-full xl:h-full h-[90%]'>
                     {/* menu list  */}
                     <div className='border-2 h-full  xl:px-20 px-6 xl:py-5 py-2 border-primary-border rounded-xl'>

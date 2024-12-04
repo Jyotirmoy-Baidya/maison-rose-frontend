@@ -23,7 +23,7 @@ const HoverDropdown = ({ ItemCategoryList, value }) => {
 
             {/* Dropdown */}
             {isDropdownVisible && (
-                <div className="absolute top-full left-0 bg-[#18181895] backdrop-blur-3xl shadow-lg w-48 z-10">
+                <div className="absolute top-full left-0 bg-[#181818] w-48 z-10 pt-[17.5px]">
                     {ItemCategoryList?.map((category, index) => (
                         <NavLink to={`/fashion-store/c/${category.category}`}
                             key={index}
@@ -41,9 +41,10 @@ const HoverDropdown = ({ ItemCategoryList, value }) => {
                             {hoveredCategory === category.category && (
                                 <div className="absolute flex flex-col top-0 bg-[#18181895] backdrop-blur-md left-full  shadow-lg w-48">
                                     {category?.subcategories?.map((subcategory, subIndex) => (
-                                        <NavLink to={`/fashion-store/${category.category}/${subcategory}`}
+                                        <NavLink to={`/fashion-store/c/${category.category}/${subcategory}`}
                                             key={subIndex}
                                             className="px-4 py-2 text-primary-text hover:bg-primary-text hover:text-primary-bg cursor-pointer"
+                                            onClick={() => { setIsDropdownVisible(false); setHoveredCategory(null) }}
                                         >
                                             {subcategory}
                                         </NavLink>

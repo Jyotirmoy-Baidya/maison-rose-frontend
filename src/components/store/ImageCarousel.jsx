@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const ImageCarousel = ({ images }) => {
+    console.log(images);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextImage = () => {
@@ -24,10 +25,10 @@ const ImageCarousel = ({ images }) => {
                     transform: `translateX(-${currentIndex * 100}%)`,
                 }}
             >
-                {images.map((image, index) => (
+                {images?.map((image, index) => (
                     <img
                         key={index}
-                        src={image}
+                        src={image.thumbnails.large.url}
                         alt={`Slide ${index}`}
                         className="w-full h-full object-cover flex-shrink-0"
                     />
@@ -47,6 +48,8 @@ const ImageCarousel = ({ images }) => {
             </button>
         </div>
     );
+
+
 };
 
 export default ImageCarousel;

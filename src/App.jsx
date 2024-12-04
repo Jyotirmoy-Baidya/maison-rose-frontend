@@ -23,15 +23,16 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cafe' element={<Cafe />} />
-            <Route path='/saloon' element={<Saloon />} />
+            <Route path='/salon' element={<Saloon />} />
             <Route path='/fashion' element={<Fashion />} />
             <Route path='/store' element={<Fashion />} />
             <Route path='/fashion-store/t/:category' element={<ProductPage />} />
-            <Route path='fashion-store/:type/:cat/:subcat' element={<ProductPage />} />
+            <Route path='fashion-store/c/:cat/:subcat' element={<ProductPage />} />
             <Route path='fashion-store/c/:cat' element={<ProductPage />} />
             <Route path='fashion-store/:type' element={<ProductPage />} />
             <Route path='/check/:id' element={<ProductListPage />} />
             <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<About />} />
             <Route path='/combos' element={<Combos />} />
             <Route path='/lander' element={<Navigate to="/" replace />} />
           </Routes>

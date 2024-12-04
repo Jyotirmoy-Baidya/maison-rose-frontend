@@ -13,6 +13,8 @@ const DesktopProductModal = ({ handleCloseModal, selectedProduct }) => {
     //     };
     // }, []);
 
+    console.log(selectedProduct);
+
     return (
         <div className="fixed z-30 inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={handleCloseModal}>
             <div className="bg-primary-bg h-[80%]  text-gray-100 overflow-y-scroll xl:overflow-hidden rounded xl:rounded-lg w-9/12 md:w-2/3 lg:w-1/3 xl:w-1/2" onClick={(e) => e.stopPropagation()} >
@@ -23,21 +25,21 @@ const DesktopProductModal = ({ handleCloseModal, selectedProduct }) => {
                                     alt={selectedProduct.name}
                                     className="w-full h-full object-cover mb-4 "
                                 /> */}
-                        <ImageCarousel images={selectedProduct.images} />
+                        <ImageCarousel images={selectedProduct?.Images} />
                     </div>
                     <div className='w-full xl:w-1/2 h-full p-2'>
                         <div className='border-2 flex flex-col px-4 py-5 border-primary-border w-full h-full rounded-lg'>
 
 
                             <h1 className='text-2xl lg:text-2xl xl:text-3xl font-forum tracking-wide text-primary-text'>
-                                {selectedProduct.name}
+                                {selectedProduct.Name}
                             </h1>
                             <div className='xl:text-2xl text-base font-forum mt-3'>
                                 {
-                                    selectedProduct.discountedPercentage == 0 ?
-                                        <div className='xl:text-base text-sm'>₹ {selectedProduct.price}</div>
+                                    selectedProduct.DiscountedPercentage == 0 ?
+                                        <div className='xl:text-base text-sm'>₹ {selectedProduct.Price}</div>
                                         :
-                                        <div className=''>₹ <s className='text-xs xl:text-sm text-red-500'>{selectedProduct.price}</s> {selectedProduct.discountedPrice}</div>
+                                        <div className=''>₹ <s className='text-xs xl:text-sm text-red-500'>{selectedProduct.Price}</s> {selectedProduct.DiscountedPrice}</div>
                                 }
                             </div>
                             <div className="flex items-center mt-4">

@@ -45,38 +45,6 @@ const Home = () => {
         <link rel="canonical" href="https://maisonroselifestyle.com" />
       </Helmet>
 
-      {/* mobile nav  */}
-      {/* <div className="xl:hidden z-10 flex w-full fixed top-3 left-0 px-3">
-        <div className="z-10 h-14 p-3 top-0 rounded-xl navbar w-full mb-3 bg-[#18181890]">
-          <div className="w-full h-full flex items-center">
-            <div className="border-primary-border border-[1px] p-2 rounded-lg">
-              <RxHamburgerMenu className="text-white" />
-            </div>
-            <div className="pl-2 text-xl text-primary-text uppercase font-forum tracking-wide">
-              Maison Rose Lifestyle
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Navbar   */}
-      {/* <div className="hidden xl:flex  fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]">
-        <div className="w-full h-full flex items-center">
-          <div className="border-primary-border border-[1px] p-2 rounded-lg hover:bg-primary-text hover:text-primary-bg text-primary-text">
-            <RxHamburgerMenu className="" />
-          </div>
-          <div className="pl-2 text-xl text-primary-text uppercase font-forum tracking-wide">
-            Maison Rose Lifestyle
-          </div>
-          <div className="flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <div className="border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink">
-              Contact Us
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <div className="hidden xl:flex p-4 h-screen max-h-screen min-h-screen bg-primary-bg">
         <div className="flex w-full gap-4">

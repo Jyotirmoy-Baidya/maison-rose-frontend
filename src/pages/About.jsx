@@ -42,7 +42,7 @@ const About = () => {
             </Helmet>
 
             {/* Mobile Layout */}
-            <div className='xl:hidden flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
+            <div className='xl:hidden flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-full cafe-bg-img'>
                 <div className='xl:hidden z-10 block sticky top-3'>
                     <div className='z-10 h-14 p-3 top-0 rounded-xl navbar bg-[#18181890]'>
                         <div className='w-full h-full flex items-center'>
@@ -52,9 +52,9 @@ const About = () => {
                     </div>
                 </div>
                 <div className='relative h-46 w-full'>
-                    <img 
-                        src="./images/coffeeMug.png" 
-                        alt="Maison Rose Lifestyle's signature coffee experience in New Town, Kolkata" 
+                    <img
+                        src="./images/coffeeMug.png"
+                        alt="Maison Rose Lifestyle's signature coffee experience in New Town, Kolkata"
                         className='h-full w-full rounded-xl'
                         loading="lazy"
                     />
@@ -64,8 +64,8 @@ const About = () => {
                 <div className='w-full flex flex-col gap-4 text-primary-text font-forum'>
                     <h1 className="text-2xl tracking-wide">Welcome to Maison Rose Lifestyle</h1>
                     <p className="text-lg">
-                        Located in the heart of New Town, Kolkata, Maison Rose Lifestyle is a unique destination 
-                        where Thai-inspired fashion meets gourmet dining. Our boutique offers carefully curated 
+                        Located in the heart of New Town, Kolkata, Maison Rose Lifestyle is a unique destination
+                        where Thai-inspired fashion meets gourmet dining. Our boutique offers carefully curated
                         fashion pieces while our café serves exquisite beverages and delicacies.
                     </p>
                 </div>
@@ -137,7 +137,7 @@ const About = () => {
 
             </div>
 
-            <div className='hidden xl:block xl:h-screen xl:w-screen bg-primary-bg cafe-bg-img'>
+            <div className='hidden xl:block xl:h-screen bg-primary-bg cafe-bg-img'>
                 <div className='hidden xl:grid grid-cols-4 xl:p-6 xl:gap-6 h-screen w-full'>
                     {/* Navbar */}
                     <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]' >

@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import HoverDropdown from './HoverDropdown'
-import { AccessoriesCategories, DressCategories } from '../../constants/store'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import { fetchCategoriesAndAccessories } from '../../api/AirtableApis'
+import { processAccessoriesCategory, processFashionCategory } from '../../utils/TransformData'
 
 
 
 
 const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
 
-
+    const [fashion, setFashion] = useState([]);
+    const [accessories, setAccessories] = useState([]);
     const location = useLocation();
-    console.log(location.pathname.split('/'));
-    console.log(location.pathname)
+
+
+    useEffect(() => {
+        const getNavbarDropdownDatas = async () => {
+            try {
+                const data = await fetchCategoriesAndAccessories();
+                const NavArrayForFashion = processFashionCategory(data);
+                setFashion(NavArrayForFashion);
+                const NavArrayForAccessories = processAccessoriesCategory(data);
+                setAccessories(NavArrayForAccessories);
+            } catch (error) {
+                setAccessories([]);
+                setFashion([]);
+            }
+        };
+
+        getNavbarDropdownDatas();
+    }, []);
+
     return (
-        <div className='xl:block hidden fixed z-20  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181895] backdrop-blur-sm'>
+        <div className='xl:block hidden fixed z-20  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
             <div className='w-full h-full flex items-center'>
                 <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
                 <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
                 <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
-                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='/' className='text-primary-text'>Home</NavLink>
                     <NavLink to='/store'>Store</NavLink>
-                    <HoverDropdown ItemCategoryList={DressCategories} value='Category' />
-                    <HoverDropdown ItemCategoryList={AccessoriesCategories} value='Accessories' />
+                    <HoverDropdown ItemCategoryList={fashion} value='Category' />
+                    <HoverDropdown ItemCategoryList={accessories} value='Accessories' />
 
                     {
                         location.pathname.split('/')[1] === 'fashion' || location.pathname.split('/')[1] === 'store' &&
