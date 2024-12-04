@@ -115,7 +115,6 @@ const Saloon = () => {
                     </div>
 
 
-                    <div className='bg-primary-text mx-auto' data-aos='fade-right'>Jyoti</div>
                 </div>
 
 

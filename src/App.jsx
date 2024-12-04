@@ -26,7 +26,7 @@ const App = () => {
             <Route path='/salon' element={<Saloon />} />
             <Route path='/fashion' element={<Fashion />} />
             <Route path='/store' element={<Fashion />} />
-            <Route path='/fashion-store/t/:category' element={<ProductPage />} />
+            <Route path='/fashion-store/s/:filterSearch' element={<ProductPage />} />
             <Route path='fashion-store/c/:cat/:subcat' element={<ProductPage />} />
             <Route path='fashion-store/c/:cat' element={<ProductPage />} />
             <Route path='fashion-store/:type' element={<ProductPage />} />

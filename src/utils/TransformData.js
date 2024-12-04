@@ -2,12 +2,12 @@
 export const transformTypesDataForNavbar = (data) => {
     return data.reduce((acc, item) => {
         // Check if a `type` already exists in the result array
-        let existingType = acc.find((entry) => entry.type === item.fields.Type);
+        let existingType = acc.find((entry) => entry.type === item.fields.Type[0]);
 
         if (!existingType) {
             // If the type does not exist, create a new entry
             existingType = {
-                type: item.fields.Type,
+                type: item.fields.Type[0],
                 category: [],
             };
             acc.push(existingType);

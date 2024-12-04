@@ -19,6 +19,7 @@ const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
         const getNavbarDropdownDatas = async () => {
             try {
                 const data = await fetchCategoriesAndAccessories();
+                console.log(data);
                 const NavArrayForFashion = processFashionCategory(data);
                 setFashion(NavArrayForFashion);
                 const NavArrayForAccessories = processAccessoriesCategory(data);

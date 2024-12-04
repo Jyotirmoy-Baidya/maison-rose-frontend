@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 
 const WhatnewCard = ({ item }) => {
-
+    console.log(item?.CoverImg && item?.CoverImg[0]);
     const [hover, setHover] = useState(false);
 
     return (
@@ -16,8 +16,12 @@ const WhatnewCard = ({ item }) => {
                         </NavLink>
                     </div>
                     : <></>}
-            <img src={item?.CoverImg[0]?.url} alt="" className='h-full w-full' />
+            {
+                item?.CoverImg && item?.CoverImg[0] &&
+                <img src={item?.CoverImg[0].url} alt="Img" className='h-full w-full' />
+            }
         </div>
+        // <></>
     )
 }
 

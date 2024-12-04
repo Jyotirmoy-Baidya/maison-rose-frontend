@@ -70,6 +70,38 @@ export const fetchFilteredProductsOnSubCategory = async (typeValue) => {
 };
 
 
+//Search 
+export const fetchFilteredProductsOnSearch = async (typeValue) => {
+    console.log(typeValue);
+    try {
+        // Create the formula to search across multiple fields
+        const filterFormula = `
+                OR(
+                    SEARCH(LOWER("${typeValue}"), LOWER({Tags})),
+                    SEARCH(LOWER("${typeValue}"), LOWER({SubCategory})),
+                    SEARCH(LOWER("${typeValue}"), LOWER({Type})),
+                    SEARCH(LOWER("${typeValue}"), LOWER({Category})),
+                    SEARCH(LOWER("${typeValue}"), LOWER({WhatsNewTagline})),
+                    SEARCH(LOWER("${typeValue}"), LOWER({Color}))
+                )
+        `;
+
+        // Make the API call with the encoded formula
+        const response = await axios.get(
+            `${API_URL}/Products?filterByFormula=${encodeURIComponent(filterFormula)}`,
+            config
+        );
+        console.log(response.data.records)
+
+        return response.data.records; // Return the filtered products
+    } catch (error) {
+        console.error("Error fetching filtered products:", error);
+        throw error;
+    }
+};
+
+
+
 
 
 // Fetch the navbar categories (category table)

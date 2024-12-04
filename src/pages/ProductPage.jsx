@@ -8,8 +8,9 @@ import MobileNavbar from '../components/basics/MobileNavbar';
 import { ClimbingBoxLoader, ClipLoader } from 'react-spinners';
 import { override } from '../constants/basic';
 import DesktopStoreNavbar from '../components/basics/DesktopStoreNavbar';
-import { fetchFilteredProductsOnCategory, fetchFilteredProductsOnSubCategory, fetchFilteredProductsOnType } from '../api/AirtableApis';
+import { fetchFilteredProductsOnCategory, fetchFilteredProductsOnSearch, fetchFilteredProductsOnSubCategory, fetchFilteredProductsOnType } from '../api/AirtableApis';
 import ErrorComponent from '../components/basics/ErrorComponent';
+import NoProductsFound from '../components/basics/NoProductsFound';
 
 const ProductPage = () => {
     const [search, setSearch] = useState('');
@@ -17,7 +18,7 @@ const ProductPage = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
 
-    const { type, cat, subcat } = useParams(); // Extract parameters
+    const { type, cat, subcat, filterSearch } = useParams(); // Extract parameters
 
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
@@ -41,10 +42,10 @@ const ProductPage = () => {
                 else if (type) {
                     const filteredProducts = await fetchFilteredProductsOnType(type);
                     setProducts(filteredProducts);
-                    console.log(filteredProducts);
                 }
-                else {
-
+                else if (filterSearch) {
+                    const filteredProducts = await fetchFilteredProductsOnSearch(filterSearch);
+                    setProducts(filteredProducts);
                 }
             } catch (error) {
                 console.error("Failed to fetch products:", error);
@@ -57,17 +58,20 @@ const ProductPage = () => {
         getFilteredProducts();
 
 
-    }, [type, cat, subcat]);
+    }, [type, cat, subcat, filterSearch]);
 
-    const filteredProducts = products?.filter(product =>
-        product.fields?.Name?.toLowerCase().includes(search.toLowerCase()) ||
-        product.fields?.tags?.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
-    ).sort((a, b) => {
+    // filter(product =>
+    //     product.fields?.Name?.toLowerCase().includes(search.toLowerCase()) ||
+    //     product.fields?.tags?.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
+    // )
+
+    const filteredProducts = products?.sort((a, b) => {
         if (sort == 'Price: Low to High') return a.fields.Price - b.fields.Price;
         if (sort == 'Price: High to Low') return b.fields.Price - a.fields.Price;
         return 0; // Default order
     });
 
+    const navigate = useNavigate();
     const handleProductClick = (product) => {
         setSelectedProduct(product);
     };
@@ -113,9 +117,18 @@ const ProductPage = () => {
                     data-testid="loader"
                 /> :
                     <>
+                        {/* Search bar  */}
+                        <div className='xl:flex items-center gap-2 w-96 hidden fixed z-10 p-3 top-10 right-10 rounded-xl searchbar '>
+                            <div className='uppercase h-full w-full'>
+                                <input type="text" className='w-full bg-[#18181895] backdrop-blur-sm  rounded-xl text-primary-text h-full border-2 px-3 py-2 border-primary-border outline-none' placeholder='Search' value={search} onChange={(e) => setSearch(e.target.value)} />
+                            </div>
+                            <div className='text-xl text-primary-text' onClick={() => { if (search != '') navigate(`/fashion-store/s/${search}`) }}><IoSearchSharp /></div>
+                        </div>
 
                         <div className="flex flex-col md:flex-row gap-2 xl:justify-between items-end xl:items-center xl:mt-24 mb-3 mt-2">
-                            <div className='xl:flex flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
+
+                            <div className='text-primary-text text-3xl'>{type || cat || subcat || filterSearch || ''}</div>
+                            {/* <div className='xl:flex flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
                                 <input
                                     type="text"
                                     placeholder="Search products..."
@@ -124,7 +137,7 @@ const ProductPage = () => {
                                     className="flex-grow font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
                                 />
                                 <div className='text-xl text-primary-text'><IoSearchSharp /></div>
-                            </div>
+                            </div> */}
 
 
 
@@ -180,7 +193,9 @@ const ProductPage = () => {
                         </p> */}
                                         </div>
                                     ))}
+
                                 </div>
+                                {filteredProducts.length === 0 && <NoProductsFound />}
 
                                 {/* Modal */}
                                 {selectedProduct && (

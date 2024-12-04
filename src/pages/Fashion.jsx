@@ -16,6 +16,7 @@ import Airtable from 'airtable'
 import { ClimbingBoxLoader } from 'react-spinners'
 import { override } from '../constants/basic'
 import { fetchWhatsNewRecords } from '../api/AirtableApis'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -28,6 +29,7 @@ const Fashion = () => {
     }, [])
 
     const [whatsNew, setWhatsNew] = useState();
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         const getRecords = async () => {
@@ -59,7 +61,9 @@ const Fashion = () => {
                 behavior: 'smooth',
             });
         }
+
     };
+    const navigate = useNavigate();
 
     return (
         <div className='min-h-screen p-6 flex flex-col overflow-x-hidden bg-primary-bg relative'>
@@ -68,9 +72,9 @@ const Fashion = () => {
 
             <div className='xl:flex items-center gap-2 w-96 hidden fixed z-10 p-3 top-10 right-10 rounded-xl searchbar '>
                 <div className='uppercase h-full w-full'>
-                    <input type="text" className='w-full bg-[#18181895] backdrop-blur-sm  rounded-xl text-primary-text h-full border-2 px-3 py-2 border-primary-border outline-none' placeholder='Search' />
+                    <input type="text" className='w-full bg-[#18181895] backdrop-blur-sm  rounded-xl text-primary-text h-full border-2 px-3 py-2 border-primary-border outline-none' placeholder='Search' value={search} onChange={(e) => setSearch(e.target.value)} />
                 </div>
-                <div className='text-xl text-primary-text'><IoSearchSharp /></div>
+                <div className='text-xl text-primary-text' onClick={() => { if (search != '') navigate(`/fashion-store/s/${search}`) }}><IoSearchSharp /></div>
             </div>
             <div className='mt-32'>Jyoti</div>
 
@@ -96,8 +100,6 @@ const Fashion = () => {
 
                                         <React.Fragment key={index}>
                                             <WhatnewCard key={index} item={item.fields} />
-
-
                                         </React.Fragment>
 
                                     ))

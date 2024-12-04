@@ -72,7 +72,7 @@ const Home = () => {
           <div className="w-[23%] h-full flex bg-primary-bg">
             <div className="flex flex-col gap-4 h-full w-full">
               <NavLink
-                to="/saloon"
+                to="/salon"
                 className="h-full w-full relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
               >
                 <img
@@ -199,7 +199,7 @@ const Home = () => {
         {/* mobile to section   */}
         <div className="flex flex-col gap-2">
           <NavLink
-            to="/saloon"
+            to="/salon"
             className="relative h-28 w-1/2 bg-primary-bg rounded-lg rounded-br-none overflow-hidden"
             data-aos="fade-right"
           >

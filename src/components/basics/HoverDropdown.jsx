@@ -39,7 +39,7 @@ const HoverDropdown = ({ ItemCategoryList, value }) => {
 
                             {/* Subcategories Dropdown */}
                             {hoveredCategory === category.category && (
-                                <div className="absolute flex flex-col top-0 bg-[#18181895] backdrop-blur-md left-full  shadow-lg w-48">
+                                <div className="absolute flex flex-col top-0 bg-[#181818] left-full  shadow-lg w-48">
                                     {category?.subcategories?.map((subcategory, subIndex) => (
                                         <NavLink to={`/fashion-store/c/${category.category}/${subcategory}`}
                                             key={subIndex}
