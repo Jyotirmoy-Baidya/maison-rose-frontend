@@ -95,8 +95,6 @@ const ProductPage = () => {
 
     return (
         <div className="bg-primary-bg flex flex-col  min-h-screen p-3 xl:p-6">
-            <DesktopStoreNavbar />
-            <MobileNavbar />
 
             {
                 loading ? <ClimbingBoxLoader

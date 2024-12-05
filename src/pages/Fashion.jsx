@@ -68,7 +68,6 @@ const Fashion = () => {
     return (
         <div className='min-h-screen p-6 flex flex-col overflow-x-hidden bg-primary-bg relative'>
             {/* Navbar */}
-            <DesktopStoreNavbar scrollToPart={scrollToPart} p1={p1} />
 
             <div className='xl:flex items-center gap-2 w-96 hidden fixed z-10 p-3 top-10 right-10 rounded-xl searchbar '>
                 <div className='uppercase h-full w-full'>
