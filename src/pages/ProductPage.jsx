@@ -158,7 +158,10 @@ const ProductPage = () => {
                                             onClick={() => handleProductClick(product.fields)}
                                         >
                                             <div className='w-full xl:h-[300px] 3xl:h-[330px]'>
-                                                <img src={product?.fields?.Images[0].url} alt={product?.fields?.Name} className='w-full hover:scale-[105%] transition-transform duration-300 brightness-[90%]' />
+                                                {
+                                                    product?.fields?.Images && product?.fields?.Images[0]?.url &&
+                                                    <img src={product?.fields?.Images[0].url} alt={product?.fields?.Name} className='w-full hover:scale-[105%] transition-transform duration-300 brightness-[90%]' />
+                                                }
                                             </div>
                                             {/* {product?.fields?.Name} */}
                                             <div className='absolute flex flex-col bottom-2 left-0 px-2 w-full'>

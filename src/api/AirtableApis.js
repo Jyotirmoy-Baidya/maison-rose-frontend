@@ -109,7 +109,9 @@ export const fetchCategoriesAndAccessories = async () => {
     try {
         const response = await axios.get(`${API_URL}/${import.meta.env.VITE_AIRTABLE_TYPES_TABLE}`, config);
         const transformed = transformTypesDataForNavbar(response.data.records);
+        console.log(transformed);
         return transformed;
+
     } catch (error) {
         console.error("Error fetching records: ", error);
         throw error;
