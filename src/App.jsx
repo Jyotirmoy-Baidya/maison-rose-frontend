@@ -13,6 +13,7 @@ import DesktopNavbar from "./components/basics/DesktopNavbar";
 import ScrollToTopOnRouteChange from "./utils/ScrollToTopOnRouteChange";
 import WhatsAppComponent from "./components/basics/WhatsAppComponent";
 import MobileNavbar from "./components/basics/MobileNavbar";
+import Nailarts from "./pages/Nailarts";
 
 const App = () => {
   return (
@@ -37,7 +38,9 @@ const App = () => {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<About />} />
             <Route path='/combos' element={<Combos />} />
+            <Route path='/nailarts' element={<Nailarts />} />
             <Route path='/lander' element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
         <Footer />
