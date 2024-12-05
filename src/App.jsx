@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import DesktopStoreNavbar from "./components/basics/DesktopStoreNavbar";
 import ScrollToTop from "./utils/ScrollToTop";
 import ScrollToTopOnRouteChange from "./utils/ScrollToTopOnRouteChange";
+import Nailarts from "./pages/Nailarts";
 
 const App = () => {
   return (
@@ -34,7 +35,9 @@ const App = () => {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<About />} />
             <Route path='/combos' element={<Combos />} />
+            <Route path='/nailarts' element={<Nailarts />} />
             <Route path='/lander' element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
         <Footer />

@@ -21,7 +21,7 @@ const ServiceCarousel = () => {
       description: "Experience premium beauty services in our state-of-the-art salon. From signature hair treatments and styling to professional makeup services, our expert stylists use premium products to enhance your natural beauty. Enjoy personalized consultations and transformative beauty experiences.",
       image: "./images/saloon.png",
       price: "Services starting from ₹499",
-      path: "/saloon"
+      path: "/salon"
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const ServiceCarousel = () => {
       description: "Visit our specialized nail art studio for creative and professional nail care services. Our skilled technicians offer everything from classic manicures to intricate nail art designs. Using premium products and sterilized equipment, we ensure both beauty and hygiene in every service.",
       image: "./images/nailart.jpg",
       price: "Services from ₹399",
-      path: "/nailart"
+      path: "/nailarts"
     }
   ];
 
