@@ -14,6 +14,7 @@ import 'aos/dist/aos.css'
 
 
 
+
 const Saloon = () => {
 
     const p1 = useRef(null);
@@ -24,7 +25,6 @@ const Saloon = () => {
         ref.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
     };
-
 
 
     const RatingStars = ({ rating }) => {
@@ -120,9 +120,6 @@ const Saloon = () => {
 
 
 
-
-
-
                 {/* social media connect  */}
                 <div className='flex justify-center text-primary-text bg-[#181818] rounded-xl py-3 gap-3 border-2 border-primary-border w-full'>
                     <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
@@ -205,25 +202,24 @@ const Saloon = () => {
             {/* <hr className='mx-auto w-[90%] bg-primary-border' /> */}
 
             <div className='flex bg-primary-bg' ref={p1}>
-                <div className='flex flex-col gap-6 w-full border-2 border-primary-border m-6 rounded-xl py-6 px-12'>
-                    <div className='flex w-full justify-center font-forum items-center gap-4 text-5xl tracking-widest text-primary-text uppercase'>
+                <div className='flex flex-col gap-8 xl:gap-6 w-full border-2 border-primary-border m-3 xl:m-6 rounded-xl py-6 xl:py-6 px-6 xl:px-12'>
+                    <div className='flex w-full justify-center font-forum items-center gap-3 xl:gap-4 text-3xl xl:text-5xl tracking-widest text-primary-text uppercase'>
                         <Menuarrow />
                         SERVICES
                         <Menuarrow2 />
                     </div>
 
                     {/* Category  */}
-
-
                     {saloonMenu.map((menu, index) => (
                         <div
                             key={index}
-                            className={`flex gap-12 w-full mb-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                                }`}
+                            className={`flex flex-col xl:flex-row gap-8 xl:gap-12 w-full mb-10 xl:mb-8 ${
+                                index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse'
+                            }`}
                         >
                             {/* Image Section */}
-                            <div className="flex  w-1/3">
-                                <div className="w-full h-72 rounded-xl overflow-hidden">
+                            <div className="flex w-full xl:w-1/3">
+                                <div className="w-full h-56 xl:h-72 rounded-xl overflow-hidden">
                                     <img
                                         src={
                                             saloonCategories.find((cat) => cat.category === menu.category)
@@ -236,26 +232,26 @@ const Saloon = () => {
                             </div>
 
                             {/* Content Section */}
-                            <div className="flex flex-col w-2/3">
+                            <div className="flex flex-col w-full xl:w-2/3">
                                 {/* Category Header */}
-                                <div className="text-primary-text text-xl uppercase items-center font-forum flex gap-2 justify-center w-full mb-4 tracking-wider head">
+                                <div className="text-primary-text text-xl xl:text-xl uppercase items-center font-forum flex gap-2 justify-center w-full mb-6 xl:mb-4 tracking-wider head">
                                     <Menuarrow />
                                     {menu.category}
                                     <Menuarrow2 />
                                 </div>
 
                                 {/* Menu Items */}
-                                <div className="grid gap-x-10 gap-y-5 mt-4 grid-cols-2 w-full">
+                                <div className="grid gap-x-4 xl:gap-x-10 gap-y-6 xl:gap-y-5 mt-2 xl:mt-4 grid-cols-1 xl:grid-cols-2 w-full">
                                     {menu.items.map((item, idx) => (
                                         <div
                                             key={idx}
-                                            className="text-primary-text flex flex-col w-full font-forum"
+                                            className="text-primary-text flex flex-col w-full font-forum border-b xl:border-b-0 border-primary-border/20 pb-4 xl:pb-0"
                                         >
-                                            <div className="w-full justify-between flex">
-                                                <div className="text-lg tracking-wider uppercase">{item.name}</div>
-                                                <div className="text-lg">₹ {item.price}</div>
+                                            <div className="w-full justify-between flex mb-2">
+                                                <div className="text-lg xl:text-lg tracking-wider uppercase">{item.name}</div>
+                                                <div className="text-lg xl:text-lg font-medium">₹ {item.price}</div>
                                             </div>
-                                            <div className="text-sm description">{item.description}</div>
+                                            <div className="text-sm xl:text-sm description text-primary-text/80 leading-relaxed">{item.description}</div>
                                         </div>
                                     ))}
                                 </div>
