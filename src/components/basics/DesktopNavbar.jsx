@@ -4,11 +4,12 @@ import HoverDropdown from './HoverDropdown'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { fetchCategoriesAndAccessories } from '../../api/AirtableApis'
 import { processAccessoriesCategory, processFashionCategory } from '../../utils/TransformData'
+import HamburgerMenu from './HamburgerMenu'
 
 
 
 
-const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
+const DesktopNavbar = ({ scrollToPart, p1 }) => {
 
     const [fashion, setFashion] = useState([]);
     const [accessories, setAccessories] = useState([]);
@@ -32,15 +33,17 @@ const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
 
         getNavbarDropdownDatas();
     }, []);
-
     return (
-        <div className='xl:block hidden fixed z-20  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
+        <div className='xl:block hidden fixed z-20 h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
             <div className='w-full h-full flex items-center'>
-                <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
+                <HamburgerMenu />
+                <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</div>
                 <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
                     <NavLink to='/' className='text-primary-text'>Home</NavLink>
                     <NavLink to='/store'>Store</NavLink>
+                    {
+                        location.pathname === '/cafe' && <NavLink to='/combos'>Combos</NavLink>
+                    }
                     <HoverDropdown ItemCategoryList={fashion} value='Category' />
                     <HoverDropdown ItemCategoryList={accessories} value='Accessories' />
 
@@ -58,4 +61,4 @@ const DesktopStoreNavbar = ({ scrollToPart, p1 }) => {
     )
 }
 
-export default DesktopStoreNavbar
+export default DesktopNavbar

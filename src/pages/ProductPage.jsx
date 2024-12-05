@@ -7,7 +7,7 @@ import DesktopProductModal from '../components/store/DesktopProductModal';
 import MobileNavbar from '../components/basics/MobileNavbar';
 import { ClimbingBoxLoader, ClipLoader } from 'react-spinners';
 import { override } from '../constants/basic';
-import DesktopStoreNavbar from '../components/basics/DesktopStoreNavbar';
+import DesktopStoreNavbar from '../components/basics/DesktopNavbar';
 import { fetchFilteredProductsOnCategory, fetchFilteredProductsOnSearch, fetchFilteredProductsOnSubCategory, fetchFilteredProductsOnType } from '../api/AirtableApis';
 import ErrorComponent from '../components/basics/ErrorComponent';
 import NoProductsFound from '../components/basics/NoProductsFound';
@@ -92,15 +92,6 @@ const ProductPage = () => {
 
     const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     // Set a timer to simulate loading for 1 second
-    //     const timer = setTimeout(() => {
-    //         setLoading(false); // Hide the loading screen after 1 second
-    //     }, 3000);
-
-    //     // Cleanup the timer if the component unmounts
-    //     return () => clearTimeout(timer);
-    // }, []); // Empty dependency array to run only once on mount
 
     return (
         <div className="bg-primary-bg flex flex-col  min-h-screen p-3 xl:p-6">

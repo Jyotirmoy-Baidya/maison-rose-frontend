@@ -43,14 +43,7 @@ const About = () => {
 
             {/* Mobile Layout */}
             <div className='xl:hidden flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-full cafe-bg-img'>
-                <div className='xl:hidden z-10 block sticky top-3'>
-                    <div className='z-10 h-14 p-3 top-0 rounded-xl navbar bg-[#18181890]'>
-                        <div className='w-full h-full flex items-center'>
-                            <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                            <div className='pl-2 text-xl text-primary-text uppercase font-forum tracking-wide'>Maison Rose Lifestyle</div>
-                        </div>
-                    </div>
-                </div>
+
                 <div className='relative h-46 w-full'>
                     <img
                         src="./images/coffeeMug.png"
@@ -137,7 +130,7 @@ const About = () => {
 
             </div>
 
-            <div className='hidden xl:block xl:h-screen bg-primary-bg cafe-bg-img'>
+            <div className='hidden xl:block xl:h-screen bg-primary-bg cafe-bg-img '>
                 <div className='hidden xl:grid grid-cols-4 xl:p-6 xl:gap-6 h-screen w-full'>
                     {/* Navbar */}
                     <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]' >

@@ -9,17 +9,20 @@ import ProductPage from "./pages/ProductPage";
 import ProductListPage from "./pages/ProductListPage";
 import Combos from './pages/Combos';
 import Footer from './components/Footer';
-import DesktopStoreNavbar from "./components/basics/DesktopStoreNavbar";
-import ScrollToTop from "./utils/ScrollToTop";
+import DesktopNavbar from "./components/basics/DesktopNavbar";
 import ScrollToTopOnRouteChange from "./utils/ScrollToTopOnRouteChange";
+import WhatsAppComponent from "./components/basics/WhatsAppComponent";
+import MobileNavbar from "./components/basics/MobileNavbar";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
         <ScrollToTopOnRouteChange />
-        <DesktopStoreNavbar />
-        <div className="flex-1">
+        <DesktopNavbar />
+        <MobileNavbar />
+        <WhatsAppComponent />
+        <div className="flex-1 bg-primary-bg pt-16 xl:pt-0">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cafe' element={<Cafe />} />

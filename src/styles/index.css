@@ -136,6 +136,7 @@
 
 .show-submenu {
   max-height: 100px; /* Adjust to fit submenu content */
+  overflow: scroll;
   opacity: 1;
 }
 

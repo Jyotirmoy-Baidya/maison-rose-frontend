@@ -96,7 +96,7 @@ const Cafe = () => {
 
     return (
         <div className='bg-primary-bg h-full'>
-            <div className='flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen w-screen cafe-bg-img'>
+            <div className='flex xl:flex-row flex-col xl:gap-6 gap-3 xl:p-6 p-3 bg-primary-bg xl:h-screen xl:min-h-screen cafe-bg-img'>
 
 
 
