@@ -1,5 +1,6 @@
 // Transform the data for the navbar 
 export const transformTypesDataForNavbar = (data) => {
+    console.log(data);
     return data.reduce((acc, item) => {
         // Check if a `type` already exists in the result array
         let existingType = acc.find((entry) => entry.type === item.fields.Type[0]);

@@ -68,44 +68,6 @@ const Combos = () => {
 
   return (
     <div className="min-h-screen bg-primary-bg text-primary-text relative">
-      {/* Navigation Bar */}
-      <div className='xl:block hidden fixed z-[100] h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181890]'>
-        <div className='w-full h-full flex items-center'>
-          <div className='border-primary-border border-[1px] p-2 rounded-lg'>
-            <RxHamburgerMenu className='text-white' />
-          </div>
-          <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>
-            Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe
-          </div>
-          <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/about'>About</NavLink>
-            <NavLink to='/combos'>Combos</NavLink>
-            <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
-              Order
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div className='xl:hidden fixed z-[100] flex w-full top-3 left-0 px-3'>
-        <div className='z-50 h-14 p-3 top-0 rounded-xl navbar w-full mb-3 bg-[#18181890] backdrop-blur-sm'>
-          <div className='w-full h-full flex items-center justify-between'>
-            <div className='flex items-center'>
-              <div className='border-primary-border border-[1px] p-2 rounded-lg'>
-                <RxHamburgerMenu className='text-white' />
-              </div>
-              <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>
-                Maison Rose
-              </div>
-            </div>
-            <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink text-primary-text'>
-              Order
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto p-8 pt-32">
@@ -148,7 +110,7 @@ const Combos = () => {
           </div>
 
           {/* Animated Hero Image */}
-          <motion.div 
+          <motion.div
             className="xl:w-1/2 relative h-[600px] w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -158,11 +120,11 @@ const Combos = () => {
               src="/menu/combos/mainComboHero.png"
               alt="Maison Rose Combo Special"
               className="w-full h-full object-contain rounded-2xl shadow-2xl"
-              animate={{ 
+              animate={{
                 scale: [1, 1.02, 1],
-                rotate: [0, 1, 0] 
+                rotate: [0, 1, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut"

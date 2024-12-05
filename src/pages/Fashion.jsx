@@ -6,7 +6,7 @@ import ParallaxText from '../components/basics/ParallaxText'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import StoreHoverButton from '../components/store/StoreHoverButton'
-import DesktopStoreNavbar from '../components/basics/DesktopStoreNavbar'
+import DesktopStoreNavbar from '../components/basics/DesktopNavbar'
 
 
 import Airtable from 'airtable'

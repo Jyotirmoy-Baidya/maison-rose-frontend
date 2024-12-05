@@ -20,14 +20,7 @@ const Home = () => {
   return (
     <div className="flex flex-col w-screen xl:w-full overflow-x-hidden bg-primary-bg">
       {/* WhatsApp floating button */}
-      <a
-        href="https://wa.me/916290433603"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#181818] hover:bg-[#252525] text-[#25D366] p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 border border-[#25D366]"
-      >
-        <FaWhatsapp className="text-3xl" />
-      </a>
+
       {/* SEO Meta Tags */}
       <Helmet>
         <title>
@@ -134,7 +127,7 @@ const Home = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="flex flex-col gap-3 mt-16 xl:hidden p-3">
+      <div className="flex flex-col gap-3 xl:hidden p-3">
         <div className="w-full h-80 font-forum bg-primary-bg relative flex overflow-hidden rounded-lg">
           <div className="relative w-[22%]">
             <div className="tracking-wider absolute text-3xl sm:text-4xl md:text-5xl lg:text-5xl bottom-8 right-0 text-primary-text">
@@ -149,7 +142,7 @@ const Home = () => {
               alt="Maison Rose Lifestyle - Café and Fashion Store in New Town Kolkata"
               className="min-w-full min-h-full"
             />
-            <div className="tracking-wider -left-[53px] absolute text-3xl  bottom-8 right-0 text-primary-bg">
+            <div className="tracking-wider -left-[53px] sm:-left-[63px] md:-left-[85px] absolute text-3xl sm:text-4xl md:text-5xl lg:text-5xl  bottom-8 right-0 text-primary-bg">
               MAISON ROSE
               <br />
               LIFESTYLE
@@ -197,7 +190,7 @@ const Home = () => {
         </section>
 
         {/* mobile to section   */}
-        <div className="flex flex-col gap-2">
+        <div className="flex xs:hidden flex-col gap-2">
           <NavLink
             to="/salon"
             className="relative h-28 w-1/2 bg-primary-bg rounded-lg rounded-br-none overflow-hidden"
@@ -248,7 +241,7 @@ const Home = () => {
             <img
               src="./store/what-new1.jpg"
               alt="Thai-Inspired Fashion Collection in Kolkata"
-              className="absolute top-0 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
+              className="absolute -top-1/3 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
               loading="lazy"
             />
             <div className="absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg">
