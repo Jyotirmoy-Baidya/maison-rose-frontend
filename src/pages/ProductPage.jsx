@@ -46,7 +46,7 @@ const ProductPage = () => {
                     setProducts(filteredProducts);
                 }
                 else if (whatsnew) {
-                    const filteredProducts = await fetchFilteredProductsOnWhatsNew(filterSearch);
+                    const filteredProducts = await fetchFilteredProductsOnWhatsNew(whatsnew);
                     setProducts(filteredProducts);
                 }
                 else {
@@ -64,7 +64,7 @@ const ProductPage = () => {
         getFilteredProducts();
 
 
-    }, [type, cat, subcat, filterSearch]);
+    }, [type, cat, subcat, filterSearch, whatsnew]);
 
     // filter(product =>
     //     product.fields?.Name?.toLowerCase().includes(search.toLowerCase()) ||
