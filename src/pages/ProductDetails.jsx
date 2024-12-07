@@ -130,7 +130,7 @@ const ProductDetails = () => {
                                                     ))
                                                 }
                                             </>
-                                            : <div key={i} className='py-1 px-2 border border-primary-border bg-[#18181840] text-sm xl:text-base rounded-lg cursor-pointer hover:bg-primary-text hover:text-primary-bg'>
+                                            : <div className='py-1 px-2 border border-primary-border bg-[#18181840] text-sm xl:text-base rounded-lg cursor-pointer hover:bg-primary-text hover:text-primary-bg'>
                                                 Freesize
                                             </div>}</div>
                                     </div>
