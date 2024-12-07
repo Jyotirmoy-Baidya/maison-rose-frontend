@@ -134,7 +134,7 @@ const Fashion = () => {
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute 4xl:left-[265px] 2xl:left-[350px] xl:left-[295px] md:left-[105px] sm:left-[98px] left-[48px] bottom-[10px] sm:bottom-0 
+                        className='absolute 4xl:left-[265px] 2xl:left-[350px] xl:left-[295px] md:left-[105px] sm:left-[98px] left-[50px] bottom-[10px] sm:bottom-0 
                         h-20 sm:h-32 md:h-48 xl:h-52 2xl:h-60 4xl:h-80 
                         z-[3]'
                     >
