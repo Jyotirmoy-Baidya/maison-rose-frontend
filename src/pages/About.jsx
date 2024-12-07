@@ -96,28 +96,28 @@ const About = () => {
                     <div className="flex flex-col h-full w-full gap-2 mt-10">
                         <div className='flex w-full font-forum justify-between text-primary-text'>
                             <h3 className="tracking-widest">ADDRESS</h3>
-                            <p className="">Street No. 23, New Town<br />Kolkata, West Bengal</p>
+                            <p className="">CE/1/B/96, Street no 238, Action Area 1<br />Newtown Kolkata - 700156, Near Axis Mall</p>
                         </div>
                         <div className='flex w-full font-forum justify-between text-primary-text'>
                             <h3 className="tracking-widest">PHONE</h3>
-                            <p className="">+91 9085533510</p>
+                            <p className="">+91 62904 33603</p>
                         </div>
                         <div className='flex w-full font-forum justify-between text-primary-text'>
                             <h3 className="tracking-widest">EMAIL</h3>
-                            <p className="">contact@maisonroselifestyle.com</p>
+                            <p className="">maisonroselifestyle@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Map */}
                 <div className='w-full rounded-xl overflow-hidden border-2 border-primary-border' >
-                    <iframe
-                        src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.7028566375777!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94e8cf28b9b3%3A0x7e778da388d74453!2sYour%20Location!5e0!3m2!1sen!2sus!4v1647095757123!5m2!1sen!2sus`}
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d907.0719559852205!2d88.46191888828407!3d22.574951497702656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02756b64107939%3A0xafb999e2f3e20a97!2sSymphony%20Housing%20Society!5e1!3m2!1sen!2sin!4v1733584244520!5m2!1sen!2sin" 
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>
 
@@ -135,20 +135,6 @@ const About = () => {
 
             <div className='hidden xl:block xl:h-screen bg-primary-bg cafe-bg-img '>
                 <div className='hidden xl:grid grid-cols-4 xl:p-6 xl:gap-6 h-screen w-full'>
-                    {/* Navbar */}
-                    <div className='xl:block hidden absolute z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]' >
-                        <div className='w-full h-full flex items-center'>
-                            <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                            <div className='pl-2 text-xl text-primary-text uppercase font-forum tracking-wide'>Maison Rose Lifestyle</div>
-                            <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
-                                <NavLink to='/'>Home</NavLink>
-                                <NavLink to='/about'>About</NavLink>
-                                <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
-                                    Contact Us
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div className='relative col-span-2 h-full overflow-hidden  rounded-2xl'>
                         <img src="./contact/aboutus.png" alt="Maison Rose Lifestyle's boutique and café in New Town, Kolkata" className='z-[1]  absolute bottom-0' />
 
@@ -201,13 +187,13 @@ const About = () => {
                         </div>
                         <div className='h-1/2 w-full flex gap-4'>
                             <div className='w-1/2 rounded-xl overflow-hidden border-2 border-primary-border' >
-                                <iframe
-                                    src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.7028566375777!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94e8cf28b9b3%3A0x7e778da388d74453!2sYour%20Location!5e0!3m2!1sen!2sus!4v1647095757123!5m2!1sen!2sus`}
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d907.0719559852205!2d88.46191888828407!3d22.574951497702656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02756b64107939%3A0xafb999e2f3e20a97!2sSymphony%20Housing%20Society!5e1!3m2!1sen!2sin!4v1733584244520!5m2!1sen!2sin" 
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
                                     allowFullScreen=""
                                     loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                 ></iframe>
                             </div>
 
@@ -223,15 +209,15 @@ const About = () => {
                                 <div className="flex flex-col h-full w-full gap-2 mt-10">
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">ADDRESS</h3>
-                                        <p className="">Street No. 23, New Town<br />Kolkata, West Bengal</p>
+                                        <p className="">CE/1/B/96, Street no 238, Action Area 1<br />Newtown Kolkata - 700156, Near Axis Mall</p>
                                     </div>
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">PHONE</h3>
-                                        <p className="">+91 9085533510</p>
+                                        <p className="">+91 62904 33603</p>
                                     </div>
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">EMAIL</h3>
-                                        <p className="">contact@maisonroselifestyle.com</p>
+                                        <p className="">maisonroselifestyle@gmail.com</p>
                                     </div>
                                 </div>
                             </div>
