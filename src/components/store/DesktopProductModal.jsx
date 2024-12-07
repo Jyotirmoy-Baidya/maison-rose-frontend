@@ -171,7 +171,7 @@ const DesktopProductModal = ({ handleCloseModal, selectedProduct, id }) => {
                                         to={`/product/${id}`}
                                         className="w-1/2 border-2 text-xs md:text-base border-primary-text text-primary-text py-2 rounded-lg font-forum flex justify-center items-center hover:bg-primary-text hover:text-black transition"
                                     >
-                                        View Product Details
+                                        View Details
                                     </NavLink>
                                 </div>
                             </div>
