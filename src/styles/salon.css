@@ -1,7 +1,7 @@
-.bg-img-saloon {
+.bg-img-salon {
   position: relative;
   /* Required for pseudo-element positioning */
-  background-image: url(./saloon/saloon.png);
+  background-image: url(./salon/salon.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -23,12 +23,17 @@
   background: #f0f0f0;
   text-align: center;
   border: 1px solid #ddd;
-  opacity: 0; /* Start hidden */
-  transform: translateX(-50px); /* Start from off-screen */
-  transition: all 0.8s ease; /* Smooth transition */
+  opacity: 0;
+  /* Start hidden */
+  transform: translateX(-50px);
+  /* Start from off-screen */
+  transition: all 0.8s ease;
+  /* Smooth transition */
 }
 
 .box.visible {
-  opacity: 1; /* Fully visible */
-  transform: translateX(0); /* Move to position */
+  opacity: 1;
+  /* Fully visible */
+  transform: translateX(0);
+  /* Move to position */
 }

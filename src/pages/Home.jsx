@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import DesktopHeader from "../components/basics/DesktopHeader";
 import { NavLink } from "react-router-dom";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -69,7 +68,7 @@ const Home = () => {
                 className="h-full w-full relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
               >
                 <img
-                  src="./images/saloon.png"
+                  src="./images/salon.png"
                   alt="Luxury Salon Services at Maison Rose Lifestyle"
                   className="object-cover bottom-0 absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
                   loading="lazy"
@@ -103,7 +102,7 @@ const Home = () => {
                 </div>
               </NavLink>
               <NavLink
-                to="/fashion"
+                to="/store"
                 className="h-full w-full relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
               >
                 <img
@@ -136,7 +135,7 @@ const Home = () => {
               LIFE
             </div>
           </div>
-          <div className="w-[78%] relative bg-primary-pink overflow-hidden">
+          <div className="w-[78%] relative overflow-hidden">
             <img
               src="./fashion/main.png"
               alt="Maison Rose Lifestyle - Café and Fashion Store in New Town Kolkata"
@@ -197,7 +196,7 @@ const Home = () => {
             data-aos="fade-right"
           >
             <img
-              src="./images/saloon.png"
+              src="./images/salon.png"
               alt="Luxury Salon Services at Maison Rose Lifestyle"
               className="object-cover bottom-0 absolute w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
               loading="lazy"

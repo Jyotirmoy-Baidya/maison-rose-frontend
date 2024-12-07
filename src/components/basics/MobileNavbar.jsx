@@ -2,6 +2,7 @@ import React from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import HamburgerMenu from './HamburgerMenu'
 import MobileHamburgerMenu from './MobileHamburgerMenu'
+import { NavLink } from 'react-router-dom'
 
 const MobileNavbar = () => {
     return (
@@ -9,7 +10,7 @@ const MobileNavbar = () => {
             <div className='h-14 p-3 top-10 left-10 w-full rounded-xl navbar bg-[#181818] backdrop-blur-sm'>
                 <div className='w-full h-full flex items-center'>
                     <MobileHamburgerMenu />
-                    <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</div>
+                    <NavLink to='' className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</NavLink>
                 </div>
             </div>
         </div>

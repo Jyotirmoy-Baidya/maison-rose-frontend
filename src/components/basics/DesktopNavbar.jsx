@@ -37,15 +37,18 @@ const DesktopNavbar = ({ scrollToPart, p1 }) => {
         <div className='xl:block hidden fixed z-20 h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
             <div className='w-full h-full flex items-center'>
                 <HamburgerMenu />
-                <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</div>
+                <NavLink to='/' className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</NavLink>
                 <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
                     <NavLink to='/' className='text-primary-text'>Home</NavLink>
                     <NavLink to='/store'>Store</NavLink>
                     {
                         location.pathname === '/cafe' && <NavLink to='/combos'>Combos</NavLink>
                     }
-                    <HoverDropdown ItemCategoryList={fashion} value='Category' />
-                    <HoverDropdown ItemCategoryList={accessories} value='Accessories' />
+                    <HoverDropdown ItemCategoryList={fashion} value='Clothing' />
+                    {
+                        location.pathname != '/cafe' &&
+                        <HoverDropdown ItemCategoryList={accessories} value='Accessories' />
+                    }
 
                     {
                         location.pathname.split('/')[1] === 'fashion' || location.pathname.split('/')[1] === 'store' &&

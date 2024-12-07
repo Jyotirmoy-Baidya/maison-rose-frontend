@@ -1,4 +1,4 @@
-export const saloonMenu = [
+export const salonMenu = [
     {
         category: 'Hair Styling',
         items: [
@@ -112,11 +112,11 @@ export const saloonMenu = [
     },
 ];
 
-export const saloonCategories = [
-    { category: 'Hair Styling', priority: 1, imgUrl: './saloon/hairdresser.png' },
-    { category: 'Nail Art', priority: 2, imgUrl: './saloon/nailart.png' },
-    { category: 'Facial Treatments', priority: 3, imgUrl: './saloon/facialtreatement.jpg' },
-    { category: 'Spa Services', priority: 4, imgUrl: './saloon/spa.jpg' },
+export const salonCategories = [
+    { category: 'Hair Styling', priority: 1, imgUrl: './salon/hairdresser.png' },
+    { category: 'Nail Art', priority: 2, imgUrl: './salon/nailart.png' },
+    { category: 'Facial Treatments', priority: 3, imgUrl: './salon/facialtreatement.jpg' },
+    { category: 'Spa Services', priority: 4, imgUrl: './salon/spa.jpg' },
     // { category: 'Manicure', priority: 5 },
     // { category: 'Pedicure', priority: 6 },
     // { category: 'Makeup', priority: 7 },

@@ -13,13 +13,13 @@ const ServiceCarousel = () => {
       description: "Discover our curated collection of Thai-inspired fashion pieces, featuring elegant floral dresses, contemporary Korean styles, and vintage-inspired clothing. Each piece is carefully selected to blend Eastern grace with modern aesthetics, perfect for both casual outings and special occasions.",
       image: "./fashion/home.png",
       price: "Dresses starting from ₹999",
-      path: "/fashion"
+      path: "/store"
     },
     {
       id: 2,
       name: "Luxury Salon",
       description: "Experience premium beauty services in our state-of-the-art salon. From signature hair treatments and styling to professional makeup services, our expert stylists use premium products to enhance your natural beauty. Enjoy personalized consultations and transformative beauty experiences.",
-      image: "./images/saloon.png",
+      image: "./images/salon.png",
       price: "Services starting from ₹499",
       path: "/salon"
     },

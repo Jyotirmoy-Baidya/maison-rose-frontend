@@ -11,7 +11,7 @@ const WhatnewCard = ({ item }) => {
                 hover ?
                     <div className='absolute cursor-pointer py-8 gap-20 flex flex-col justify-end h-full w-full bg-white bg-opacity-60'>
                         <div className='mx-auto text-3xl font-forum text-center cursor-pointer'>{item?.Name}</div>
-                        <NavLink to={`/fashion-store/${item?.Tag}`} className='w-8/12 mx-auto tracking-widest bg-white flex justify-center items-center font-forum h-fit py-3 hover:bg-primary-bg hover:text-primary-text'>
+                        <NavLink to={`/fashion-store/new/${item?.Tag}`} className='w-8/12 mx-auto tracking-widest bg-white flex justify-center items-center font-forum h-fit py-3 hover:bg-primary-bg hover:text-primary-text'>
                             EXPLORE
                         </NavLink>
                     </div>

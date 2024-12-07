@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from 'react-icons/io'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import "../styles/saloon.css"
+import "../styles/salon.css"
 
 const nailartImages = [
     "./images/nailarts/image01.png",
@@ -100,9 +100,9 @@ const Nailarts = () => {
                 <div className='relative mt-16 w-full'>
                     <div className='flex flex-col md:flex-row gap-8 min-h-[500px]'>
                         <div className='w-full md:w-1/2 relative'>
-                            <img 
-                                src={nailartImages[0]} 
-                                alt="Nail Art Design Showcase" 
+                            <img
+                                src={nailartImages[0]}
+                                alt="Nail Art Design Showcase"
                                 className='absolute inset-0 w-full h-full rounded-xl object-cover'
                                 style={{ objectPosition: 'center' }}
                                 data-aos="fade-right"
@@ -122,8 +122,8 @@ const Nailarts = () => {
                                 <div className='text-primary-pink font-forum text-lg'>
                                     Services starting from ₹499
                                 </div>
-                                <a 
-                                    href="tel:+916290433603" 
+                                <a
+                                    href="tel:+916290433603"
                                     className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary-pink text-primary-pink font-forum rounded-lg hover:bg-primary-pink hover:text-primary-bg transition-all duration-300 w-fit"
                                 >
                                     Book Appointment
@@ -135,9 +135,9 @@ const Nailarts = () => {
 
                 {/* Secondary Image */}
                 <div className='relative mt-8 w-full h-[300px]'>
-                    <img 
-                        src={nailartImages[1]} 
-                        alt="Nail Art Designs" 
+                    <img
+                        src={nailartImages[1]}
+                        alt="Nail Art Designs"
                         className='absolute inset-0 w-full h-full rounded-xl object-cover'
                         style={{ objectPosition: 'center' }}
                         data-aos="fade-up"
@@ -157,15 +157,15 @@ const Nailarts = () => {
                         </div>
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
                             {nailartImages.map((image, index) => (
-                                <div 
-                                    key={index} 
+                                <div
+                                    key={index}
                                     className="relative aspect-[3/4] group overflow-hidden rounded-xl"
                                     data-aos="fade-up"
                                     data-aos-delay={index * 100}
                                 >
-                                    <img 
-                                        src={image} 
-                                        alt={`Nail Art Design ${index + 1}`} 
+                                    <img
+                                        src={image}
+                                        alt={`Nail Art Design ${index + 1}`}
                                         className='absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
                                         style={{ objectPosition: 'center' }}
                                     />

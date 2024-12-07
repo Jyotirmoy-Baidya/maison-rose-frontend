@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import "../styles/saloon.css"
+import "../styles/salon.css"
 import { RxHamburgerMenu } from 'react-icons/rx'
-import { prizes, saloonCategories, saloonMenu } from '../constants/saloon'
+import { prizes, salonCategories, salonMenu } from '../constants/salon'
 import Menuarrow from '../components/cafe/Menuarrow'
 import Menuarrow2 from '../components/cafe/Menuarrow2'
 import { TiSocialFacebookCircular } from 'react-icons/ti'
@@ -15,7 +15,7 @@ import 'aos/dist/aos.css'
 
 
 
-const Saloon = () => {
+const Salon = () => {
 
     const p1 = useRef(null);
     const p2 = useRef(null);
@@ -52,22 +52,13 @@ const Saloon = () => {
 
             {/* mobile section */}
             <div className='xl:hidden flex  flex-col gap-3 p-3 w-screen content'>
-                {/* mobiel nav  */}
-                <div className='xl:hidden z-10 flex w-full fixed top-3 left-0 px-3'>
-                    <div className='z-10 h-14 p-3 top-0 rounded-xl navbar w-full mb-3 bg-[#18181890]'>
-                        <div className='w-full h-full flex items-center'>
-                            <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                            <div className='pl-2 text-xl text-primary-text uppercase font-forum tracking-wide'>Maison Rose Lifestyle</div>
-                        </div>
-                    </div>
-                </div>
 
 
                 <div className='relative mt-16 h-46 w-full'>
-                    <img src="./saloon/saloon.png" alt="" className='h-full w-full rounded-xl' />
+                    <img src="./salon/salon.png" alt="" className='h-full w-full rounded-xl' />
                 </div>
 
-                <div className='text-5xl tracking-wider text-primary-text text-center font-forum'>Saloon</div>
+                <div className='text-5xl tracking-wider text-primary-text text-center font-forum'>Salon</div>
 
 
                 <div className='flex flex-col gap-4 w-full'>
@@ -100,7 +91,7 @@ const Saloon = () => {
 
                     <div className='flex flex-col xl:flex-row gap-4 xl:h-[40%]'>
                         <div className='relative xl:w-1/2 w-full h-64 overflow-hidden rounded-xl' data-aos='fade-up'>
-                            <img src="./saloon/nailart.png" alt="" className='absolute bottom-0 w-full' />
+                            <img src="./salon/nailart.png" alt="" className='absolute bottom-0 w-full' />
                         </div>
                         <div className='flex flex-col border-2 border-primary-border rounded-xl p-7 w-full  xl:w-1/2' data-aos='zoom-in-out'>
                             <div className='w-full text-3xl font-forum items-center gap-2 text-primary-text uppercase justify-center flex'>
@@ -132,29 +123,14 @@ const Saloon = () => {
                 </div>
             </div>
 
-            {/* navbar */}
-            <div className='xl:block hidden fixed z-10  h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#18181895]'>
-                <div className='w-full h-full flex items-center'>
-                    <div className='border-primary-border border-[1px] p-2 rounded-lg'><RxHamburgerMenu className='text-white' /></div>
-                    <div className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle'<span className='lowercase'>s</span> Cafe</div>
-                    <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
-                        <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/about'>About</NavLink>
 
-                        <div onClick={() => scrollToPart(p1)} className='cursor-pointer'>SERVICES</div>
-                        <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
-                            Book
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             {/* desktop section */}
             <div className='xl:block hidden h-screen p-6 bg-primary-bg cafe-bg-img '>
                 <div className='flex h-full gap-6'>
                     <div className='w-full h-full rounded-xl'>
                         <div className='relative h-full w-full rounded-xl overflow-hidden'>
-                            <img src="./saloon/saloon.png" alt="saloon-pic" className='absolute bottom-0 min-h-full w-full image-bottom' />
+                            <img src="./salon/salon.png" alt="salon-pic" className='absolute bottom-0 min-h-full w-full image-bottom' />
                         </div>
                     </div>
                     <div className='flex flex-col gap-4 w-full'>
@@ -164,7 +140,7 @@ const Saloon = () => {
                                 <div className='my-auto text-primary-text font-forum'>Where beauty artistry meets modern sophistication. Indulge in the finest salon experience, expertly crafted to elevate your style and confidence.</div>
                             </div>
                             <div className='relative w-1/2 h-full rounded-xl overflow-hidden'>
-                                <img src="./saloon/hairdresser.png" alt="hairdresser" className='absolute -bottom-10' />
+                                <img src="./salon/hairdresser.png" alt="hairdresser" className='absolute -bottom-10' />
                             </div>
                         </div>
 
@@ -186,7 +162,7 @@ const Saloon = () => {
 
                         <div className='flex gap-4 h-[40%]'>
                             <div className='relative w-1/2 overflow-hidden rounded-xl'>
-                                <img src="./saloon/nailart.png" alt="" className='w-full absolute bottom-0' />
+                                <img src="./salon/nailart.png" alt="" className='w-full absolute bottom-0' />
                             </div>
                             <div className='flex flex-col border-2 border-primary-border rounded-xl p-7  w-1/2'>
                                 <div className='w-full text-3xl font-forum items-center gap-2 text-primary-text uppercase justify-center flex'>
@@ -214,19 +190,18 @@ const Saloon = () => {
                     </div>
 
                     {/* Category  */}
-                    {saloonMenu.map((menu, index) => (
+                    {salonMenu.map((menu, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col xl:flex-row gap-8 xl:gap-12 w-full mb-10 xl:mb-8 ${
-                                index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse'
-                            }`}
+                            className={`flex flex-col xl:flex-row gap-8 xl:gap-12 w-full mb-10 xl:mb-8 ${index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse'
+                                }`}
                         >
                             {/* Image Section */}
                             <div className="flex w-full xl:w-1/3">
                                 <div className="w-full h-56 xl:h-72 rounded-xl overflow-hidden">
                                     <img
                                         src={
-                                            saloonCategories.find((cat) => cat.category === menu.category)
+                                            salonCategories.find((cat) => cat.category === menu.category)
                                                 ?.imgUrl || './default-image.png'
                                         }
                                         alt={menu.category}
@@ -268,4 +243,4 @@ const Saloon = () => {
     )
 }
 
-export default Saloon
+export default Salon

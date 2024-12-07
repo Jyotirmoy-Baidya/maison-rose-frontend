@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/basics/Navbar';
 import { IoSearchSharp } from 'react-icons/io5';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AnimatedDropdown from '../components/store/AnimatedDropdown';
 import DesktopProductModal from '../components/store/DesktopProductModal';
-import MobileNavbar from '../components/basics/MobileNavbar';
-import { ClimbingBoxLoader, ClipLoader } from 'react-spinners';
+import { ClimbingBoxLoader } from 'react-spinners';
 import { override } from '../constants/basic';
-import DesktopStoreNavbar from '../components/basics/DesktopNavbar';
-import { fetchFilteredProductsOnCategory, fetchFilteredProductsOnSearch, fetchFilteredProductsOnSubCategory, fetchFilteredProductsOnType } from '../api/AirtableApis';
+import { fetchAllProducts, fetchFilteredProductsOnCategory, fetchFilteredProductsOnSearch, fetchFilteredProductsOnSubCategory, fetchFilteredProductsOnType, fetchFilteredProductsOnWhatsNew } from '../api/AirtableApis';
 import ErrorComponent from '../components/basics/ErrorComponent';
 import NoProductsFound from '../components/basics/NoProductsFound';
 
@@ -18,7 +15,7 @@ const ProductPage = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
 
-    const { type, cat, subcat, filterSearch } = useParams(); // Extract parameters
+    const { type, cat, subcat, filterSearch, whatsnew } = useParams(); // Extract parameters
 
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
@@ -45,6 +42,14 @@ const ProductPage = () => {
                 }
                 else if (filterSearch) {
                     const filteredProducts = await fetchFilteredProductsOnSearch(filterSearch);
+                    setProducts(filteredProducts);
+                }
+                else if (whatsnew) {
+                    const filteredProducts = await fetchFilteredProductsOnWhatsNew(filterSearch);
+                    setProducts(filteredProducts);
+                }
+                else {
+                    const filteredProducts = await fetchAllProducts(filterSearch);
                     setProducts(filteredProducts);
                 }
             } catch (error) {
@@ -80,16 +85,6 @@ const ProductPage = () => {
         setSelectedProduct(null);
     };
 
-    const handleShareLink = () => {
-        if (selectedProduct) {
-            navigator.clipboard.writeText(selectedProduct.amazonLink);
-            alert('Product link copied to clipboard!');
-        }
-    };
-
-    const navigation = useNavigate();
-    const location = useLocation();
-
     const [loading, setLoading] = useState(true);
 
 
@@ -117,16 +112,7 @@ const ProductPage = () => {
                         <div className="flex flex-col md:flex-row gap-2 xl:justify-between items-end xl:items-center xl:mt-24 mb-3 mt-2">
 
                             <div className='text-primary-text text-3xl'>{type || cat || subcat || filterSearch || ''}</div>
-                            {/* <div className='xl:flex flex w-full h-[50px] border-2 border-primary-border px-2 rounded-lg items-center gap-2 searchbar '>
-                                <input
-                                    type="text"
-                                    placeholder="Search products..."
-                                    value={search}
-                                    onChange={(e) => setSearch(e.target.value)}
-                                    className="flex-grow font-forum  text-primary-text h-full bg-primary-bg px-3 py-3 outline-none focus:outline-none "
-                                />
-                                <div className='text-xl text-primary-text'><IoSearchSharp /></div>
-                            </div> */}
+
 
 
 
@@ -134,8 +120,6 @@ const ProductPage = () => {
 
                             <AnimatedDropdown sort={sort} setSort={setSort} />
                         </div>
-                        {/* <div className='w-full mb-2 text-primary-text font-forum text-3xl capitalize tracking-wide navigation-list'>{params.category}</div> */}
-
 
                         {
                             error ? <ErrorComponent /> : <>
@@ -166,23 +150,7 @@ const ProductPage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            {/* <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-                        <div className="flex justify-between items-center mb-4">
-                            <span className="font-bold text-lg text-indigo-400">
-                                ₹{product.discountedPrice}
-                            </span>
-                            <span className="text-sm text-gray-500 line-through">
-                                ₹{product.price}
-                            </span>
-                        </div>
-                        <p
-                            className={`font-semibold ${product.availability === 'In Stock'
-                                ? 'text-green-400'
-                                : 'text-red-400'
-                                }`}
-                        >
-                            {product.availability}
-                        </p> */}
+
                                         </div>
                                     ))}
 

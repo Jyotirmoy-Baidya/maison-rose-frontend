@@ -35,7 +35,7 @@ const Fashion = () => {
         const getRecords = async () => {
             setWhatsNewLoading(true);
             try {
-                const data = await fetchWhatsNewRecords("What's New");
+                const data = await fetchWhatsNewRecords();
                 setWhatsNew(data);
                 console.log(data);
             } catch (error) {
@@ -113,6 +113,7 @@ const Fashion = () => {
 
                 <div className='relative mx-auto h-[280px] sm:h-[350px] md:h-[440px] xl:h-[500px] 2xl:h-[600px] 4xl:h-[800px] 5xl:w-9/12 4xl:w-[1550px] 2xl:w-[1400px] xl:w-[1140px] md:w-[700px] sm:w-[600px] w-[350px] mt-20 shopping-area'>
 
+                    {/* accessories  */}
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         className='absolute -left-5  sm:left-0 md:left-0 md:top-[150px] xl:left-[80px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-24'
@@ -121,12 +122,14 @@ const Fashion = () => {
                         <StoreHoverButton type='white' className='absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
                     </div>
 
+
+                    {/* hats  */}
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         className='absolute left-6 sm:left-[90px] 4xl:left-[250px] 2xl:left-[340px] xl:left-[250px] md:left-[100px] top-0 z-[1] 4xl:h-[420px] 2xl:h-80 xl:h-64 md:h-56 sm:h-40 h-32'
                     >
-                        <img src="./store/HomePerfume.png" alt="Home Perfume" className='h-full' />
-                        <StoreHoverButton type='white' className='absolute bottom-2 sm:bottom-5 left-1/2 -translate-x-1/2' text='Perfumes' />
+                        <img src="./store/HomePerfume.png" alt="Home Hats" className='h-full' />
+                        <StoreHoverButton link='/fashion-store/Hats' type='white' className='absolute bottom-2 sm:bottom-5 left-1/2 -translate-x-1/2' text='Hats' />
                     </div>
 
                     <div data-aos="fade-up"
@@ -145,6 +148,7 @@ const Fashion = () => {
                         <StoreHoverButton link='/fashion-store/Fashion' type='white' className='absolute  bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Dress' />
                     </div>
 
+                    {/* jewellery  */}
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         className='absolute right-28 sm:right-auto sm:left-[340px] 4xl:left-[960px] 2xl:left-[850px] xl:left-[700px]  md:left-[400px]  4xl:top-28 xl:top-14 md:top-[40px] top-[10px] h-[70px] sm:h-28 4xl:h-64 xl:h-40 md:h-32 2xl:h-48 z-[3]'

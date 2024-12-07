@@ -120,7 +120,19 @@ const ProductDetails = () => {
                                 <div className="space-y-4 text-sm md:text-base 2xl:text-lg 3xl:text-xl">
                                     <div className="space-y-2">
                                         <span className="text-gray-400 block">Size:</span>
-                                        <div className="">{product?.CareInstructions || "Freesize"}</div>
+                                        <div className="flex gap-2">{product?.Sizes?.length > 0 ?
+                                            <>
+                                                {
+                                                    product?.Sizes?.map((ele, i) => (
+                                                        <div key={i} className='py-1 px-2 border border-primary-border bg-[#18181840] text-sm xl:text-base rounded-lg cursor-pointer hover:bg-primary-text hover:text-primary-bg'>
+                                                            {ele}
+                                                        </div>
+                                                    ))
+                                                }
+                                            </>
+                                            : <div key={i} className='py-1 px-2 border border-primary-border bg-[#18181840] text-sm xl:text-base rounded-lg cursor-pointer hover:bg-primary-text hover:text-primary-bg'>
+                                                Freesize
+                                            </div>}</div>
                                     </div>
                                     <div className="space-y-2">
                                         <span className="text-gray-400 block">Material & Care:</span>

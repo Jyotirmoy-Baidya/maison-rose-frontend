@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import ImageCarousel from './ImageCarousel';
 import RatingStars from '../basics/RatingStars'
+import { IoCall, IoLocationSharp } from 'react-icons/io5';
+import { MdEmail } from 'react-icons/md';
+import BuyNowButton from './BuyNowButton';
+import CreativeShareButton from '../basics/CreativeShareButton';
 
 const DesktopProductModal = ({ handleCloseModal, selectedProduct, id }) => {
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
@@ -56,41 +60,71 @@ const DesktopProductModal = ({ handleCloseModal, selectedProduct, id }) => {
                                     {selectedProduct?.Description}
                                 </p>
 
+                                <div className='flex  gap-2'>
+                                    <BuyNowButton
+                                        SHARE_URL={`www.maisonroselifestyle.com/product/${id}`} />
+                                    <CreativeShareButton SHARE_URL={`www.maisonroselifestyle.com/product/${id}`} />
+                                </div>
+
                                 {/* Product Details Section */}
-                                <div className="mt-6 border-t border-primary-border pt-4">
+                                <div className="mt-6 border-t border-primary-border pt-1">
                                     <h3 className="text-lg font-forum mb-3">Product Details</h3>
 
-                                    <div className="space-y-3 text-sm">
-                                        <div>
-                                            <span className="text-gray-400">Material & Care:</span>
+                                    <div className="space-y-4 text-sm md:text-base 2xl:text-lg 3xl:text-xl">
+                                        <div className="space-y-2">
+                                            <span className="text-gray-400 block">Size:</span>
+                                            <div className="flex gap-2">{selectedProduct?.Sizes?.length > 0 ?
+                                                <>
+                                                    {
+                                                        selectedProduct?.Sizes?.map((ele, i) => (
+                                                            <div key={i} className='py-1 px-2 border border-primary-border bg-[#18181840] text-sm xl:text-base rounded-lg cursor-pointer hover:bg-primary-text hover:text-primary-bg'>
+                                                                {ele}
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </>
+                                                : <div className='py-1 px-2 border border-primary-border bg-[#18181840] text-sm xl:text-base rounded-lg cursor-pointer hover:bg-primary-text hover:text-primary-bg'>
+                                                    Freesize
+                                                </div>}</div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <span className="text-gray-400 block">Material & Care:</span>
                                             <div>{selectedProduct?.Material || "Material information not available"}</div>
                                             <div className="text-gray-400">{selectedProduct?.CareInstructions || "Care instructions not available"}</div>
                                         </div>
 
-                                        <div>
-                                            <span className="text-gray-400">Country of Origin:</span>
+                                        <div className="space-y-2">
+                                            <span className="text-gray-400 block">Country of Origin:</span>
                                             <div>{selectedProduct?.CountryOfOrigin || "India"}</div>
                                         </div>
 
-                                        <div>
-                                            <span className="text-gray-400">Manufactured & Sold By:</span>
-                                            <div>{selectedProduct?.Manufacturer || "Maison Rose Lifestyle"}</div>
-                                            <div className="whitespace-pre-line">{selectedProduct?.ManufacturerAddress || `224, Tantia Jogani Industrial Premises
-J.R. Boricha Marg
-Lower Parel (E)
-Mumbai - 400 011`}</div>
-                                            <div>tel: {selectedProduct?.ContactPhone || "+91 22-68493328"}</div>
+                                        <div className="space-y-2">
+                                            <span className="text-gray-400 block">Manufactured & Sold By:</span>
+                                            <div className='xl:text-lg 3xl:text-xl'>{selectedProduct?.Manufacturer || "Maison Rose Lifestyle"}</div>
+                                            <div className='flex gap-1'>
+                                                <IoLocationSharp className='text-primary-text xl:text-xl' />
+                                                <div className="whitespace-pre-line text-sm xl:text-base 3xl:text-lg">
+                                                    {selectedProduct?.ManufacturerAddress ||
+                                                        `CE/1/B/96, Street no 238, Action Area 1, 
+                                                Newtown, Kolkata 700156.
+                                                (Near Axis Mall)`}
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div>
-                                            <a href={`mailto:${selectedProduct?.ContactEmail || "connect@maisonroselifestyle.com"}`} className="text-primary-text hover:text-gray-300">
-                                                {selectedProduct?.ContactEmail || "connect@maisonroselifestyle.com"}
+                                        <div className="flex items-center gap-1">
+                                            <MdEmail className='text-primary-text xl:text-xl' />
+                                            <a href={`mailto:${selectedProduct?.ContactEmail || "connect@maisonroselifestyle.com"}`}
+                                                className="text-primary-text hover:text-gray-300 block">
+                                                {selectedProduct?.ContactEmail || "maisonroselifestyle@gmail.com"}
                                             </a>
                                         </div>
 
-                                        <div>
-                                            <a href={`tel:${selectedProduct?.ContactPhone || "+91 22-68493328"}`} className="text-primary-text hover:text-gray-300">
-                                                Customer care no: {selectedProduct?.ContactPhone || "+91 22-68493328"}
+                                        <div className="flex items-center gap-1">
+                                            <IoCall className='text-primary-text xl:text-xl' />
+                                            <a href={`tel:${selectedProduct?.ContactPhone || "+91 22-68493328"}`}
+                                                className="text-primary-text hover:text-gray-300 block">
+                                                {selectedProduct?.ContactPhone || "+91 6290 433 603"}
                                             </a>
                                         </div>
                                     </div>
@@ -113,14 +147,7 @@ Mumbai - 400 011`}</div>
                                         )}
                                     </div>
 
-                                    <div className="mt-4 border-t border-primary-border pt-4">
-                                        <NavLink
-                                            to={`/product/${selectedProduct?.id}`}
-                                            className="block w-full py-3 text-center bg-primary-text text-primary-bg font-forum hover:bg-primary-text/90 transition-colors rounded"
-                                        >
-                                            View Product Details
-                                        </NavLink>
-                                    </div>
+
 
                                     <div className="border-t border-primary-border pt-2">
                                         <button
@@ -138,13 +165,11 @@ Mumbai - 400 011`}</div>
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col gap-3 mt-6">
-                                    <NavLink to="#" className="w-full bg-primary-text text-black py-2 rounded-lg font-forum flex justify-center items-center hover:bg-gray-200 transition">
-                                        Buy Now
-                                    </NavLink>
+                                <div className="flex gap-3 mt-6">
+                                    <BuyNowButton SHARE_URL={`www.maisonroselifestyle.com/product/${id}}`} />
                                     <NavLink
                                         to={`/product/${id}`}
-                                        className="w-full border-2 border-primary-text text-primary-text py-2 rounded-lg font-forum flex justify-center items-center hover:bg-primary-text hover:text-black transition"
+                                        className="w-1/2 border-2 border-primary-text text-primary-text py-2 rounded-lg font-forum flex justify-center items-center hover:bg-primary-text hover:text-black transition"
                                     >
                                         View Product Details
                                     </NavLink>

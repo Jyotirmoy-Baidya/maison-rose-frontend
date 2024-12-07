@@ -9,9 +9,9 @@ const config = {
     },
 };
 
-export const fetchWhatsNewRecords = async (tableName) => {
+export const fetchWhatsNewRecords = async () => {
     try {
-        const response = await axios.get(`${API_URL}/${tableName}`, config);
+        const response = await axios.get(`${API_URL}/${"What's New"}`, config);
         return response.data.records;
     } catch (error) {
         console.error("Error fetching records: ", error);
@@ -25,7 +25,7 @@ export const fetchFilteredProductsOnType = async (typeValue) => {
     try {
         const filterFormula = `SEARCH("${typeValue}", {Type})`; // Airtable formula for filtering
         const response = await axios.get(
-            `${API_URL}/Products?filterByFormula=${encodeURIComponent(filterFormula)}`,
+            `${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}?filterByFormula=${encodeURIComponent(filterFormula)}`,
             config
         );
 
@@ -42,7 +42,7 @@ export const fetchFilteredProductsOnCategory = async (typeValue) => {
         const filterFormula = `SEARCH("${typeValue}", {Category})`;
 
         const response = await axios.get(
-            `${API_URL}/Products?filterByFormula=${encodeURIComponent(filterFormula)}`,
+            `${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}?filterByFormula=${encodeURIComponent(filterFormula)}`,
             config
         );
 
@@ -58,7 +58,7 @@ export const fetchFilteredProductsOnSubCategory = async (typeValue) => {
     try {
         const filterFormula = `SEARCH("${typeValue}", {SubCategory})`;
         const response = await axios.get(
-            `${API_URL}/Products?filterByFormula=${encodeURIComponent(filterFormula)}`,
+            `${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}?filterByFormula=${encodeURIComponent(filterFormula)}`,
             config
         );
 
@@ -69,6 +69,37 @@ export const fetchFilteredProductsOnSubCategory = async (typeValue) => {
     }
 };
 
+
+// based on whats new tagline 
+export const fetchFilteredProductsOnWhatsNew = async (typeValue) => {
+    try {
+        const filterFormula = `SEARCH("${typeValue}", {WhatsNewTagline})`;
+        const response = await axios.get(
+            `${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}?filterByFormula=${encodeURIComponent(filterFormula)}`,
+            config
+        );
+
+        return response.data.records; // Return the filtered products
+    } catch (error) {
+        console.error("Error fetching filtered products:", error);
+        throw error;
+    }
+};
+
+//All products
+export const fetchAllProducts = async () => {
+    try {
+        const response = await axios.get(
+            `${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}`, // Fetches all products without filters
+            config
+        );
+
+        return response.data.records; // Return all product records
+    } catch (error) {
+        console.error("Error fetching all products:", error);
+        throw error;
+    }
+};
 
 //Search 
 export const fetchFilteredProductsOnSearch = async (typeValue) => {
@@ -82,13 +113,14 @@ export const fetchFilteredProductsOnSearch = async (typeValue) => {
                     SEARCH(LOWER("${typeValue}"), LOWER({Type})),
                     SEARCH(LOWER("${typeValue}"), LOWER({Category})),
                     SEARCH(LOWER("${typeValue}"), LOWER({WhatsNewTagline})),
-                    SEARCH(LOWER("${typeValue}"), LOWER({Color}))
+                    SEARCH(LOWER("${typeValue}"), LOWER({Color})),
+                    SEARCH(LOWER("${typeValue}"), LOWER({Name}))
                 )
         `;
 
         // Make the API call with the encoded formula
         const response = await axios.get(
-            `${API_URL}/Products?filterByFormula=${encodeURIComponent(filterFormula)}`,
+            `${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}?filterByFormula=${encodeURIComponent(filterFormula)}`,
             config
         );
         console.log(response.data.records)
@@ -115,9 +147,10 @@ export const fetchCategoriesAndAccessories = async () => {
     }
 };
 
+//Get products by title
 export const getProductById = async (productId) => {
     try {
-        const response = await axios.get(`${API_URL}/Products/${productId}`, config);
+        const response = await axios.get(`${API_URL}/${import.meta.env.VITE_AIRTABLE_PRODUCT_TABLE}/${productId}`, config);
         return {
             id: response.data.id,
             ...response.data.fields
