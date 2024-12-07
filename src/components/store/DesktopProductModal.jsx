@@ -29,12 +29,12 @@ const DesktopProductModal = ({ handleCloseModal, selectedProduct, id }) => {
                     }
                     `}
                 </style>
-                <div className='flex xl:flex-row flex-col h-full w-full'>
+                <div className='flex xl:flex-row overflow-y-auto flex-col h-full w-full'>
                     <div className='w-full xl:w-1/2 h-full'>
                         <ImageCarousel images={selectedProduct?.Images} />
                     </div>
                     <div className='w-full xl:w-1/2 h-full'>
-                        <div className='h-full overflow-y-auto custom-scrollbar'>
+                        <div className='h-full xl:overflow-y-auto custom-scrollbar'>
                             <div className='border-2 flex flex-col px-4 py-5 border-primary-border rounded-lg m-2'>
                                 <h1 className='text-2xl lg:text-2xl xl:text-3xl font-forum tracking-wide text-primary-text'>
                                     {selectedProduct?.Name}

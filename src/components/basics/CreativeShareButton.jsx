@@ -9,10 +9,10 @@ const CreativeShareButton = ({ SHARE_URL }) => {
     };
 
     const shareLinks = {
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${SHARE_URL}`,
-        twitter: `https://twitter.com/intent/tweet?url=${SHARE_URL}`,
-        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${SHARE_URL}`,
-        whatsapp: `https://wa.me/?text=${SHARE_URL}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}`,
+        twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(SHARE_URL)}`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SHARE_URL)}`,
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(SHARE_URL)}`,
     };
 
     return (

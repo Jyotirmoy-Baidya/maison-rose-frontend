@@ -8,6 +8,7 @@ import ImageCarouselInDetailsPage from '../components/store/ImageCarouselInDetai
 import { IoCall, IoLocationSharp } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import CreativeShareButton from '../components/basics/CreativeShareButton';
+import BuyNowButton from '../components/store/BuyNowButton';
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -109,15 +110,9 @@ const ProductDetails = () => {
                                 {product?.Description && product?.Description}
                             </p>
                             <div className='flex gap-2'>
-                                <a
-                                    href="https://wa.me/916290433603"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="cursor-pointer py-2 px-4 border-2 border-primary-border rounded-lg flex justify-center w-1/2 hover:bg-primary-text hover:text-black"
-                                >
-                                    Buy Now
-                                </a>
-                                <CreativeShareButton SHARE_URL={`www.maisonroselifystyle.com/product/${productId}`} />
+                                <BuyNowButton
+                                    SHARE_URL={`www.maisonroselifestyle.com/product/${productId}`} />
+                                <CreativeShareButton SHARE_URL={`www.maisonroselifestyle.com/product/${productId}`} />
                             </div>
                             {/* Product Details Section */}
                             <div className="border-t border-primary-border pt-4 md:pt-6">
