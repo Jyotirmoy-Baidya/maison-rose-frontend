@@ -9,8 +9,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <FaInstagram size={18} />, url: 'https://instagram.com' },
-    { icon: <FaFacebookF size={18} />, url: 'https://facebook.com' },
+    { icon: <FaInstagram size={18} />, url: 'https://www.instagram.com/maison.rose.lifestyle?igsh=MXJlMGpqZTRtOGU2ZA==' },
+    { icon: <FaFacebookF size={18} />, url: 'https://www.facebook.com/maison.rose.lifestyle?mibextid=ZbWKwL' },
     { icon: <FaTwitter size={18} />, url: 'https://twitter.com' }
   ];
 

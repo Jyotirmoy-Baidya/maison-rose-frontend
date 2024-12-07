@@ -123,9 +123,12 @@ const About = () => {
 
                 {/* social media connect */}
                 <div className='flex justify-center text-primary-text rounded-xl py-3 gap-3 border-2 border-primary-border w-full'>
-                    <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
-                    <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><TiSocialFacebookCircular className='text-xl' /></div>
-                    <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaXTwitter /></div>
+                    <a href='https://www.instagram.com/maison.rose.lifestyle?igsh=MXJlMGpqZTRtOGU2ZA==' target='_blank' rel='noopener noreferrer'>
+                        <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
+                    </a>
+                    <a href='https://www.facebook.com/maison.rose.lifestyle?mibextid=ZbWKwL' target='_blank' rel='noopener noreferrer'>
+                        <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><TiSocialFacebookCircular className='text-xl' /></div>
+                    </a>
                 </div>
 
             </div>
@@ -156,9 +159,12 @@ const About = () => {
                         {/* Links to social media */}
                         <div className='absolute z-[4] rounded-ss-2xl p-3 text-white bottom-0 right-0 bg-primary-bg links'>
                             <div className='w-full flex items-center gap-2'>
-                                <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
-                                <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><TiSocialFacebookCircular className='text-xl' /></div>
-                                <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaXTwitter /></div>
+                                <a href='https://www.instagram.com/maison.rose.lifestyle?igsh=MXJlMGpqZTRtOGU2ZA==' target='_blank' rel='noopener noreferrer'>
+                                    <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><FaInstagram /></div>
+                                </a>
+                                <a href='https://www.facebook.com/maison.rose.lifestyle?mibextid=ZbWKwL' target='_blank' rel='noopener noreferrer'>
+                                    <div className='flex items-center justify-center border-[1px] border-primary-border w-8 h-8 rounded-full bg-[#18181850] hover:bg-primary-pink hover:text-black'><TiSocialFacebookCircular className='text-xl' /></div>
+                                </a>
                             </div>
                         </div>
                     </div>
