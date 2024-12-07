@@ -78,8 +78,8 @@ const ProductDetails = () => {
     return (
         <div className="min-h-screen bg-primary-bg">
             <Navbar />
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex flex-col xl:flex-row gap-8">
+            <div className="container mx-auto px-4 py-4 md:py-8">
+                <div className="flex flex-col xl:flex-row gap-6 md:gap-8">
                     {/* Left side - Image Carousel */}
                     <div className="w-full xl:w-1/2">
                         <ImageCarousel images={product?.Images} />
@@ -87,12 +87,12 @@ const ProductDetails = () => {
 
                     {/* Right side - Product Details */}
                     <div className="w-full xl:w-1/2 text-primary-text">
-                        <div className="space-y-6">
-                            <h1 className="text-3xl xl:text-4xl font-forum tracking-wide">
+                        <div className="space-y-4 md:space-y-6">
+                            <h1 className="text-2xl md:text-3xl xl:text-4xl font-forum tracking-wide">
                                 {product?.Name}
                             </h1>
 
-                            <div className="text-2xl font-forum">
+                            <div className="text-xl md:text-2xl font-forum">
                                 {product?.DiscountedPrice ? (
                                     <div>₹ <s className="text-sm text-red-500">{product?.Price}</s> {product?.DiscountedPrice}</div>
                                 ) : (
@@ -105,29 +105,29 @@ const ProductDetails = () => {
                                 <p className="ml-2 text-sm">42 reviews</p>
                             </div>
 
-                            <p className="text-base font-forum tracking-wide">
+                            <p className="text-sm md:text-base font-forum tracking-wide">
                                 {product?.Description}
                             </p>
 
                             {/* Product Details Section */}
-                            <div className="border-t border-primary-border pt-6">
-                                <h3 className="text-xl font-forum mb-4">Product Details</h3>
-                                <div className="space-y-4 text-sm">
-                                    <div>
-                                        <span className="text-gray-400 block mb-1">Material & Care:</span>
+                            <div className="border-t border-primary-border pt-4 md:pt-6">
+                                <h3 className="text-lg md:text-xl font-forum mb-3 md:mb-4">Product Details</h3>
+                                <div className="space-y-4 text-sm md:text-base">
+                                    <div className="space-y-2">
+                                        <span className="text-gray-400 block">Material & Care:</span>
                                         <div>{product?.Material || "Material information not available"}</div>
                                         <div className="text-gray-400">{product?.CareInstructions || "Care instructions not available"}</div>
                                     </div>
 
-                                    <div>
-                                        <span className="text-gray-400 block mb-1">Country of Origin:</span>
+                                    <div className="space-y-2">
+                                        <span className="text-gray-400 block">Country of Origin:</span>
                                         <div>{product?.CountryOfOrigin || "India"}</div>
                                     </div>
 
-                                    <div>
-                                        <span className="text-gray-400 block mb-1">Manufactured & Sold By:</span>
+                                    <div className="space-y-2">
+                                        <span className="text-gray-400 block">Manufactured & Sold By:</span>
                                         <div>{product?.Manufacturer || "Maison Rose Lifestyle"}</div>
-                                        <div className="whitespace-pre-line">
+                                        <div className="whitespace-pre-line text-sm">
                                             {product?.ManufacturerAddress || `224, Tantia Jogani Industrial Premises
 J.R. Boricha Marg
 Lower Parel (E)
@@ -135,17 +135,17 @@ Mumbai - 400 011`}
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <div className="space-y-2">
                                         <a href={`mailto:${product?.ContactEmail || "connect@maisonroselifestyle.com"}`} 
                                            className="text-primary-text hover:text-gray-300 block">
                                             {product?.ContactEmail || "connect@maisonroselifestyle.com"}
                                         </a>
                                     </div>
 
-                                    <div>
+                                    <div className="space-y-2">
                                         <a href={`tel:${product?.ContactPhone || "+91 22-68493328"}`} 
                                            className="text-primary-text hover:text-gray-300 block">
-                                            Customer care: {product?.ContactPhone || "+91 22-68493328"}
+                                            {product?.ContactPhone || "+91 22-68493328"}
                                         </a>
                                     </div>
                                 </div>
@@ -153,41 +153,38 @@ Mumbai - 400 011`}
 
                             {/* Collapsible Sections */}
                             <div className="space-y-4">
+                                {/* Product Description */}
                                 <div className="border-t border-primary-border pt-4">
                                     <button 
-                                        className="flex justify-between items-center w-full py-2 text-left font-forum"
+                                        className="flex justify-between items-center w-full py-2 text-left font-forum text-base md:text-lg"
                                         onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
                                     >
                                         <span>Product Description</span>
                                         <span className={`transform transition-transform ${isDescriptionOpen ? 'rotate-180' : ''}`}>▼</span>
                                     </button>
                                     {isDescriptionOpen && (
-                                        <div className="py-2 text-sm text-gray-300">
+                                        <div className="py-3 text-sm md:text-base">
                                             {product?.DetailedDescription || "No detailed description available."}
                                         </div>
                                     )}
                                 </div>
 
+                                {/* Artist Details */}
                                 <div className="border-t border-primary-border pt-4">
                                     <button 
-                                        className="flex justify-between items-center w-full py-2 text-left font-forum"
+                                        className="flex justify-between items-center w-full py-2 text-left font-forum text-base md:text-lg"
                                         onClick={() => setIsArtistDetailsOpen(!isArtistDetailsOpen)}
                                     >
-                                        <span>Artist's Details</span>
+                                        <span>Artist Details</span>
                                         <span className={`transform transition-transform ${isArtistDetailsOpen ? 'rotate-180' : ''}`}>▼</span>
                                     </button>
                                     {isArtistDetailsOpen && (
-                                        <div className="py-2 text-sm text-gray-300">
+                                        <div className="py-3 text-sm md:text-base">
                                             {product?.ArtistDetails || "No artist details available."}
                                         </div>
                                     )}
                                 </div>
                             </div>
-
-                            {/* Buy Now Button */}
-                            <button className="w-full bg-primary-text text-black py-3 rounded-lg font-forum text-lg hover:bg-gray-200 transition mt-6">
-                                Buy Now
-                            </button>
                         </div>
                     </div>
                 </div>
