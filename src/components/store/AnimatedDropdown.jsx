@@ -12,7 +12,7 @@ const AnimatedDropdown = ({ sort, setSort }) => {
     };
 
     return (
-        <div className="flex z-10 items-center justify-center font-forum">
+        <div className="flex z-10 ml-auto items-center justify-center font-forum">
             <div className="relative">
                 {/* Dropdown Trigger */}
                 <div
@@ -40,7 +40,7 @@ const AnimatedDropdown = ({ sort, setSort }) => {
                 {/* Dropdown Menu */}
                 {isOpen && (
                     <div
-                        className="absolute mt-2 w-64 text-primary-text bg-primary-bg border-2 border-primary-border rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform scale-y-100 origin-top animate-slideDown"
+                        className="absolute mt-2 w-48 xl:w-64 text-primary-text bg-primary-bg border-2 border-primary-border rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform scale-y-100 origin-top animate-slideDown"
                     >
                         {options.map((option, index) => (
                             <div

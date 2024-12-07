@@ -104,7 +104,7 @@ const ProductPage = () => {
                     <>
                         {/* Search bar  */}
                         <SearchBar />
-                        <div className="flex gap-2 justify-between items-center xl:mt-24 mb-3 mt-2">
+                        <div className="flex flex-col md:flex-row gap-2 justify-between md:items-center xl:mt-24 mb-3 mt-2">
                             <div className='text-primary-text text-3xl'><span className='text-xs xl:text-base'>Search results for : </span>{subcat || cat || type || whatsnew || filterSearch || ''}</div>
                             <AnimatedDropdown sort={sort} setSort={setSort} />
                         </div>
