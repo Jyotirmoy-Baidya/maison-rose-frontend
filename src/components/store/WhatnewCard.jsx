@@ -17,8 +17,8 @@ const WhatnewCard = ({ item }) => {
                     </div>
                     : <></>
             }
-            <div className='flex absolute bottom-0 cursor-pointer xl:hidden flex-col justify-end h-[40%] w-full bg-white bg-opacity-50'>
-                <div className='mx-auto text-lg font-forum text-center cursor-pointer'>{item?.Name}</div>
+            <div className='flex absolute bottom-0 cursor-pointer xl:hidden flex-col justify-end h-[50%] w-full bg-white bg-opacity-50'>
+                <div className='mx-auto text-base font-forum text-center cursor-pointer'>{item?.Name}</div>
                 <NavLink to={`/fashion-store/new/${item?.Tag}`} className='w-8/12 mx-auto bg-white flex justify-center text-xs items-center font-forum h-fit py-1 hover:bg-primary-bg hover:text-primary-text mb-3'>
                     EXPLORE
                 </NavLink>

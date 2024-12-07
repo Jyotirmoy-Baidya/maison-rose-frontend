@@ -82,22 +82,10 @@ const Nailarts = () => {
         <div className='flex flex-col bg-primary-bg overflow-y-scroll overflow-x-hidden no-scrollbar min-h-screen'>
             {/* mobile section */}
             <div className='flex flex-col gap-3 p-3 w-full content'>
-                {/* mobile nav */}
-                <div className='xl:hidden z-10 flex w-full fixed top-3 left-0 px-3'>
-                    <div className='z-10 h-14 p-3 top-0 rounded-xl navbar w-full mb-3 bg-[#18181890]'>
-                        <div className='w-full h-full flex items-center'>
-                            <div className='border-primary-border border-[1px] p-2 rounded-lg'>
-                                <RxHamburgerMenu className='text-white' />
-                            </div>
-                            <div className='pl-2 text-xl text-primary-text uppercase font-forum tracking-wide'>
-                                Maison Rose Lifestyle
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 {/* Hero Section with Image and Text */}
-                <div className='relative mt-16 w-full'>
+                <div className='relative xl:mt-16 w-full'>
                     <div className='flex flex-col md:flex-row gap-8 min-h-[500px]'>
                         <div className='w-full md:w-1/2 relative'>
                             <img
@@ -108,7 +96,7 @@ const Nailarts = () => {
                                 data-aos="fade-right"
                             />
                         </div>
-                        <div className='w-full md:w-1/2 flex flex-col justify-center gap-6 p-4 md:p-8'>
+                        <div className='w-full md:w-1/2 flex flex-col justify-center gap-6 p-2 xl:p-4 md:p-8'>
                             <h1 className='text-4xl md:text-6xl tracking-wider text-primary-text font-forum' data-aos="fade-left">
                                 Nail Art Studio
                             </h1>
