@@ -1,4 +1,4 @@
-  import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF, FaTwitter, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { GiHairStrands, GiNails, GiCoffeeCup } from 'react-icons/gi';
@@ -10,8 +10,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: <FaInstagram size={18} />, url: 'https://www.instagram.com/maison.rose.lifestyle?igsh=MXJlMGpqZTRtOGU2ZA==' },
-    { icon: <FaFacebookF size={18} />, url: 'https://www.facebook.com/maison.rose.lifestyle?mibextid=ZbWKwL' },
-    { icon: <FaTwitter size={18} />, url: 'https://twitter.com' }
+    { icon: <FaFacebookF size={18} />, url: 'https://www.facebook.com/maison.rose.lifestyle?mibextid=ZbWKwL' }
   ];
 
   const services = [
@@ -33,14 +32,14 @@ const Footer = () => {
               </h3>
             </Link>
             <p className="text-primary-text/80 text-sm leading-relaxed">
-              Experience luxury and elegance at Kolkata's premier lifestyle destination, 
+              Experience luxury and elegance at Kolkata's premier lifestyle destination,
               where fashion meets fine dining and beauty services.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <motion.a 
+                <motion.a
                   key={index}
-                  href={social.url} 
+                  href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
@@ -63,8 +62,8 @@ const Footer = () => {
                 { name: 'Contact', path: '/contact' }
               ].map((link, index) => (
                 <li key={index}>
-                  <Link 
-                    to={link.path} 
+                  <Link
+                    to={link.path}
                     className="text-primary-text/80 hover:text-primary-pink transition-colors inline-flex items-center space-x-2 group"
                   >
                     <span className="w-1 h-1 bg-primary-text/30 rounded-full group-hover:bg-primary-pink group-hover:w-2 transition-all duration-200"></span>
@@ -81,8 +80,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <Link 
-                    to={service.path} 
+                  <Link
+                    to={service.path}
                     className="text-primary-text/80 hover:text-primary-pink transition-colors flex items-center space-x-3 group"
                   >
                     <span className="text-primary-text/60 group-hover:text-primary-pink transition-colors">
@@ -109,8 +108,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-primary-pink flex-shrink-0" />
-                <a 
-                  href="tel:+919876543210" 
+                <a
+                  href="tel:+919876543210"
                   className="text-primary-text/80 hover:text-primary-pink transition-colors"
                 >
                   +91 98765 43210
@@ -118,8 +117,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-primary-pink flex-shrink-0" />
-                <a 
-                  href="mailto:info@maisonroselifestyle.com" 
+                <a
+                  href="mailto:info@maisonroselifestyle.com"
                   className="text-primary-text/80 hover:text-primary-pink transition-colors break-all"
                 >
                   info@maisonroselifestyle.com

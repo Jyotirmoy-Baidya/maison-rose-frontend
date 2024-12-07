@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa"; // Icons
+import { NavLink } from "react-router-dom";
 
 const ContactButton = () => {
     const [showLinks, setShowLinks] = useState(false);
@@ -16,12 +17,13 @@ const ContactButton = () => {
     return (
         <div className="relative">
             {/* Main Button */}
-            <div
+            <NavLink
+                to='/contact'
                 className="border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink flex items-center justify-center gap-2"
                 onMouseEnter={() => handleShowLinks()}
             >
                 <span>Contact</span>
-            </div>
+            </NavLink>
 
             {/* Pop-up Links */}
             {showLinks && (
