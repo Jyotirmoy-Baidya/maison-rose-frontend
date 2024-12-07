@@ -233,7 +233,7 @@ const Home = () => {
             </NavLink>
           </div>
           <NavLink
-            to="/fashion"
+            to="/store"
             className="h-28 w-1/2 relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
             data-aos="fade-right"
           >
