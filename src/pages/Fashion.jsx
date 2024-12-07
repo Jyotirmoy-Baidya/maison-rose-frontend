@@ -116,28 +116,30 @@ const Fashion = () => {
                     {/* accessories  */}
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute -left-5  sm:left-0 md:left-0 md:top-[150px] xl:left-[80px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-24'
+                        className='absolute -left-5  sm:left-0 md:left-0 md:top-[150px] xl:left-[95px] top-28 sm:top-[120px] xl:top-[140px] 4xl:left-0 4xl:top-[260px] z-[2] 4xl:h-80 2xl:h-72 xl:h-56 md:h-36 sm:h-32 h-24'
                     >
                         <img src="./store/HomeShoe.png" alt="Home Shoe" className='h-full' />
                         <StoreHoverButton type='white' className='absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2' text='Shoe' />
                     </div>
 
 
-                    {/* hats  */}
+                    {/* bags  */}
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         className='absolute left-6 sm:left-[90px] 4xl:left-[250px] 2xl:left-[340px] xl:left-[250px] md:left-[100px] top-0 z-[1] 4xl:h-[420px] 2xl:h-80 xl:h-64 md:h-56 sm:h-40 h-32'
                     >
-                        <img src="./store/HomePerfume.png" alt="Home Hats" className='h-full' />
-                        <StoreHoverButton link='/fashion-store/Hats' type='white' className='absolute bottom-2 sm:bottom-5 left-1/2 -translate-x-1/2' text='Hats' />
+                        <img src="./store/Homebag1.png" alt="Home bags" className='h-full' />
+                        <StoreHoverButton link='/fashion-store/Bags' type='white' className='absolute bottom-2 sm:bottom-5 left-1/2 -translate-x-1/2' text='Bags' />
                     </div>
 
                     <div data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
-                        className='absolute 4xl:left-[250px] 2xl:left-[310px] xl:left-[280px] md:left-[105px] sm:left-[80px] left-[30px] bottom-0 h-20 sm:h-28 md:h-36 xl:h-44 2xl:h-56 4xl:h-64 z-[3]'
+                        className='absolute 4xl:left-[265px] 2xl:left-[350px] xl:left-[295px] md:left-[105px] sm:left-[98px] left-[48px] bottom-[10px] sm:bottom-0 
+                        h-20 sm:h-32 md:h-48 xl:h-52 2xl:h-60 4xl:h-80 
+                        z-[3]'
                     >
-                        <img src="./store/HomeBag.png" alt="Home Bag" className='h-full' />
-                        <StoreHoverButton type='black' className='absolute bottom-2 left-1/2 -translate-x-1/2' text='Bags' />
+                        <img src="./store/home-hat2.png" alt="Home Hat" className='h-full' />
+                        <StoreHoverButton link='/fashion-store/Hats' type='white' className='absolute bottom-2 left-1/2 -translate-x-1/2' text='Hats' />
                     </div>
 
                     <div data-aos="fade-up"
@@ -160,7 +162,7 @@ const Fashion = () => {
 
 
 
-                    <div className='font-medium absolute left-[95px] tracking-wider sm:tracking-normal sm:left-[160px] md:left-[215px] xl:left-[400px] 2xl:left-[460px] 4xl:left-[410px] bottom-[50px] sm:bottom-[55px] md:bottom-[80px] text-2xl sm:text-6xl md:text-6xl xl:text-8xl 2xl:text-9xl 4xl:text-11xl z-[7] text-primary-pink' data-aos="fade-up"
+                    <div className='font-medium absolute left-[95px] tracking-wider sm:tracking-normal sm:left-[160px] md:left-[215px] xl:left-[400px] 2xl:left-[460px] 4xl:left-[410px] bottom-[50px] sm:bottom-[55px] md:bottom-[80px] text-2xl sm:text-6xl md:text-6xl xl:text-8xl 2xl:text-9xl 4xl:text-11xl z-[7] text-black' data-aos="fade-up"
                         data-aos-anchor-placement="top-bottom">S</div>
                     <div className='font-medium absolute left-[95px] tracking-wider sm:tracking-normal sm:left-[160px] md:left-[215px] xl:left-[400px] 2xl:left-[460px] 4xl:left-[410px] bottom-[50px] sm:bottom-[55px] md:bottom-[80px] text-2xl sm:text-6xl md:text-6xl xl:text-8xl 2xl:text-9xl 4xl:text-11xl z-[6] text-white' data-aos="fade-up"
                         data-aos-anchor-placement="top-bottom">SHOPPIN</div>

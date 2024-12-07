@@ -48,7 +48,7 @@ const Home = () => {
                 LIFE
               </div>
             </div>
-            <div className="w-[78%] relative bg-primary-pink overflow-hidden">
+            <div className="w-[78%] relative bg-primary-bg overflow-hidden">
               <img
                 src="./fashion/main.png"
                 alt="Maison Rose Lifestyle - Café and Fashion Store in New Town Kolkata"
