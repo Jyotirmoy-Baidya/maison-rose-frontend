@@ -223,15 +223,31 @@ const About = () => {
                                 <div className="flex flex-col h-full w-full gap-2 mt-10">
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">ADDRESS</h3>
-                                        <p className="">Street No. 23, New Town<br />Kolkata, West Bengal</p>
+                                        <div className="whitespace-pre-line text-right text-sm xl:text-base 3xl:text-lg">
+                                            CE/1/B/96, Street no 238,
+                                            <br />
+                                            Action Area 1,
+                                            Newtown, <br />Kolkata 700156.
+                                            <br />(Near Axis Mall)
+                                        </div>
                                     </div>
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">PHONE</h3>
-                                        <p className="">+91 9085533510</p>
+                                        <a
+                                            href="tel:+916290433603"
+                                            className="text-primary-text/80 hover:text-primary-pink transition-colors"
+                                        >
+                                            +91 62904 33603
+                                        </a>
                                     </div>
                                     <div className='flex w-full font-forum justify-between text-primary-text'>
                                         <h3 className="tracking-widest">EMAIL</h3>
-                                        <p className="">contact@maisonroselifestyle.com</p>
+                                        <a
+                                            href="mailto:maisonroselifestyle@gmail.com"
+                                            className="text-primary-text/80 hover:text-primary-pink transition-colors break-all"
+                                        >
+                                            maisonroselifestyle@gmail.com
+                                        </a>
                                     </div>
                                 </div>
                             </div>
