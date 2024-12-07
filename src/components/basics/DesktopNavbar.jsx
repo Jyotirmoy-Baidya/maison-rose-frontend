@@ -38,6 +38,7 @@ const DesktopNavbar = ({ scrollToPart, p1 }) => {
         <div className='xl:block hidden fixed z-20 h-14 p-3 top-10 left-10 rounded-xl navbar bg-[#181818]'>
             <div className='w-full h-full flex items-center'>
                 <HamburgerMenu />
+                <img src="./maisonroselifesytlelogo.png" alt="logo" className='h-7 w-7 ml-2 rounded-full' />
                 <NavLink to='/' className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</NavLink>
                 <div className='flex items-center text-primary-text gap-4 ml-12 tracking-wide font-sans uppercase text-sm'>
                     <NavLink to='/' className='text-primary-text'>Home</NavLink>

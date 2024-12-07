@@ -47,11 +47,11 @@ const App = () => {
             <Route path='fashion-store/new/:whatsnew' element={<ProductPage />} />
             {/* Type: dress, hats, jewellery  */}
             <Route path='fashion-store/:type' element={<ProductPage />} />
+            <Route path='/product/:productId' element={<ProductDetails />} />
 
 
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<About />} />
-            <Route path='/product/:productId' element={<ProductDetails />} />
             <Route path='/lander' element={<Navigate to="/" replace />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
