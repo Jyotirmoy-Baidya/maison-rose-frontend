@@ -101,27 +101,27 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-primary-pink mt-1 flex-shrink-0" />
                 <p className="text-primary-text/80">
-                  Axis Mall, CF Block, Action Area 1C
+                  CE/1/B/96, Street no 238, Action Area 1
                   <br />
-                  New Town, Kolkata - 700156
+                  Newtown Kolkata - 700156, Near Axis Mall
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-primary-pink flex-shrink-0" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+916290433603"
                   className="text-primary-text/80 hover:text-primary-pink transition-colors"
                 >
-                  +91 98765 43210
+                  +91 62904 33603
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-primary-pink flex-shrink-0" />
                 <a
-                  href="mailto:info@maisonroselifestyle.com"
+                  href="mailto:maisonroselifestyle@gmail.com"
                   className="text-primary-text/80 hover:text-primary-pink transition-colors break-all"
                 >
-                  info@maisonroselifestyle.com
+                  maisonroselifestyle@gmail.com
                 </a>
               </div>
             </div>
