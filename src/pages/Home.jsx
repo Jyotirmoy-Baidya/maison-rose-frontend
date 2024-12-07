@@ -127,7 +127,7 @@ const Home = () => {
 
       {/* Mobile View */}
       <div className="flex flex-col gap-3 xl:hidden p-3">
-        <div className="w-full h-72 font-forum bg-primary-bg relative flex overflow-hidden rounded-lg">
+        <div className="w-full h-[300px] font-forum bg-primary-bg relative flex overflow-hidden rounded-lg">
           <div className="relative w-[22%]">
             <div className="tracking-wider absolute text-3xl sm:text-4xl md:text-5xl lg:text-5xl bottom-8 right-0 text-primary-text">
               MAI
