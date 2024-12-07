@@ -101,9 +101,6 @@ export const fetchFilteredProductsOnSearch = async (typeValue) => {
 };
 
 
-
-
-
 // Fetch the navbar categories (category table)
 export const fetchCategoriesAndAccessories = async () => {
     try {
@@ -114,6 +111,19 @@ export const fetchCategoriesAndAccessories = async () => {
 
     } catch (error) {
         console.error("Error fetching records: ", error);
+        throw error;
+    }
+};
+
+export const getProductById = async (productId) => {
+    try {
+        const response = await axios.get(`${API_URL}/Products/${productId}`, config);
+        return {
+            id: response.data.id,
+            ...response.data.fields
+        };
+    } catch (error) {
+        console.error('Error fetching product:', error);
         throw error;
     }
 };

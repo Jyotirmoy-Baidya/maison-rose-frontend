@@ -14,6 +14,7 @@ import ScrollToTopOnRouteChange from "./utils/ScrollToTopOnRouteChange";
 import WhatsAppComponent from "./components/basics/WhatsAppComponent";
 import MobileNavbar from "./components/basics/MobileNavbar";
 import Nailarts from "./pages/Nailarts";
+import ProductDetails from './pages/ProductDetails';
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
             <Route path='/contact' element={<About />} />
             <Route path='/combos' element={<Combos />} />
             <Route path='/nailarts' element={<Nailarts />} />
+            <Route path='/product/:productId' element={<ProductDetails />} />
             <Route path='/lander' element={<Navigate to="/" replace />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
