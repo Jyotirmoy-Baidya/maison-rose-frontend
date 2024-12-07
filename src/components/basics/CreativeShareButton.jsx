@@ -9,7 +9,7 @@ const CreativeShareButton = ({ SHARE_URL }) => {
     };
 
     const shareLinks = {
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}`,
+        // facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}`,
         whatsapp: `https://wa.me/?text=${encodeURIComponent(SHARE_URL)}`,
     };
 
@@ -31,14 +31,14 @@ const CreativeShareButton = ({ SHARE_URL }) => {
                     }`}
             >
                 {/* Facebook */}
-                <a
+                {/* <a
                     href={shareLinks.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-600 p-3 rounded-full text-white shadow-lg hover:scale-110 transition duration-300"
                 >
                     <FaFacebookF size={16} />
-                </a>
+                </a> */}
 
                 {/* Twitter */}
                 {/* <a
