@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 import ImageCarousel from './ImageCarousel';
 import RatingStars from '../basics/RatingStars'
 
-const DesktopProductModal = ({ handleCloseModal, selectedProduct }) => {
+const DesktopProductModal = ({ handleCloseModal, selectedProduct, id }) => {
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
     const [isArtistDetailsOpen, setIsArtistDetailsOpen] = useState(false);
+    console.log(id);
 
     return (
         <div className="fixed z-30 inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={handleCloseModal}>
@@ -58,19 +59,19 @@ const DesktopProductModal = ({ handleCloseModal, selectedProduct }) => {
                                 {/* Product Details Section */}
                                 <div className="mt-6 border-t border-primary-border pt-4">
                                     <h3 className="text-lg font-forum mb-3">Product Details</h3>
-                                    
+
                                     <div className="space-y-3 text-sm">
                                         <div>
                                             <span className="text-gray-400">Material & Care:</span>
                                             <div>{selectedProduct?.Material || "Material information not available"}</div>
                                             <div className="text-gray-400">{selectedProduct?.CareInstructions || "Care instructions not available"}</div>
                                         </div>
-                                        
+
                                         <div>
                                             <span className="text-gray-400">Country of Origin:</span>
                                             <div>{selectedProduct?.CountryOfOrigin || "India"}</div>
                                         </div>
-                                        
+
                                         <div>
                                             <span className="text-gray-400">Manufactured & Sold By:</span>
                                             <div>{selectedProduct?.Manufacturer || "Maison Rose Lifestyle"}</div>
@@ -80,13 +81,13 @@ Lower Parel (E)
 Mumbai - 400 011`}</div>
                                             <div>tel: {selectedProduct?.ContactPhone || "+91 22-68493328"}</div>
                                         </div>
-                                        
+
                                         <div>
                                             <a href={`mailto:${selectedProduct?.ContactEmail || "connect@maisonroselifestyle.com"}`} className="text-primary-text hover:text-gray-300">
                                                 {selectedProduct?.ContactEmail || "connect@maisonroselifestyle.com"}
                                             </a>
                                         </div>
-                                        
+
                                         <div>
                                             <a href={`tel:${selectedProduct?.ContactPhone || "+91 22-68493328"}`} className="text-primary-text hover:text-gray-300">
                                                 Customer care no: {selectedProduct?.ContactPhone || "+91 22-68493328"}
@@ -98,7 +99,7 @@ Mumbai - 400 011`}</div>
                                 {/* Product Description and Artist Details Accordions */}
                                 <div className="mt-4 space-y-2">
                                     <div className="border-t border-primary-border pt-2">
-                                        <button 
+                                        <button
                                             className="flex justify-between items-center w-full py-2 text-left font-forum"
                                             onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
                                         >
@@ -113,7 +114,7 @@ Mumbai - 400 011`}</div>
                                     </div>
 
                                     <div className="mt-4 border-t border-primary-border pt-4">
-                                        <NavLink 
+                                        <NavLink
                                             to={`/product/${selectedProduct?.id}`}
                                             className="block w-full py-3 text-center bg-primary-text text-primary-bg font-forum hover:bg-primary-text/90 transition-colors rounded"
                                         >
@@ -122,7 +123,7 @@ Mumbai - 400 011`}</div>
                                     </div>
 
                                     <div className="border-t border-primary-border pt-2">
-                                        <button 
+                                        <button
                                             className="flex justify-between items-center w-full py-2 text-left font-forum"
                                             onClick={() => setIsArtistDetailsOpen(!isArtistDetailsOpen)}
                                         >
@@ -141,8 +142,8 @@ Mumbai - 400 011`}</div>
                                     <NavLink to="#" className="w-full bg-primary-text text-black py-2 rounded-lg font-forum flex justify-center items-center hover:bg-gray-200 transition">
                                         Buy Now
                                     </NavLink>
-                                    <NavLink 
-                                        to={`/product/${selectedProduct?.id}`}
+                                    <NavLink
+                                        to={`/product/${id}`}
                                         className="w-full border-2 border-primary-text text-primary-text py-2 rounded-lg font-forum flex justify-center items-center hover:bg-primary-text hover:text-black transition"
                                     >
                                         View Product Details

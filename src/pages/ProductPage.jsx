@@ -144,7 +144,7 @@ const ProductPage = () => {
                                         <div
                                             key={index}
                                             className="relative bg-gray-800 shadow-lg rounded hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden text-primary-text"
-                                            onClick={() => handleProductClick(product.fields)}
+                                            onClick={() => handleProductClick(product)}
                                         >
                                             <div className='w-full xl:h-[300px] 3xl:h-[330px]'>
                                                 {
@@ -191,7 +191,7 @@ const ProductPage = () => {
 
                                 {/* Modal */}
                                 {selectedProduct && (
-                                    <DesktopProductModal handleCloseModal={handleCloseModal} selectedProduct={selectedProduct} />
+                                    <DesktopProductModal id={selectedProduct.id} handleCloseModal={handleCloseModal} selectedProduct={selectedProduct.fields} />
                                 )}
 
                             </>
