@@ -5,6 +5,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { fetchCategoriesAndAccessories } from '../../api/AirtableApis'
 import { processAccessoriesCategory, processFashionCategory } from '../../utils/TransformData'
 import HamburgerMenu from './HamburgerMenu'
+import ContactButton from './ContactButton'
 
 
 
@@ -49,15 +50,7 @@ const DesktopNavbar = ({ scrollToPart, p1 }) => {
                         location.pathname != '/cafe' &&
                         <HoverDropdown ItemCategoryList={accessories} value='Accessories' />
                     }
-
-                    {
-                        location.pathname.split('/')[1] === 'fashion' || location.pathname.split('/')[1] === 'store' &&
-
-                        <div onClick={() => scrollToPart(p1)} className='cursor-pointer hidden 2xl:block'>New Launch</div>
-                    }
-                    <div className='border px-4 py-2 cursor-pointer uppercase font-sans tracking-wide rounded-xl bg-[#18181850] border-primary-border hover:border-primary-pink'>
-                        Store
-                    </div>
+                    <ContactButton />
                 </div>
             </div>
         </div>
