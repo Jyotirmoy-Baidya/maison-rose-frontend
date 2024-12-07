@@ -5,7 +5,7 @@ import RatingStars from '../components/basics/RatingStars';
 import ImageCarousel from '../components/store/ImageCarousel';
 import { FaCircle } from 'react-icons/fa';
 import ImageCarouselInDetailsPage from '../components/store/ImageCarouselInDetailsPage';
-import { IoCall, IoLocationSharp } from 'react-icons/io5';
+import { IoCall, IoLocationSharp, IoSearchSharp } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import CreativeShareButton from '../components/basics/CreativeShareButton';
 import BuyNowButton from '../components/store/BuyNowButton';
@@ -13,6 +13,7 @@ import BuyNowButton from '../components/store/BuyNowButton';
 const ProductDetails = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
+    const [search, setSearch] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
@@ -73,8 +74,16 @@ const ProductDetails = () => {
         );
     }
 
+
+
     return (
         <div className="min-h-screen bg-primary-bg  xl:pt-20">
+            <div className='xl:flex items-center gap-2 w-96 hidden fixed z-10 p-3 top-10 right-10 rounded-xl searchbar '>
+                <div className='uppercase h-full w-full'>
+                    <input type="text" className='w-full bg-[#18181895] backdrop-blur-sm  rounded-xl text-primary-text h-full border-2 px-3 py-2 border-primary-border outline-none' placeholder='Search' value={search} onChange={(e) => setSearch(e.target.value)} />
+                </div>
+                <div className='text-xl text-primary-text' onClick={() => { if (search != '') navigate(`/fashion-store/s/${search}`) }}><IoSearchSharp /></div>
+            </div>
             <div className="container mx-auto px-4 py-4 md:py-8">
                 <div className="flex flex-col xl:flex-row gap-6 md:gap-8">
                     {/* Left side - Image Carousel */}
@@ -102,7 +111,7 @@ const ProductDetails = () => {
                                 <div className="flex items-center">
                                     <RatingStars rating={product?.Ratings} />
                                     <p className="ml-2 text-sm">{product?.Reviews} reviews</p>
-                                    <div className='cursor-pointer py-1 px-2 border border-red-300 rounded-lg ml-auto'>{product?.Available === 'Yes' && 'Sold Out'}</div>
+                                    <div className='cursor-pointer py-1 px-2 border border-red-300 rounded-lg ml-auto'>{product?.Available === 'No' && 'Sold Out'}</div>
                                 </div>
                             }
 

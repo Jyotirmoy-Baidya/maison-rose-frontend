@@ -10,7 +10,7 @@ const MobileNavbar = () => {
             <div className='h-14 p-3 top-10 left-10 w-full rounded-xl navbar bg-[#181818] backdrop-blur-sm'>
                 <div className='w-full h-full flex items-center'>
                     <MobileHamburgerMenu />
-                    <img src="./maisonroselifesytlelogo.png" alt="logo" className='h-7 w-7 ml-2 rounded-full' />
+                    <img src="/maisonroselifesytlelogo.png" alt="logo" className='h-7 w-7 ml-2 rounded-full' />
                     <NavLink to='' className='pl-2 text-xl uppercase font-forum tracking-wide text-primary-text'>Maison Rose Lifestyle</NavLink>
                 </div>
             </div>

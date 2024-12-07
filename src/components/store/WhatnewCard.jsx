@@ -6,7 +6,7 @@ const WhatnewCard = ({ item }) => {
     const [hover, setHover] = useState(false);
 
     return (
-        <div className='relative h-80 w-52 rounded-xl overflow-hidden transition-all duration-100' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <div className='relative h-48 w-32 xl:h-80 xl:w-52 rounded-xl overflow-hidden transition-all duration-100' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
             {
                 hover ?
                     <div className='absolute cursor-pointer py-8 gap-20 flex flex-col justify-end h-full w-full bg-white bg-opacity-60'>

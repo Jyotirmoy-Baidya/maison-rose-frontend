@@ -8,6 +8,7 @@ import { override } from '../constants/basic';
 import { fetchAllProducts, fetchFilteredProductsOnCategory, fetchFilteredProductsOnSearch, fetchFilteredProductsOnSubCategory, fetchFilteredProductsOnType, fetchFilteredProductsOnWhatsNew } from '../api/AirtableApis';
 import ErrorComponent from '../components/basics/ErrorComponent';
 import NoProductsFound from '../components/basics/NoProductsFound';
+import SearchBar from '../components/store/SearchBar';
 
 const ProductPage = () => {
     const [search, setSearch] = useState('');
@@ -102,22 +103,9 @@ const ProductPage = () => {
                 /> :
                     <>
                         {/* Search bar  */}
-                        <div className='xl:flex items-center gap-2 w-96 hidden fixed z-10 p-3 top-10 right-10 rounded-xl searchbar '>
-                            <div className='uppercase h-full w-full'>
-                                <input type="text" className='w-full bg-[#18181895] backdrop-blur-sm  rounded-xl text-primary-text h-full border-2 px-3 py-2 border-primary-border outline-none' placeholder='Search' value={search} onChange={(e) => setSearch(e.target.value)} />
-                            </div>
-                            <div className='text-xl text-primary-text' onClick={() => { if (search != '') navigate(`/fashion-store/s/${search}`) }}><IoSearchSharp /></div>
-                        </div>
-
-                        <div className="flex flex-col md:flex-row gap-2 xl:justify-between items-end xl:items-center xl:mt-24 mb-3 mt-2">
-
-                            <div className='text-primary-text text-3xl'>{type || cat || subcat || filterSearch || ''}</div>
-
-
-
-
-
-
+                        <SearchBar />
+                        <div className="flex gap-2 justify-between items-center xl:mt-24 mb-3 mt-2">
+                            <div className='text-primary-text text-3xl'><span className='text-xs xl:text-base'>Search results for : </span>{subcat || cat || type || whatsnew || filterSearch || ''}</div>
                             <AnimatedDropdown sort={sort} setSort={setSort} />
                         </div>
 

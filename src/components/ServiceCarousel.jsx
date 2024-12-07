@@ -11,7 +11,7 @@ const ServiceCarousel = () => {
       id: 1,
       name: "Fashion Boutique",
       description: "Discover our curated collection of Thai-inspired fashion pieces, featuring elegant floral dresses, contemporary Korean styles, and vintage-inspired clothing. Each piece is carefully selected to blend Eastern grace with modern aesthetics, perfect for both casual outings and special occasions.",
-      image: "./fashion/home.png",
+      image: "./images/fashion.jpg",
       price: "Dresses starting from ₹999",
       path: "/store"
     },
@@ -35,7 +35,7 @@ const ServiceCarousel = () => {
       id: 4,
       name: "Nail Art Studio",
       description: "Visit our specialized nail art studio for creative and professional nail care services. Our skilled technicians offer everything from classic manicures to intricate nail art designs. Using premium products and sterilized equipment, we ensure both beauty and hygiene in every service.",
-      image: "./images/nailart.jpg",
+      image: "./images/nailart.png",
       price: "Services from ₹399",
       path: "/nailarts"
     }
@@ -99,10 +99,10 @@ const ServiceCarousel = () => {
                       <img
                         src={service.image}
                         alt={service.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover absolute bottom-0"
                       />
                     </div>
-                    <div className="flex-1 md:absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-primary-bg md:bg-gradient-to-t md:from-black/80 md:to-transparent z-[2]">
+                    <div className="flex-1 md:absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-[#18181870] backdrop-blur-sm md:bg-gradient-to-t md:from-black/80 md:to-transparent z-[2]">
                       <h3 className="text-lg md:text-2xl font-forum text-primary-text md:text-white mb-2">{service.name}</h3>
                       <p className="text-sm md:text-base text-primary-text/80 md:text-white/80 line-clamp-4 leading-relaxed">{service.description}</p>
                       <p className="text-sm md:text-base text-primary-pink mt-3 font-medium">{service.price}</p>

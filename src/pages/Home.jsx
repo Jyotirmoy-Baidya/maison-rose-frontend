@@ -75,7 +75,7 @@ const Home = () => {
                 />
                 <div className="absolute bottom-0 right-0 pl-6 pt-3 flex items-center rounded-ss-3xl bg-primary-bg">
                   <div className="pr-2 text-white font-forum text-lg tracking-wide">
-                    Salon
+                    Unisex Salon
                   </div>
                   <div className="h-8 w-8 border border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
                     <FaArrowRight />
@@ -94,7 +94,7 @@ const Home = () => {
                 />
                 <div className="absolute bottom-0 right-0 pl-6 pt-3 flex items-center rounded-ss-3xl bg-primary-bg">
                   <div className="pr-2 text-white font-forum text-lg tracking-wide">
-                    Café
+                    Cafe
                   </div>
                   <div className="h-8 w-8 border border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
                     <FaArrowRight />
@@ -106,14 +106,14 @@ const Home = () => {
                 className="h-full w-full relative flex-grow-1 bg-primary-bg rounded-2xl rounded-br-none overflow-hidden"
               >
                 <img
-                  src="./store/what-new1.jpg"
+                  src="./images/fashion3.jpg"
                   alt="Thai-Inspired Fashion Collection in Kolkata"
                   className="absolute -top-1/3 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 right-0 pl-6 pt-3 flex items-center rounded-ss-3xl bg-primary-bg">
                   <div className="pr-2 text-white font-forum text-lg tracking-wide">
-                    Fashion
+                    Fashion-store
                   </div>
                   <div className="h-8 w-8 border border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
                     <FaArrowRight />
@@ -203,7 +203,7 @@ const Home = () => {
             />
             <div className="absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg">
               <div className="pr-2 text-white font-forum text-sm tracking-wide">
-                Salon
+                Unisex Salon
               </div>
               <div className="h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
                 <FaArrowRight />
@@ -238,14 +238,14 @@ const Home = () => {
             data-aos="fade-right"
           >
             <img
-              src="./store/what-new1.jpg"
+              src="./images/fashion3.jpg"
               alt="Thai-Inspired Fashion Collection in Kolkata"
               className="absolute -top-1/3 w-full transition duration-300 ease-in-out transform hover:scale-[103%]"
               loading="lazy"
             />
             <div className="absolute bottom-0 right-0 pl-3 pt-1 flex items-center rounded-ss-lg bg-primary-bg">
               <div className="pr-2 text-white font-forum text-sm tracking-wide">
-                Fashion
+                Fashion-Store
               </div>
               <div className="h-4 w-4 border text-xs border-gray-500 rounded-full flex items-center justify-center text-white hover:bg-primary-text hover:text-primary-bg">
                 <FaArrowRight />

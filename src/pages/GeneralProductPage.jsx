@@ -56,7 +56,7 @@ const GeneralProductPage = () => {
             <div className='p-4'>
                 <h1 className='text-3xl font-forum text-primary-text mb-4'>Our Collections</h1>
                 <p className='text-primary-text mb-8'>
-                    Discover our carefully curated collections of Thai-inspired fashion, 
+                    Discover our carefully curated collections of Thai-inspired fashion,
                     bringing the elegance of Thai design to Kolkata.
                 </p>
             </div>
@@ -65,8 +65,8 @@ const GeneralProductPage = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4'>
                 {categories.map((category) => (
                     <div key={category.id} className='border-2 border-primary-border rounded-xl overflow-hidden'>
-                        <img 
-                            src={category.image} 
+                        <img
+                            src={category.image}
                             alt={`${category.name} Collection - Maison Rose Lifestyle`}
                             className='w-full h-48 object-cover'
                             loading="lazy"
@@ -74,7 +74,7 @@ const GeneralProductPage = () => {
                         <div className='p-4'>
                             <h2 className='text-xl font-forum text-primary-text mb-2'>{category.name}</h2>
                             <p className='text-primary-text opacity-80 mb-4'>{category.description}</p>
-                            <NavLink 
+                            <NavLink
                                 to={`/collections/${category.id}`}
                                 className='block text-center border border-primary-border rounded-lg py-2 text-primary-text hover:bg-primary-pink hover:text-black transition-colors'
                             >

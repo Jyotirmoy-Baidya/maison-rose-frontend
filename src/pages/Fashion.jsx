@@ -17,6 +17,7 @@ import { ClimbingBoxLoader } from 'react-spinners'
 import { override } from '../constants/basic'
 import { fetchWhatsNewRecords } from '../api/AirtableApis'
 import { useNavigate } from 'react-router-dom'
+import SearchBar from '../components/store/SearchBar'
 
 
 
@@ -68,17 +69,10 @@ const Fashion = () => {
     return (
         <div className='min-h-screen p-3 xl:p-6 flex flex-col overflow-x-hidden bg-primary-bg relative'>
 
-            <div className='xl:flex items-center gap-2 w-96 hidden fixed z-10 p-3 top-10 right-10 rounded-xl searchbar '>
-                <div className='uppercase h-full w-full'>
-                    <input type="text" className='w-full bg-[#18181895] backdrop-blur-sm  rounded-xl text-primary-text h-full border-2 px-3 py-2 border-primary-border outline-none' placeholder='Search' value={search} onChange={(e) => setSearch(e.target.value)} />
-                </div>
-                <div className='text-xl text-primary-text' onClick={() => { if (search != '') navigate(`/fashion-store/s/${search}`) }}><IoSearchSharp /></div>
-            </div>
-            <div className='mt-32'>Jyoti</div>
+            <SearchBar />
 
-            <div className='flex-col flex w-full'>
-                <h2 className='text-primary-text text-5xl text-center font-forum'>What's New</h2>
-
+            <div className='flex-col flex w-full xl:mt-32 mt-7'>
+                <h2 className='text-primary-text text-3xl xl:text-5xl text-center font-forum'>What's New</h2>
                 <div className='flex mt-8 px-8 overflow-x-scroll no-scrollbar' ref={p1}>
                     {
                         whatsNewLoading ?
@@ -95,9 +89,11 @@ const Fashion = () => {
                             <div className='flex gap-5 justify-center' >
                                 {
                                     whatsNew?.map((item, index) => (
-
                                         <React.Fragment key={index}>
-                                            <WhatnewCard key={index} item={item.fields} />
+                                            {
+                                                item?.fields?.Display === 'Yes' &&
+                                                <WhatnewCard key={index} item={item.fields} />
+                                            }
                                         </React.Fragment>
 
                                     ))

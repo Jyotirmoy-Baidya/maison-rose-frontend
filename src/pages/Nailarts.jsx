@@ -199,7 +199,7 @@ const Nailarts = () => {
                     </div>
 
                     {/* Services Section */}
-                    <div className='flex flex-col gap-4 mt-12'>
+                    <div className='hidden flex-col gap-4 mt-12'>
                         <div className='text-primary-text text-2xl text-center tracking-wide font-forum mb-6'>
                             Our Services
                         </div>

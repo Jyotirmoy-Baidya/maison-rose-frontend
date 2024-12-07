@@ -181,7 +181,7 @@ const Salon = () => {
 
             {/* <hr className='mx-auto w-[90%] bg-primary-border' /> */}
 
-            <div className='flex bg-primary-bg' ref={p1}>
+            <div className='hidden bg-primary-bg' ref={p1}>
                 <div className='flex flex-col gap-8 xl:gap-6 w-full border-2 border-primary-border m-3 xl:m-6 rounded-xl py-6 xl:py-6 px-6 xl:px-12'>
                     <div className='flex w-full justify-center font-forum items-center gap-3 xl:gap-4 text-3xl xl:text-5xl tracking-widest text-primary-text uppercase'>
                         <Menuarrow />
