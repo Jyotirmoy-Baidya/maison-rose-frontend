@@ -13,7 +13,7 @@ const SearchBar = () => {
 
     return (
         <>
-            <div className="flex items-center gap-2 w-96 xl:fixed z-10 xl:p-3 xl:top-10 xl:right-10 rounded-xl searchbar">
+            <div className="flex items-center gap-2 w-full xl:w-96 xl:fixed z-10 xl:p-3 xl:top-10 xl:right-10 rounded-xl searchbar">
 
                 {/* Animated Search Bar */}
                 <div
