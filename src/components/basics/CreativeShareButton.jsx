@@ -10,8 +10,6 @@ const CreativeShareButton = ({ SHARE_URL }) => {
 
     const shareLinks = {
         facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}`,
-        twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(SHARE_URL)}`,
-        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SHARE_URL)}`,
         whatsapp: `https://wa.me/?text=${encodeURIComponent(SHARE_URL)}`,
     };
 
@@ -43,24 +41,24 @@ const CreativeShareButton = ({ SHARE_URL }) => {
                 </a>
 
                 {/* Twitter */}
-                <a
+                {/* <a
                     href={shareLinks.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-400 p-3 rounded-full text-white shadow-lg hover:scale-110 transition duration-300"
                 >
                     <FaTwitter size={16} />
-                </a>
+                </a> */}
 
                 {/* LinkedIn */}
-                <a
+                {/* <a
                     href={shareLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-700 p-3 rounded-full text-white shadow-lg hover:scale-110 transition duration-300"
                 >
                     <FaLinkedinIn size={16} />
-                </a>
+                </a> */}
 
                 {/* WhatsApp */}
                 <a

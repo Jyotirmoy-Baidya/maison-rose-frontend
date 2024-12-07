@@ -74,7 +74,7 @@ const ProductDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-primary-bg  pt-20">
+        <div className="min-h-screen bg-primary-bg  xl:pt-20">
             <div className="container mx-auto px-4 py-4 md:py-8">
                 <div className="flex flex-col xl:flex-row gap-6 md:gap-8">
                     {/* Left side - Image Carousel */}
@@ -109,7 +109,7 @@ const ProductDetails = () => {
                             <p className="text-sm md:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-forum tracking-wide">
                                 {product?.Description && product?.Description}
                             </p>
-                            <div className='flex gap-2'>
+                            <div className='flex  gap-2'>
                                 <BuyNowButton
                                     SHARE_URL={`www.maisonroselifestyle.com/product/${productId}`} />
                                 <CreativeShareButton SHARE_URL={`www.maisonroselifestyle.com/product/${productId}`} />

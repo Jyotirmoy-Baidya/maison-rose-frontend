@@ -8,16 +8,16 @@ const ImageCarouselInDetailsPage = ({ images }) => {
     };
 
     return (
-        <div className="carousel-details-page flex xl:ml-auto w-full">
+        <div className="carousel-details-page flex flex-col xl:flex-row gap-2 xl:ml-auto w-full">
             {/* Thumbnails */}
-            <div className="thumbnail-container xl:w-[20%] flex flex-col gap-2 xl:mr-10">
+            <div className="thumbnail-container w-full overflow-x-auto order-2 xl:order-1 xl:w-[20%] flex flex-row xl:flex-col gap-2 xl:mr-10">
                 {images?.map((image, index) => (
                     <img
                         key={index}
                         src={image.thumbnails.large.url}
                         alt={`Thumbnail ${index}`}
                         onClick={() => selectImage(index)}
-                        className={`w-16 h-16 2xl:w-28 2xl:h-48 object-cover cursor-pointer border-2 ${currentIndex === index
+                        className={`w-16 h-28 2xl:w-28 2xl:h-48 object-cover cursor-pointer border-2 ${currentIndex === index
                             ? "border-primary"
                             : "border-gray-300"
                             }`}
@@ -26,7 +26,7 @@ const ImageCarouselInDetailsPage = ({ images }) => {
             </div>
 
             {/* Main Image */}
-            <div className="main-image-container xl:w-[70%] flex-1 flex justify-center items-center">
+            <div className="main-image-container  order-1 xl:order-2 xl:w-[70%] flex-1 flex justify-center items-center">
                 <img
                     src={images[currentIndex].thumbnails.full.url}
                     alt={`Main Slide ${currentIndex}`}
