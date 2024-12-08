@@ -10,58 +10,72 @@ const Combos = () => {
   const combos = [
     {
       id: 1,
-      name: "Weekend Brunch Combo",
-      description: "Perfect for lazy weekends. Includes freshly baked croissants, eggs benedict, and signature coffee.",
-      price: 599,
+      name: "Veg Pizza Combo Meal",
+      description: "A delicious vegetarian combo featuring pizza, momos, and more",
+      price: 199,
       image: "/menu/combos/image1.png",
       rating: 4.8,
       reviews: 124,
       details: {
-        items: ["2 Croissants", "Eggs Benedict", "Fresh Orange Juice", "Signature Coffee"],
-        serves: "2 persons",
-        time: "Available 9 AM - 2 PM"
+        items: ["1 Veg Pizza", "2 Veg Momos", "1 Litti", "French Fries", "Mocktail"],
+        serves: "1 person",
+        time: "Available all day"
       }
     },
     {
       id: 2,
-      name: "Thai Fusion Feast",
-      description: "Experience the best of Thai fusion cuisine with our carefully curated combo.",
-      price: 899,
+      name: "Veg Burger Combo",
+      description: "A classic vegetarian burger combo with sides",
+      price: 179,
       image: "/menu/combos/image2.png",
-      rating: 4.9,
+      rating: 4.6,
       reviews: 156,
       details: {
-        items: ["Tom Yum Soup", "Green Curry", "Pad Thai", "Mango Sticky Rice"],
-        serves: "2-3 persons",
+        items: ["Veg Burger", "French Fries", "Mocktail"],
+        serves: "1 person",
         time: "Available all day"
       }
     },
     {
       id: 3,
-      name: "Evening Tea Special",
-      description: "Traditional high tea experience with a modern twist.",
-      price: 499,
+      name: "Non-Veg Pizza Combo Meal",
+      description: "A hearty chicken pizza combo with sides",
+      price: 249,
       image: "/menu/combos/image3.png",
-      rating: 4.7,
-      reviews: 98,
+      rating: 4.9,
+      reviews: 203,
       details: {
-        items: ["Assorted Sandwiches", "Scones", "Petit Fours", "Premium Tea Selection"],
-        serves: "2 persons",
-        time: "Available 3 PM - 7 PM"
+        items: ["1 Chicken Pizza", "2 Chicken Momos", "1 Litti", "French Fries", "Mocktail"],
+        serves: "1 person",
+        time: "Available all day"
       }
     },
     {
       id: 4,
-      name: "Date Night Dinner",
-      description: "Romantic dinner combo perfect for special occasions.",
-      price: 1299,
+      name: "Non-Veg Sandwich Combo",
+      description: "A filling non-veg sandwich combo with sides",
+      price: 249,
       image: "/menu/combos/image4.png",
-      rating: 5.0,
-      reviews: 203,
+      rating: 4.8,
+      reviews: 167,
       details: {
-        items: ["Wine", "Appetizer Platter", "Choice of Main Course", "Dessert"],
-        serves: "2 persons",
-        time: "Available after 7 PM"
+        items: ["Non-Veg Sandwich", "2 Chicken Momos", "1 Litti", "French Fries", "Mocktail"],
+        serves: "1 person",
+        time: "Available all day"
+      }
+    },
+    {
+      id: 5,
+      name: "Non-Veg Burger Combo",
+      description: "A classic non-veg burger combo with sides",
+      price: 199,
+      image: "/menu/combos/image1.png",
+      rating: 4.7,
+      reviews: 145,
+      details: {
+        items: ["Non-Veg Burger", "French Fries", "Mocktail"],
+        serves: "1 person",
+        time: "Available all day"
       }
     }
   ];
